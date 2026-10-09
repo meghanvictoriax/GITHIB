@@ -1,0 +1,805 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_mnJmTF": {
+      "type": "section",
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "custom",
+        "section_height_custom": 15,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_fktxz3": {
+      "type": "section",
+      "blocks": {
+        "group_NYJGH9": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_DDMXVP": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p><br/>Kyst On the Korner<br/><br/></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_zaqrbe": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Kyst on the Korner is the heart and soul of Sol Kyst. We're a boutique that highlights women-owned Canadian brands in fashion, beauty, and lifestyle.                                                      </p><p>1- 331 Dundas St E, Waterdown, Ontario</p><p><strong>HOURS:</strong><br/>Sunday: Closed<br/>Monday: Closed<br/>Tuesday: Closed<br/>Wednesday: 11 AM - 4 PM<br/>Thursday: 11 AM - 6 PM<br/>Friday: 11 AM - 4 PM<br/>Saturday: 10 AM - 5 PM</p>",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_GwYf8C": {
+              "type": "button",
+              "settings": {
+                "label": "Follow Kyst on the Korner",
+                "link": "https://www.instagram.com/kystonthekorner/",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_DDMXVP",
+            "text_zaqrbe",
+            "button_GwYf8C"
+          ]
+        },
+        "image_XdGk6E": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8965_VSCO_8f734089-abb3-4507-9755-db801ae2764f.jpg",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "image_tnKGnU": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2354_432c83a6-5cad-4e0f-8ab0-c48facaeb3be.jpg",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "group_NYJGH9",
+        "image_XdGk6E",
+        "image_tnKGnU"
+      ],
+      "name": "t:names.image_with_text",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "slider_6_wibr7W": {
+      "type": "slider-6",
+      "blocks": {
+        "slide_FpT66b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/VENDOR_Plaques_4_x_5_in_344e002b-7939-404c-919b-1152cbb1b3e7.png",
+            "text": "Meghan Victoria - Sol Kyst",
+            "url": "https://www.instagram.com/solkyst/"
+          }
+        },
+        "slide_d4aJ83": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/VENDOR_Plaques_4_x_5_in_1_819c7194-2439-483d-860b-4e9605aa82c8.png",
+            "text": "Jen  - Planted",
+            "url": "https://www.instagram.com/plantedcompany/"
+          }
+        },
+        "slide_h6cLU4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/9_1b9a4f5f-3bd3-4fcc-aa2e-661901bcda8a.png",
+            "text": "Vanessa - Iluminar Skin",
+            "url": "https://www.instagram.com/iluminar.skin/"
+          }
+        },
+        "slide_XfBapW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/8_28b548f6-c431-46d0-9d6d-331c4bed61cc.png",
+            "text": "Gunjan - Clutch-it",
+            "url": "https://www.instagram.com/clutcheeet/"
+          }
+        },
+        "slide_NKKzwW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/7_6b9d97ad-d0c3-4fc9-be7c-da39fe2ec96b.png",
+            "text": "Gracie & Rachel - Perfect Palette",
+            "url": "https://www.instagram.com/perfect.palettes/"
+          }
+        },
+        "slide_JbKEUj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4_e28b7c07-eb01-481d-bbb7-4f130e84f70e.png",
+            "text": "Lesley Hampton",
+            "url": "https://www.instagram.com/lesley_hampton/"
+          }
+        },
+        "slide_kmhD77": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6_2277d05a-9b92-43f4-b465-83de004edaa2.png",
+            "text": "Izabella - Golden Tallow",
+            "url": "https://www.instagram.com/goldentallow.ca/"
+          }
+        },
+        "slide_UVJLmW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/5_23ea3ee6-f3a8-4be0-a5a8-e9f9859fe33c.png",
+            "text": "Gwen & Katie - Sharp designs",
+            "url": "https://www.instagram.com/sharpdesigns.indigenous/\\"
+          }
+        },
+        "slide_NaPEbU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_9a958ce7-15c8-4bdd-9d0a-1f3f1fab4efe.png",
+            "text": "Steph - Posh Lash Pro",
+            "url": "https://www.instagram.com/poshlashpro/"
+          }
+        },
+        "slide_iMQCmQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/2_a1c3f346-d5b6-4415-8dca-e0348cfeefe3.png",
+            "text": "Yvonne - Now in Rio",
+            "url": ""
+          }
+        },
+        "slide_jiGCRt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4605_7ea38a76-ce3e-454e-a1b5-e7e89ab184c3.png",
+            "text": "Mayuri - Mayuri's Beads",
+            "url": "https://www.instagram.com/mayurisbeads/"
+          }
+        }
+      },
+      "block_order": [
+        "slide_FpT66b",
+        "slide_d4aJ83",
+        "slide_h6cLU4",
+        "slide_XfBapW",
+        "slide_NKKzwW",
+        "slide_JbKEUj",
+        "slide_kmhD77",
+        "slide_UVJLmW",
+        "slide_NaPEbU",
+        "slide_iMQCmQ",
+        "slide_jiGCRt"
+      ],
+      "name": "SS - Slider #6",
+      "settings": {
+        "button": "Our Vendors!",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 20,
+        "button_size_mobile": 16,
+        "button_height": 100,
+        "button_padding_vertical": 16,
+        "button_padding_vertical_mobile": 16,
+        "button_padding_horizontal": 38,
+        "button_padding_horizontal_mobile": 38,
+        "button_radius": 100,
+        "button_border_thickness": 0,
+        "button_align": "center",
+        "button_align_mobile": "center",
+        "button_style": "non_outline_arrow",
+        "slider_view": 3.3,
+        "slider_view_mobile": 1.4,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "slider_mt_mobile": 20,
+        "use_number": false,
+        "number_custom": false,
+        "number_font": "josefin_sans_n4",
+        "number_size": 100,
+        "number_size_mobile": 60,
+        "number_height": 150,
+        "image_radius": 70,
+        "image_border_thickness": 0,
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 18,
+        "text_size_mobile": 16,
+        "text_height": 150,
+        "text_mt": 8,
+        "text_mt_mobile": 8,
+        "text_align": "left",
+        "text_align_mobile": "left",
+        "arrow_size": 48,
+        "arrow_size_mobile": 48,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "scrollbar_height": 5,
+        "scrollbar_mt": 60,
+        "scrollbar_show_desktop": true,
+        "scrollbar_show_mobile": true,
+        "button_color": "#000000",
+        "button_hover_color": "#000000",
+        "button_bg_color": "",
+        "button_bg_hover_color": "",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "number_color": "#000000",
+        "image_border_color": "#000000",
+        "text_color": "#7c7a6f",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#000000",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#000000",
+        "scrollbar_bg_color": "#c8c6ba",
+        "scrollbar_drag_bg_color": "#64635d",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 160,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "176789966800fb10e1": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_xeR3k7": {
+      "type": "section",
+      "blocks": {
+        "text_MD7iQG": {
+          "type": "text",
+          "settings": {
+            "text": "<h4><br/>Would you like to be a vendor in store?<br/><br/></h4>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "contact_form_JRjMBN": {
+          "type": "contact-form",
+          "settings": {
+            "width": "custom",
+            "custom_width": 50,
+            "width_mobile": "custom",
+            "custom_width_mobile": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "submit-button": {
+              "type": "contact-form-submit-button",
+              "static": true,
+              "settings": {
+                "label": "Submit",
+                "style_class": "button",
+                "width": "custom",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "block_order": [
+        "text_MD7iQG",
+        "contact_form_JRjMBN"
+      ],
+      "name": "t:names.contact_form",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "section_RPLN9Q": {
+      "type": "section",
+      "blocks": {
+        "text_7LktYi": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h4><br/>You can also find us at...<br/><br/></h4>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_7LktYi"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "custom",
+        "section_height_custom": 15,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "hero_c8cYxy": {
+      "type": "hero",
+      "blocks": {
+        "group_XEayh3": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 18,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_Dky6cY": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 6,
+                "width": "custom",
+                "custom_width": 35,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "custom",
+                "custom_height": 85,
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-1",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 40,
+                "padding-block-end": 40,
+                "padding-inline-start": 40,
+                "padding-inline-end": 40
+              },
+              "blocks": {
+                "text_Y4KbLA": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p><strong><br/>REVOLUTIONHER</strong><br/><br/>Mapleview Mall<br/>Burlington, Canada</p><p>Vaughn Mills<br/>Vaughan, Ontario</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_Y4KbLA"
+              ]
+            }
+          },
+          "block_order": [
+            "group_Dky6cY"
+          ]
+        }
+      },
+      "block_order": [
+        "group_XEayh3"
+      ],
+      "name": "t:names.hero_bottom_aligned",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/0329C773-C120-456C-A6FB-3469B251F2C9_be2f4db8-a557-4852-a2e5-9dffff0b5f12.png",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "section_mnJmTF",
+    "section_fktxz3",
+    "main",
+    "slider_6_wibr7W",
+    "176789966800fb10e1",
+    "section_xeR3k7",
+    "section_RPLN9Q",
+    "hero_c8cYxy"
+  ]
+}

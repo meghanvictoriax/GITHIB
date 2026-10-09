@@ -1,0 +1,581 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_gMmcq6": {
+      "type": "hero",
+      "blocks": {
+        "text_fhdnLd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Barbie's 65th Anniversary Collection</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_fhdnLd"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/20_2.png",
+        "media_type_2": "image",
+        "image_2": "shopify://shop_images/18_1.png",
+        "stack_media_on_mobile": true,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-4",
+        "toggle_overlay": false,
+        "overlay_color": "#1a1a1ab0",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 0,
+        "padding-block-end": 36
+      }
+    },
+    "slider_6_8k6jJT": {
+      "type": "slider-6",
+      "blocks": {
+        "slide_4NYchG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst0115_AUG_15.jpg",
+            "text": "1959 Original Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1959-originals"
+          }
+        },
+        "slide_D3n7ty": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst0280_AUG_15.jpg",
+            "text": "1960’s Twist & Turn Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1960s-twist-nturn-orange"
+          }
+        },
+        "slide_XAqnt8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst1314_AUG_15.jpg",
+            "text": "1960’s Twist & Turn Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1960s-twist-nturn-red"
+          }
+        },
+        "slide_eVnrih": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst1283_AUG_15.jpg",
+            "text": "1970’s Super Star Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1970s-superstar-hexagon"
+          }
+        },
+        "slide_gJGBt4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst0886_AUG_15.jpg",
+            "text": "1970’s Super Star Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1970s-superstar-hearts"
+          }
+        },
+        "slide_Yw8ce4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst0537_AUG_15.jpg",
+            "text": "1980’s Black Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1980s-black-barbie-square"
+          }
+        },
+        "slide_UqMfQ7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst1593_AUG_15.jpg",
+            "text": "1980’s Crystal Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1980s-crystal-cat-eye"
+          }
+        },
+        "slide_j64A7H": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Barbie_Shoot_-_Solkyst0707_AUG_15.jpg",
+            "text": "1990’s Totally Hair Barbie",
+            "url": "shopify://products/barbie™-x-sol-kyst-1990s-totally-hair-frameless"
+          }
+        }
+      },
+      "block_order": [
+        "slide_4NYchG",
+        "slide_D3n7ty",
+        "slide_XAqnt8",
+        "slide_eVnrih",
+        "slide_gJGBt4",
+        "slide_Yw8ce4",
+        "slide_UqMfQ7",
+        "slide_j64A7H"
+      ],
+      "name": "SS - Slider #6",
+      "settings": {
+        "button": "",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 20,
+        "button_size_mobile": 16,
+        "button_height": 100,
+        "button_padding_vertical": 16,
+        "button_padding_vertical_mobile": 16,
+        "button_padding_horizontal": 38,
+        "button_padding_horizontal_mobile": 38,
+        "button_radius": 100,
+        "button_border_thickness": 0,
+        "button_align": "center",
+        "button_align_mobile": "center",
+        "button_style": "non_outline_arrow",
+        "slider_view": 3.3,
+        "slider_view_mobile": 1.4,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "slider_mt_mobile": 20,
+        "use_number": true,
+        "number_custom": true,
+        "number_font": "josefin_sans_n4",
+        "number_size": 31,
+        "number_size_mobile": 28,
+        "number_height": 150,
+        "image_radius": 70,
+        "image_border_thickness": 0,
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "text_custom": true,
+        "text_font": "bevan_n4",
+        "text_size": 18,
+        "text_size_mobile": 16,
+        "text_height": 150,
+        "text_mt": 8,
+        "text_mt_mobile": 8,
+        "text_align": "center",
+        "text_align_mobile": "center",
+        "arrow_size": 48,
+        "arrow_size_mobile": 48,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": false,
+        "arrow_show_mobile": false,
+        "scrollbar_height": 5,
+        "scrollbar_mt": 60,
+        "scrollbar_show_desktop": true,
+        "scrollbar_show_mobile": true,
+        "button_color": "#000000",
+        "button_hover_color": "#000000",
+        "button_bg_color": "",
+        "button_bg_hover_color": "",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "number_color": "#000000",
+        "image_border_color": "#000000",
+        "text_color": "#72093F",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#000000",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#000000",
+        "scrollbar_bg_color": "#c8c6ba",
+        "scrollbar_drag_bg_color": "#64635d",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 160,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "section": {
+      "type": "section",
+      "blocks": {
+        "divider_agfR7J": {
+          "type": "_divider",
+          "name": "Divider",
+          "settings": {
+            "thickness": 1,
+            "corner_radius": "square",
+            "width_percent": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 11
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "divider_agfR7J"
+      ],
+      "name": "Collection heading",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 84,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 36,
+        "padding-block-end": 0
+      }
+    },
+    "section_HbXTYc": {
+      "type": "section",
+      "blocks": {
+        "video_J8rXDL": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/Barbie x Solkyst H265 September 11.mp4",
+            "video_url": "",
+            "video_autoplay": false,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_6xtyWG": {
+          "type": "group",
+          "name": "t:names.caption",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_tXjnT4": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Step into our world and Bring it on Barbie!</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_CRcmq9": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Discover the collection",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_tXjnT4",
+            "button_CRcmq9"
+          ]
+        }
+      },
+      "block_order": [
+        "video_J8rXDL",
+        "group_6xtyWG"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "filters": {
+          "type": "filters",
+          "static": true,
+          "settings": {
+            "enable_filtering": true,
+            "filter_style": "horizontal",
+            "filter_width": "full-width",
+            "text_label_case": "uppercase",
+            "show_swatch_label": false,
+            "show_filter_label": false,
+            "enable_sorting": true,
+            "enable_grid_density": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "padding-block-start": 8,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "facets_margin_bottom": 8,
+            "facets_margin_right": 20
+          },
+          "blocks": {}
+        },
+        "product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_nkqgA4": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_6nPk8G": {
+              "type": "product-title",
+              "name": "t:names.title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_tainzq": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_nkqgA4",
+            "product_title_6nPk8G",
+            "price_tainzq"
+          ]
+        }
+      },
+      "settings": {
+        "layout_type": "grid",
+        "product_card_size": "extra-large",
+        "mobile_product_card_size": "small",
+        "enable_infinite_scroll": true,
+        "products_per_page": 24,
+        "product_grid_width": "centered",
+        "full_width_on_mobile": true,
+        "columns_gap_horizontal": 7,
+        "columns_gap_vertical": 7,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 31
+      }
+    }
+  },
+  "order": [
+    "hero_gMmcq6",
+    "slider_6_8k6jJT",
+    "section",
+    "section_HbXTYc",
+    "main"
+  ]
+}

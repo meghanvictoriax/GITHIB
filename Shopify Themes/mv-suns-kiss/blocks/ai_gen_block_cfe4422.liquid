@@ -1,0 +1,258 @@
+{% doc %}
+  @prompt
+    Integrate a three-image editorial split grid into the product media gallery section. The layout should show one large full-size square image on the left and two horizontal images stacked vertically on the right (each half the height of the square), displayed alongside or within the product media area. All three images should be customizable in the theme editor and the layout should be responsive on mobile.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-editorial-grid-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-editorial-grid__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.gap }}px;
+    width: 100%;
+  }
+
+  .ai-editorial-grid__main-image-{{ ai_gen_id }} {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .ai-editorial-grid__main-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-editorial-grid__side-image-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+  }
+
+  .ai-editorial-grid__side-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-editorial-grid__side-image-top-{{ ai_gen_id }} {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ai-editorial-grid__side-image-bottom-{{ ai_gen_id }} {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .ai-editorial-grid__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-editorial-grid__placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-editorial-grid__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-editorial-grid__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-editorial-grid__main-image-{{ ai_gen_id }} {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .ai-editorial-grid__side-image-top-{{ ai_gen_id }} {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .ai-editorial-grid__side-image-bottom-{{ ai_gen_id }} {
+      grid-column: 1;
+      grid-row: 3;
+    }
+  }
+{% endstyle %}
+
+<editorial-grid-{{ ai_gen_id }}
+  class="ai-editorial-grid-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-editorial-grid__container-{{ ai_gen_id }}">
+    <div class="ai-editorial-grid__main-image-{{ ai_gen_id }}">
+      {% if block.settings.main_image %}
+        <img
+          src="{{ block.settings.main_image | image_url: width: 1200 }}"
+          alt="{{ block.settings.main_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.main_image.width }}"
+          height="{{ block.settings.main_image.height }}"
+        >
+      {% else %}
+        <div class="ai-editorial-grid__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-editorial-grid__empty-state-{{ ai_gen_id }}">
+            Add main image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-editorial-grid__side-image-{{ ai_gen_id }} ai-editorial-grid__side-image-top-{{ ai_gen_id }}">
+      {% if block.settings.top_image %}
+        <img
+          src="{{ block.settings.top_image | image_url: width: 800 }}"
+          alt="{{ block.settings.top_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.top_image.width }}"
+          height="{{ block.settings.top_image.height }}"
+        >
+      {% else %}
+        <div class="ai-editorial-grid__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-editorial-grid__empty-state-{{ ai_gen_id }}">
+            Add top image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-editorial-grid__side-image-{{ ai_gen_id }} ai-editorial-grid__side-image-bottom-{{ ai_gen_id }}">
+      {% if block.settings.bottom_image %}
+        <img
+          src="{{ block.settings.bottom_image | image_url: width: 800 }}"
+          alt="{{ block.settings.bottom_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.bottom_image.width }}"
+          height="{{ block.settings.bottom_image.height }}"
+        >
+      {% else %}
+        <div class="ai-editorial-grid__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-editorial-grid__empty-state-{{ ai_gen_id }}">
+            Add bottom image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</editorial-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class EditorialGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('editorial-grid-{{ ai_gen_id }}', EditorialGrid{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Editorial split grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main image (left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_image",
+      "label": "Top right image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Bottom right image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between images",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial split grid"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}
