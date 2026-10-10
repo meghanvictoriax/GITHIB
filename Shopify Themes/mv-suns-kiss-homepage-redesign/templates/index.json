@@ -121,7 +121,7 @@
             "text": "<h4>We have different bodies, we also have different faces. Sol Kyst designs for your unique face - three distinct sizes of frames engineered to your proportions & facial harmony.&nbsp;</h4><p></p>",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "2rem",
@@ -306,7 +306,7 @@
         "icon_space": 4,
         "icon_space_mobile": 4,
         "icon_border_thickness": 0,
-        "icon_square": false,
+        "icon_square": true,
         "use_hover": true,
         "text_custom": false,
         "text_font": "josefin_sans_n7",
@@ -332,7 +332,8 @@
         "border_thickness": 0,
         "lazy": true,
         "hide_mobile": false,
-        "hide_desktop": false
+        "hide_desktop": false,
+        "icon_corner_radius": 20
       }
     },
     "section_NWpYxm": {

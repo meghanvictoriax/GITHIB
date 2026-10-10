@@ -36,6 +36,7 @@
   assign icon_border_color = section.settings.icon_border_color
   assign icon_border_gradient = section.settings.icon_border_gradient
   assign icon_square = section.settings.icon_square
+  assign icon_corner_radius = section.settings.icon_corner_radius | default: 0
   assign icon_space_mobile = section.settings.icon_space_mobile
   assign icon_space = section.settings.icon_space
 
@@ -254,6 +255,14 @@
       border-radius: 50%;
     }
     
+  </style>
+{% else %}
+  <style>
+    .circle-icon-{{ section.id }},
+    .circle-icon-{{ section.id }} img,
+    .circle-icon-{{ section.id }} svg {
+      border-radius: {{ icon_corner_radius }}%;
+    }
   </style>
 {% endunless %}
 
@@ -478,6 +487,16 @@
           "id": "icon_square",
           "default": false,
           "label": "Use square image"
+        },
+        {
+          "type": "range",
+          "id": "icon_corner_radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "%",
+          "default": 0,
+          "label": "Square image corner rounding"
         },
         {
           "type": "checkbox",
