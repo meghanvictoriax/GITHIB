@@ -1,0 +1,498 @@
+{% comment %}
+  Section contract.
+  Step 1 of the prescription builder: a step bar, shape filters and a grid of the frames
+  that can be ordered with prescription lenses. Each frame opens its RX product page
+  (?view=rx), where the lens builder takes over.
+  @example
+  <!-- Add "SK · RX frame picker" to the RX page template -->
+{% endcomment %}
+
+{%- liquid
+  assign frames = section.settings.frames
+  # Shape filters: one per shape name, with plurals grouped (Ovals and Oval are one filter).
+  assign shape_keys = ''
+  assign shape_names = ''
+  for frame in frames
+    capture shape
+      render 'sk-shape-name', product: frame
+    endcapture
+    assign shape = shape | strip
+    if shape == blank
+      continue
+    endif
+    assign key = shape | handleize
+    assign key_last = key | slice: -1
+    if key_last == 's'
+      assign key = key | remove_last: 's'
+    endif
+    assign key_wrapped = ',' | append: key | append: ','
+    unless shape_keys contains key_wrapped
+      assign shape_keys = shape_keys | append: key_wrapped
+      assign shape_names = shape_names | append: key | append: '~' | append: shape | append: '|'
+    endunless
+  endfor
+  assign shape_list = shape_names | split: '|'
+  assign anchor = section.settings.anchor | handleize | default: section.id
+-%}
+
+{% render 'sk-styles' %}
+<section
+  id="{{ anchor }}"
+  class="sk sk-rx-frames color-{{ section.settings.color_scheme }}"
+  aria-labelledby="SkRxHeading-{{ section.id }}"
+>
+  <div class="sk-rx-frames__inner">
+    <header class="sk-rx-frames__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 id="SkRxHeading-{{ section.id }}" class="sk-display sk-rx-frames__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.intro != blank -%}
+        <div class="sk-lede sk-rx-frames__intro">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- if section.settings.show_steps -%}
+      <div class="sk-rx-steps sk-rx-frames__steps">
+        <ol class="sk-rx-steps__list" role="list">
+          {%- assign labels = section.settings.step_1 | append: '|' | append: section.settings.step_2 | append: '|' | append: section.settings.step_3 | append: '|' | append: section.settings.step_4 | split: '|' -%}
+          {%- for label in labels -%}
+            <li class="sk-rx-steps__step {% if forloop.first %}is-current{% else %}is-todo{% endif %}" {% if forloop.first %}aria-current="step"{% endif %}>
+              <span class="sk-rx-steps__dot" aria-hidden="true">{{ forloop.index }}</span>
+              <span class="sk-rx-steps__label">{{ label | escape }}</span>
+            </li>
+          {%- endfor -%}
+        </ol>
+      </div>
+    {%- endif -%}
+
+    {%- if frames.size > 0 -%}
+      <sk-rx-frames>
+        {%- if section.settings.show_filters and shape_list.size > 1 -%}
+          <div class="sk-rx-frames__filters" role="group" aria-label="{{ section.settings.filter_label | escape }}">
+            <button type="button" class="sk-rx-frames__chip is-active" data-shape="" aria-pressed="true">
+              {{- section.settings.all_label | escape -}}
+            </button>
+            {%- for entry in shape_list -%}
+              {%- assign entry_parts = entry | split: '~' -%}
+              <button type="button" class="sk-rx-frames__chip" data-shape="{{ entry_parts[0] }}" aria-pressed="false">
+                {{- entry_parts[1] | escape -}}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <ul class="sk-rx-frames__grid" role="list">
+          {%- for frame in frames -%}
+            {%- liquid
+              capture shape
+                render 'sk-shape-name', product: frame
+              endcapture
+              assign shape = shape | strip
+              capture card
+                render 'sk-card-price', product: frame
+              endcapture
+              assign card = card | strip | split: '|'
+              assign card_cents = card[0] | plus: 0
+              assign card_amount = card_cents | money
+              assign rx_url = frame.url | append: '?view=rx'
+              assign shape_key = shape | handleize
+              assign key_last = shape_key | slice: -1
+              if key_last == 's'
+                assign shape_key = shape_key | remove_last: 's'
+              endif
+            -%}
+            <li class="sk-rx-frames__item" data-shape="{{ shape_key }}">
+              <a class="sk-rx-card{% unless frame.available %} is-sold-out{% endunless %}" href="{{ rx_url }}">
+                <span class="sk-rx-card__media">
+                  {%- if frame.featured_media -%}
+                    {{
+                      frame.featured_media.preview_image
+                      | image_url: width: 900
+                      | image_tag:
+                        widths: '300, 450, 600, 900',
+                        sizes: '(min-width: 990px) 23vw, (min-width: 750px) 31vw, 48vw',
+                        loading: 'lazy',
+                        alt: frame.featured_media.preview_image.alt | default: frame.title
+                    }}
+                  {%- endif -%}
+                </span>
+                <span class="sk-rx-card__body">
+                  {%- if shape != blank -%}
+                    <span class="sk-rx-card__shape">{{ shape | escape }}</span>
+                  {%- endif -%}
+                  <span class="sk-rx-card__name">{{ frame.title | escape }}</span>
+                  <span class="sk-rx-card__price">
+                    {%- if section.settings.frame_price_label != blank -%}
+                      {{ section.settings.frame_price_label | escape }}{{ ' ' }}
+                    {%- endif -%}
+                    {%- if card[1] == 'true' -%}
+                      {{ 'content.price_from' | t: price: card_amount }}
+                    {%- else -%}
+                      {{ card_amount }}
+                    {%- endif -%}
+                  </span>
+                  {%- unless frame.available -%}
+                    <span class="sk-rx-card__status">{{ section.settings.sold_out_label | escape }}</span>
+                  {%- endunless -%}
+                  <span class="sk-rx-card__cta">{{ section.settings.button_label | escape }} <span aria-hidden="true">→</span></span>
+                </span>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </sk-rx-frames>
+
+      {%- if section.settings.lens_note != blank -%}
+        <div class="sk-rx-frames__note">{{ section.settings.lens_note }}</div>
+      {%- endif -%}
+    {%- elsif request.design_mode -%}
+      <p>Choose the frames that can be ordered with prescription lenses.</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  if (!customElements.get('sk-rx-frames')) {
+    customElements.define(
+      'sk-rx-frames',
+      class extends HTMLElement {
+        connectedCallback() {
+          this.addEventListener('click', (event) => {
+            const chip = event.target.closest('.sk-rx-frames__chip');
+            if (!chip) return;
+            const shape = chip.dataset.shape;
+            for (const other of this.querySelectorAll('.sk-rx-frames__chip')) {
+              const active = other === chip;
+              other.classList.toggle('is-active', active);
+              other.setAttribute('aria-pressed', String(active));
+            }
+            for (const item of this.querySelectorAll('.sk-rx-frames__item')) {
+              item.hidden = Boolean(shape) && item.dataset.shape !== shape;
+            }
+          });
+        }
+      }
+    );
+  }
+</script>
+
+{% stylesheet %}
+  .sk-rx-frames {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sk-rx-frames__inner {
+    max-width: 1500px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .sk-rx-frames__head {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .sk-rx-frames__heading {
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+  }
+
+  .sk-rx-frames__intro {
+    max-width: 36rem;
+  }
+
+  .sk-rx-frames__steps {
+    width: min(44rem, 100%);
+    margin-inline: auto;
+  }
+
+  sk-rx-frames {
+    display: block;
+    min-width: 0;
+  }
+
+  .sk-rx-frames__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .sk-rx-frames__chip {
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.25);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+  }
+
+  .sk-rx-frames__chip:hover {
+    border-color: var(--color-foreground);
+  }
+
+  .sk-rx-frames__chip.is-active {
+    background: var(--color-foreground);
+    border-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  .sk-rx-frames__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+  }
+
+  .sk-rx-frames__item[hidden] {
+    display: none;
+  }
+
+  .sk-rx-card {
+    display: grid;
+    gap: 0.9rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sk-rx-card__media {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 20%;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+  }
+
+  .sk-rx-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .sk-rx-card:hover .sk-rx-card__media img {
+    transform: scale(1.04);
+  }
+
+  .sk-rx-card.is-sold-out .sk-rx-card__media img {
+    opacity: 0.55;
+  }
+
+  .sk-rx-card__body {
+    display: grid;
+    gap: 0.3rem;
+    padding-inline: 0.25rem;
+  }
+
+  .sk-rx-card__shape {
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .sk-rx-card__name {
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+    line-height: 1.1;
+  }
+
+  .sk-rx-card__price,
+  .sk-rx-card__status {
+    font-size: 0.875rem;
+  }
+
+  .sk-rx-card__status {
+    opacity: 0.7;
+  }
+
+  .sk-rx-card__cta {
+    margin-block-start: 0.35rem;
+    justify-self: start;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-block-end: 1px solid currentColor;
+    padding-block-end: 0.2rem;
+  }
+
+  .sk-rx-frames__note {
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.85;
+  }
+
+  .sk-rx-frames__note p {
+    margin: 0;
+  }
+
+  @media (max-width: 989px) {
+    .sk-rx-frames__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 749px) {
+    .sk-rx-frames__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sk-rx-frames__filters {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      margin-inline: calc(var(--sk-gutter, 1rem) * -1);
+      padding-inline: var(--sk-gutter, 1rem);
+      scrollbar-width: none;
+    }
+
+    .sk-rx-frames__chip {
+      flex: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · RX frame picker",
+  "tag": "div",
+  "class": "sk-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading",
+      "default": "Step one"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose your <em>frame</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro",
+      "default": "<p>Every frame below can be made with your prescription. Pick one, then build your lenses.</p>"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Link name for this section",
+      "info": "Link to this section with #rx-frames.",
+      "default": "rx-frames"
+    },
+    {
+      "type": "product_list",
+      "id": "frames",
+      "label": "Frames",
+      "info": "Only add frames that are switched on in the LensAdvizor app.",
+      "limit": 50
+    },
+    {
+      "type": "header",
+      "content": "Steps"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_steps",
+      "label": "Show steps",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "step_1",
+      "label": "Step 1",
+      "default": "Choose your frame"
+    },
+    {
+      "type": "text",
+      "id": "step_2",
+      "label": "Step 2",
+      "default": "Build your lenses"
+    },
+    {
+      "type": "text",
+      "id": "step_3",
+      "label": "Step 3",
+      "default": "Add your prescription"
+    },
+    {
+      "type": "text",
+      "id": "step_4",
+      "label": "Step 4",
+      "default": "Checkout"
+    },
+    {
+      "type": "header",
+      "content": "Filters and cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Show shape filters",
+      "info": "Shapes come from Theme settings > Colour families.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "filter_label",
+      "label": "Filter group name (read by screen readers)",
+      "default": "Filter frames by shape"
+    },
+    {
+      "type": "text",
+      "id": "all_label",
+      "label": "All frames filter",
+      "default": "All frames"
+    },
+    {
+      "type": "text",
+      "id": "frame_price_label",
+      "label": "Price label",
+      "default": "Frame"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Card button",
+      "default": "Build my glasses"
+    },
+    {
+      "type": "text",
+      "id": "sold_out_label",
+      "label": "Sold out text",
+      "default": "Sold out"
+    },
+    {
+      "type": "richtext",
+      "id": "lens_note",
+      "label": "Note under the frames",
+      "default": "<p>Lenses are chosen and priced in the next step.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · RX frame picker"
+    }
+  ]
+}
+{% endschema %}

@@ -159,7 +159,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p><a href=\"/collections/sol-kyst-rx\" title=\"SOL KYST RX\">Select your frame →</a></p><p></p>",
+                "text": "<p><a href=\"#rx-frames\" title=\"SOL KYST RX\">Select your frame →</a></p><p></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -737,7 +737,8 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 10,
         "padding-block-end": 9
-      }
+      },
+      "disabled": true
     },
     "17737488382c6ada81": {
       "type": "_blocks",
@@ -1604,12 +1605,61 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "sk_rx_frames": {
+      "type": "sk-rx-frames",
+      "settings": {
+        "eyebrow": "Step one",
+        "heading": "Choose your <em>frame</em>",
+        "intro": "<p>Every frame below can be made with your prescription. Pick one, then build your lenses.</p>",
+        "anchor": "rx-frames",
+        "frames": [
+          "echo-sunglasses-for-wide-face-wide-fit-frames",
+          "ember-sunglasses-for-wide-face-wide-fit-frames",
+          "realm-sunglasses-for-wide-face-wide-fit-frames",
+          "monarch",
+          "cashmere",
+          "regina",
+          "integrity",
+          "froze",
+          "naomi",
+          "jean",
+          "maia",
+          "shadow",
+          "charli",
+          "dylan",
+          "logan",
+          "sj-oversizedsunglasses",
+          "tyler",
+          "hangover",
+          "hangover-chic",
+          "monarch-blue-light",
+          "integrity-blue-light",
+          "breast-cancer-blue-light-frame",
+          "leo-blue-light-rx",
+          "untamed-sunglasses-for-wide-face-wide-fit-frames",
+          "shrew-sunglasses-for-wide-face-wide-fit-frames",
+          "thea",
+          "barbie™-x-sol-kyst-1959-originals",
+          "barbie™-x-sol-kyst-1960s-twist-nturn-red",
+          "barbie™-x-sol-kyst-1970s-superstar-hearts",
+          "barbie™-x-sol-kyst-1980s-black-barbie-square",
+          "barbie™-x-sol-kyst-1980s-crystal-cat-eye"
+        ],
+        "show_steps": true,
+        "show_filters": true,
+        "frame_price_label": "Frame",
+        "button_label": "Build my glasses",
+        "lens_note": "<p>Lenses are chosen and priced in the next step.</p>",
+        "color_scheme": "scheme-sk-linen"
+      }
     }
   },
   "order": [
     "main",
     "hero_kj8Xn6",
     "section_Y7rMCM",
+    "sk_rx_frames",
     "product_list_crmtWG",
     "17737488382c6ada81",
     "section_fkQ6q8",

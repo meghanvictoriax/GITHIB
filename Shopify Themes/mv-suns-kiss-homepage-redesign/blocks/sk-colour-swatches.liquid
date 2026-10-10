@@ -25,6 +25,12 @@
   endfor
 
   assign size_key = current.selected_or_first_available_variant.option1 | downcase | split: ' ' | first
+
+  # On the RX builder page (?view=rx), swatches stay on the RX page.
+  assign view_param = ''
+  if template.suffix == 'rx'
+    assign view_param = 'view=rx'
+  endif
 -%}
 
 {%- if family != blank and family.size > 1 -%}
@@ -50,14 +56,22 @@
           endif
 
           assign variant_map = ''
+          assign v_matched = nil
           assign href = item.url
+          if view_param != blank
+            assign href = item.url | append: '?' | append: view_param
+          endif
           for variant in item.variants
             assign v_key = variant.option1 | downcase | split: ' ' | first
             unless variant_map contains v_key
               assign variant_map = variant_map | append: v_key | append: ':' | append: variant.id | append: ','
             endunless
-            if v_key == size_key and href == item.url
+            if v_key == size_key and v_matched == nil
+              assign v_matched = true
               assign href = item.url | append: '?variant=' | append: variant.id
+              if view_param != blank
+                assign href = href | append: '&' | append: view_param
+              endif
             endif
           endfor
 
@@ -126,6 +140,7 @@
             class="sk-swatch{% if is_current %} is-current{% endif %}{% unless item.available %} is-sold-out{% endunless %}"
             href="{{ href }}"
             data-base="{{ item.url }}"
+            data-view="{{ view_param }}"
             data-variants="{{ variant_map }}"
             data-name="{{ item.title | escape }}"
             title="{{ item.title | escape }}{% unless item.available %} — {{ block.settings.sold_out_text | escape }}{% endunless %}"
@@ -193,7 +208,10 @@
               const pairs = Object.fromEntries(
                 swatch.dataset.variants.split(',').filter(Boolean).map((pair) => pair.split(':'))
               );
-              swatch.href = pairs[key] ? `${swatch.dataset.base}?variant=${pairs[key]}` : swatch.dataset.base;
+              const params = new URLSearchParams(swatch.dataset.view || '');
+              if (pairs[key]) params.set('variant', pairs[key]);
+              const query = params.toString();
+              swatch.href = query ? `${swatch.dataset.base}?${query}` : swatch.dataset.base;
             }
           }
         }

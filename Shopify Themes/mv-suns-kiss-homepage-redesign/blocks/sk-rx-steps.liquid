@@ -1,0 +1,220 @@
+{%- doc -%}
+  Prescription builder step bar for the RX product page (opened with ?view=rx).
+  Shows where the customer is in Frame → Lenses → Prescription → Checkout, a link back
+  to all frames, and a short note. Can hide the theme's own Add to cart button so the
+  lens builder button (LensAdvizor) is the one way forward.
+{%- enddoc -%}
+
+{%- liquid
+  assign current = block.settings.current_step
+  assign labels = block.settings.step_1 | append: '|' | append: block.settings.step_2 | append: '|' | append: block.settings.step_3 | append: '|' | append: block.settings.step_4 | split: '|'
+-%}
+
+{% render 'sk-styles' %}
+<div class="sk-rx-steps" {{ block.shopify_attributes }}>
+  {%- if block.settings.back_label != blank and block.settings.back_link != blank -%}
+    <a class="sk-rx-steps__back" href="{{ block.settings.back_link }}">
+      <span aria-hidden="true">←</span> {{ block.settings.back_label | escape }}
+    </a>
+  {%- endif -%}
+
+  <ol class="sk-rx-steps__list" role="list">
+    {%- for label in labels -%}
+      {%- liquid
+        assign state = 'todo'
+        if forloop.index < current
+          assign state = 'done'
+        elsif forloop.index == current
+          assign state = 'current'
+        endif
+      -%}
+      <li class="sk-rx-steps__step is-{{ state }}" {% if state == 'current' %}aria-current="step"{% endif %}>
+        <span class="sk-rx-steps__dot" aria-hidden="true">
+          {%- if state == 'done' -%}✓{%- else -%}{{ forloop.index }}{%- endif -%}
+        </span>
+        <span class="sk-rx-steps__label">{{ label | escape }}</span>
+      </li>
+    {%- endfor -%}
+  </ol>
+
+  {%- if block.settings.note != blank -%}
+    <div class="sk-rx-steps__note">{{ block.settings.note }}</div>
+  {%- endif -%}
+</div>
+
+{%- if block.settings.hide_add_to_cart -%}
+  <style>
+    /* RX builder: the lens builder button replaces the plain Add to cart. */
+    .add-to-cart-button,
+    shopify-accelerated-checkout,
+    shopify-accelerated-checkout-cart {
+      display: none !important;
+    }
+  </style>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-rx-steps {
+    display: grid;
+    gap: 1rem;
+    padding-block-end: 0.5rem;
+  }
+
+  .sk-rx-steps__back {
+    justify-self: start;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.75;
+  }
+
+  .sk-rx-steps__back:hover {
+    opacity: 1;
+  }
+
+  .sk-rx-steps__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+    counter-reset: none;
+  }
+
+  .sk-rx-steps__step {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0.4rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* Connecting line between steps. */
+  .sk-rx-steps__step:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0.9rem;
+    inset-inline-end: calc(50% + 1.15rem);
+    width: calc(100% - 2.3rem + 0.5rem);
+    height: 1px;
+    background: rgb(var(--color-foreground-rgb) / 0.25);
+  }
+
+  .sk-rx-steps__step.is-done:not(:first-child)::before,
+  .sk-rx-steps__step.is-current:not(:first-child)::before {
+    background: var(--color-foreground);
+  }
+
+  .sk-rx-steps__dot {
+    display: grid;
+    place-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.3);
+    background: var(--color-background);
+  }
+
+  .sk-rx-steps__step.is-done .sk-rx-steps__dot,
+  .sk-rx-steps__step.is-current .sk-rx-steps__dot {
+    border-color: var(--color-foreground);
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  .sk-rx-steps__step.is-todo .sk-rx-steps__label {
+    opacity: 0.6;
+  }
+
+  .sk-rx-steps__step.is-current .sk-rx-steps__label {
+    font-weight: 600;
+  }
+
+  .sk-rx-steps__note {
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .sk-rx-steps__note p {
+    margin: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · RX steps",
+  "settings": [
+    {
+      "type": "range",
+      "id": "current_step",
+      "label": "Current step",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "step_1",
+      "label": "Step 1",
+      "default": "Choose your frame"
+    },
+    {
+      "type": "text",
+      "id": "step_2",
+      "label": "Step 2",
+      "default": "Build your lenses"
+    },
+    {
+      "type": "text",
+      "id": "step_3",
+      "label": "Step 3",
+      "default": "Add your prescription"
+    },
+    {
+      "type": "text",
+      "id": "step_4",
+      "label": "Step 4",
+      "default": "Checkout"
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "Back link text",
+      "default": "All RX frames"
+    },
+    {
+      "type": "url",
+      "id": "back_link",
+      "label": "Back link"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note",
+      "default": "<p>Choose your colour and size, then tap the lens button to build your lenses and add your prescription.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_add_to_cart",
+      "label": "Hide the regular Add to cart button",
+      "info": "On the RX page, the lens builder button is the way to buy.",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · RX steps"
+    }
+  ]
+}
+{% endschema %}
