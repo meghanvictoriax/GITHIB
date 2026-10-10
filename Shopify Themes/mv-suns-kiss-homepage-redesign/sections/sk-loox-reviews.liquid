@@ -1,0 +1,418 @@
+{% comment %}
+  Section contract.
+  Real customer reviews from Loox, rendered into the page (so search engines and AI
+  tools can read them) from the review feed Loox keeps in the shop's metafields
+  (loox.review_feed_agg) and the overall score (loox.global_stats, "average,count").
+  Updates by itself whenever Loox refreshes the feed. Nothing is typed in by hand.
+  @example
+  <!-- Add "SK · Loox reviews" to any page -->
+{% endcomment %}
+
+{%- liquid
+  assign feed = shop.metafields.loox.review_feed_agg.value
+  assign reviews = feed.reviews
+  assign stats = shop.metafields.loox.global_stats.value | split: ','
+  assign avg = stats[0] | strip
+  assign total = stats[1] | strip | plus: 0
+  assign min_rating = section.settings.min_rating
+  assign min_chars = section.settings.min_chars
+  assign skip_handles = section.settings.skip_products | downcase | split: ','
+  assign shown = 0
+-%}
+
+{%- if reviews != blank -%}
+  {% render 'sk-styles' %}
+  <section class="sk sk-loox color-{{ section.settings.color_scheme }}" aria-labelledby="SkLoox-{{ section.id }}">
+    <div class="sk-loox__inner">
+      <header class="sk-loox__head sk-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        <h2 id="SkLoox-{{ section.id }}" class="sk-display sk-loox__heading">{{ section.settings.heading }}</h2>
+        {%- if avg != blank and total > 0 -%}
+          <p class="sk-loox__score">
+            <span class="sk-loox__stars" aria-hidden="true" style="--sk-rating: {{ avg }};"></span>
+            <span><strong>{{ avg }}</strong> {{ section.settings.score_text | replace: '[count]', total | escape }}</span>
+          </p>
+        {%- endif -%}
+      </header>
+
+      <sk-loox-carousel class="sk-loox__carousel">
+        <ul class="sk-loox__track" role="list">
+          {%- for r in reviews -%}
+            {%- liquid
+              if shown >= section.settings.max_reviews
+                break
+              endif
+              if r.rating < min_rating
+                continue
+              endif
+              assign text = r.review | strip
+              if text.size < min_chars
+                continue
+              endif
+              assign shown = shown | plus: 1
+              assign photo = r.media[0].src
+              assign link_product = nil
+              assign r_handle = r.product.handle | downcase
+              unless skip_handles contains r_handle
+                assign candidate = all_products[r.product.handle]
+                if candidate.id != blank and candidate.available
+                  assign link_product = candidate
+                endif
+              endunless
+            -%}
+            <li class="sk-loox__card">
+              {%- if section.settings.show_photos and photo != blank -%}
+                <span class="sk-loox__photo">
+                  <img
+                    src="https:{{ photo }}"
+                    alt="{{ r.media[0].alt | default: 'Customer photo' | escape }}"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                  >
+                </span>
+              {%- endif -%}
+              <div class="sk-loox__body">
+                <span class="sk-loox__stars" style="--sk-rating: {{ r.rating }};" role="img" aria-label="{{ r.rating }} out of 5 stars"></span>
+                <p class="sk-loox__text">{{ text | truncate: section.settings.max_chars | escape }}</p>
+                <p class="sk-loox__author">
+                  <span class="sk-loox__name">{{ r.author | escape }}</span>
+                  {%- if r.verified -%}
+                    <span class="sk-loox__verified">{{ section.settings.verified_text | escape }}</span>
+                  {%- endif -%}
+                </p>
+                {%- if link_product != nil -%}
+                  <a class="sk-loox__product" href="{{ link_product.url }}">{{ link_product.title | escape }}</a>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <div class="sk-loox__nav">
+          <button type="button" class="sk-loox__btn" data-dir="-1" aria-label="Previous reviews">←</button>
+          <button type="button" class="sk-loox__btn" data-dir="1" aria-label="Next reviews">→</button>
+        </div>
+      </sk-loox-carousel>
+
+      {%- if section.settings.credit_text != blank -%}
+        <p class="sk-loox__credit">
+          {%- if section.settings.credit_link != blank -%}
+            <a href="{{ section.settings.credit_link }}">{{ section.settings.credit_text | escape }}</a>
+          {%- else -%}
+            {{ section.settings.credit_text | escape }}
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <script>
+    if (!customElements.get('sk-loox-carousel')) {
+      customElements.define(
+        'sk-loox-carousel',
+        class extends HTMLElement {
+          connectedCallback() {
+            const track = this.querySelector('.sk-loox__track');
+            this.addEventListener('click', (event) => {
+              const btn = event.target.closest('.sk-loox__btn');
+              if (!btn || !track) return;
+              track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.9, behavior: 'smooth' });
+            });
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-loox {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sk-loox__inner {
+    max-width: 1500px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .sk-loox__head {
+    display: grid;
+    gap: 0.6rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .sk-loox__heading {
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+  }
+
+  .sk-loox__score {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .sk-loox__stars {
+    --sk-star-size: 1rem;
+    display: inline-block;
+    width: calc(var(--sk-star-size) * 5);
+    height: var(--sk-star-size);
+    background:
+      linear-gradient(90deg, currentColor calc(var(--sk-rating) / 5 * 100%), rgb(var(--color-foreground-rgb) / 0.2) 0);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.5 5.8 21.2l1.6-7L2 9.5l7.1-.6z'/%3E%3C/svg%3E") left / var(--sk-star-size) var(--sk-star-size) repeat-x;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.5 5.8 21.2l1.6-7L2 9.5l7.1-.6z'/%3E%3C/svg%3E") left / var(--sk-star-size) var(--sk-star-size) repeat-x;
+  }
+
+  .sk-loox__carousel {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .sk-loox__track {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3 * 1rem) / 4);
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .sk-loox__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sk-loox__card {
+    scroll-snap-align: start;
+    display: grid;
+    align-content: start;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: rgb(var(--color-foreground-rgb) / 0.04);
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.08);
+  }
+
+  .sk-loox__photo {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .sk-loox__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sk-loox__body {
+    display: grid;
+    gap: 0.6rem;
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+
+  .sk-loox__text {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .sk-loox__author {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.6rem;
+    font-size: 0.8125rem;
+  }
+
+  .sk-loox__name {
+    font-weight: 600;
+  }
+
+  .sk-loox__verified {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .sk-loox__verified::before {
+    content: '✓ ';
+  }
+
+  .sk-loox__product {
+    justify-self: start;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  .sk-loox__nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .sk-loox__btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.3);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .sk-loox__btn:hover {
+    border-color: var(--color-foreground);
+  }
+
+  .sk-loox__credit {
+    margin: 0;
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    opacity: 0.75;
+  }
+
+  .sk-loox__credit a {
+    color: inherit;
+  }
+
+  @media (max-width: 989px) {
+    .sk-loox__track {
+      grid-auto-columns: calc((100% - 1rem) / 2);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sk-loox__track {
+      grid-auto-columns: 82%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Loox reviews",
+  "tag": "div",
+  "class": "sk-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Shows your real Loox reviews and overall score. They update by themselves from Loox."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Loved by wide face babes"
+    },
+    {
+      "type": "text",
+      "id": "score_text",
+      "label": "Score text",
+      "info": "Shown after the average rating. [count] is replaced with the number of reviews.",
+      "default": "from [count] verified reviews"
+    },
+    {
+      "type": "range",
+      "id": "max_reviews",
+      "label": "Most reviews to show",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "min_rating",
+      "label": "Lowest star rating to show",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "min_chars",
+      "label": "Shortest review to show (characters)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "max_chars",
+      "label": "Longest review text before it is shortened",
+      "min": 120,
+      "max": 600,
+      "step": 20,
+      "default": 260
+    },
+    {
+      "type": "checkbox",
+      "id": "show_photos",
+      "label": "Show customer photos",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "Verified label",
+      "default": "Verified buyer"
+    },
+    {
+      "type": "text",
+      "id": "skip_products",
+      "label": "Never link reviews to these products",
+      "info": "Product handles, separated by commas.",
+      "default": "free-returns-on-your-order,frame-reviews"
+    },
+    {
+      "type": "text",
+      "id": "credit_text",
+      "label": "Credit line",
+      "default": "Reviews collected and verified by Loox"
+    },
+    {
+      "type": "url",
+      "id": "credit_link",
+      "label": "Credit link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Loox reviews"
+    }
+  ]
+}
+{% endschema %}

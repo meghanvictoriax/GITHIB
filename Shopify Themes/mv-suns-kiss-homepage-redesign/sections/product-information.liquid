@@ -1,6 +1,33 @@
 <script type="application/ld+json">
   {{ closest.product | structured_data }}
 </script>
+{%- liquid
+  # Star rating from Loox, written into the page so every crawler can read it.
+  # Loox's own script sees this and does not add a second copy.
+  assign sk_rating_count = closest.product.metafields.loox.num_reviews.value | default: 0
+  assign sk_rating_avg = closest.product.metafields.loox.avg_rating.value
+-%}
+{%- if sk_rating_count > 0 and sk_rating_avg != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": {{ closest.product.title | json }},
+      "url": {{ request.origin | append: closest.product.url | json }},
+      {%- if closest.product.featured_image -%}
+        "image": {{ closest.product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }},
+      {%- endif -%}
+      "brand": { "@type": "Brand", "name": {{ closest.product.vendor | json }} },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ sk_rating_avg | json }},
+        "reviewCount": {{ sk_rating_count }},
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }
+  </script>
+{%- endif -%}
 
 {% capture media_gallery %}
   {%- content_for 'block',
