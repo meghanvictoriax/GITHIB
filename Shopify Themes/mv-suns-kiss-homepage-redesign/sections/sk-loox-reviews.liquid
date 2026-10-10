@@ -39,6 +39,47 @@
 
       <sk-loox-carousel class="sk-loox__carousel">
         <ul class="sk-loox__track" role="list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign pick_product = block.settings.product
+              if pick_product == blank or block.settings.reviewer == blank
+                continue
+              endif
+              assign target = block.settings.reviewer | downcase | remove: ' ' | remove: '.'
+              assign pick_text = ''
+              assign pick_name = ''
+              assign chunks = pick_product.metafields.loox.reviews.value | split: '<div class="name">'
+              for chunk in chunks
+                assign chunk_name = chunk | split: '</div>' | first | strip
+                assign chunk_key = chunk_name | downcase | remove: ' ' | remove: '.'
+                if chunk_key == target
+                  assign pick_name = chunk_name
+                  assign pick_text = chunk | split: '<div class="review_text">' | last | split: '</div>' | first | strip_html | strip
+                  break
+                endif
+              endfor
+            -%}
+            {%- if pick_text != blank -%}
+              <li class="sk-loox__card sk-loox__card--pick" {{ block.shopify_attributes }}>
+                <div class="sk-loox__body">
+                  <span class="sk-loox__quote" aria-hidden="true">“</span>
+                  <p class="sk-loox__text">{{ pick_text | truncate: section.settings.pick_max_chars | escape }}</p>
+                  <p class="sk-loox__author">
+                    <span class="sk-loox__name">{{ pick_name | escape }}</span>
+                    <span class="sk-loox__verified sk-loox__verified--plain">{{ section.settings.pick_source_text | escape }}</span>
+                  </p>
+                  {%- if pick_product.available -%}
+                    <a class="sk-loox__product" href="{{ pick_product.url }}">{{ pick_product.title | escape }}</a>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- elsif request.design_mode -%}
+              <li class="sk-loox__card" {{ block.shopify_attributes }}>
+                <div class="sk-loox__body"><p class="sk-loox__text">No Loox review by “{{ block.settings.reviewer | escape }}” found on {{ pick_product.title | escape }}.</p></div>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- unless section.settings.show_feed -%}{%- assign reviews = empty -%}{%- endunless -%}
           {%- for r in reviews -%}
             {%- liquid
               if shown >= section.settings.max_reviews
@@ -186,6 +227,7 @@
     grid-auto-flow: column;
     grid-auto-columns: calc((100% - 3 * 1rem) / 4);
     gap: 1rem;
+    align-items: start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -252,6 +294,22 @@
 
   .sk-loox__verified::before {
     content: '✓ ';
+  }
+
+  .sk-loox__verified--plain::before {
+    content: '';
+  }
+
+  .sk-loox__card--pick {
+    background: rgb(var(--color-foreground-rgb) / 0.06);
+  }
+
+  .sk-loox__quote {
+    font-family: var(--font-heading--family);
+    font-size: 3.5rem;
+    line-height: 0.6;
+    height: 1.6rem;
+    opacity: 0.35;
   }
 
   .sk-loox__product {
@@ -338,8 +396,29 @@
     },
     {
       "type": "range",
+      "id": "pick_max_chars",
+      "label": "Your picks: longest text before it is shortened",
+      "min": 120,
+      "max": 900,
+      "step": 20,
+      "default": 340
+    },
+    {
+      "type": "text",
+      "id": "pick_source_text",
+      "label": "Your picks: source label",
+      "default": "Review on Loox"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_feed",
+      "label": "Also show Loox photo reviews after your picks",
+      "default": true
+    },
+    {
+      "type": "range",
       "id": "max_reviews",
-      "label": "Most reviews to show",
+      "label": "Most Loox photo reviews to show",
       "min": 4,
       "max": 40,
       "step": 1,
@@ -407,6 +486,17 @@
       "id": "color_scheme",
       "label": "Colour scheme",
       "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pick",
+      "name": "Your pick (Loox review)",
+      "settings": [
+        { "type": "paragraph", "content": "Choose the product the review was left on, and the reviewer's name exactly as it shows in Loox." },
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "reviewer", "label": "Reviewer name" }
+      ]
     }
   ],
   "presets": [

@@ -2767,7 +2767,7 @@
         "eyebrow": "Real reviews from real customers",
         "heading": "15,000+ wide face babes served",
         "score_text": "from [count] verified reviews",
-        "max_reviews": 16,
+        "max_reviews": 8,
         "min_rating": 4,
         "min_chars": 40,
         "max_chars": 260,
@@ -2775,8 +2775,103 @@
         "verified_text": "Verified buyer",
         "skip_products": "free-returns-on-your-order,frame-reviews",
         "credit_text": "Reviews collected and verified by Loox",
-        "color_scheme": "scheme-1"
-      }
+        "color_scheme": "scheme-1",
+        "show_feed": true,
+        "pick_max_chars": 340,
+        "pick_source_text": "Review on Loox"
+      },
+      "blocks": {
+        "pick1": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "Ana D"
+          }
+        },
+        "pick2": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "Jacey Loewen"
+          }
+        },
+        "pick3": {
+          "type": "pick",
+          "settings": {
+            "product": "hangover-chic",
+            "reviewer": "Ashley Scott"
+          }
+        },
+        "pick4": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "Lisa B"
+          }
+        },
+        "pick5": {
+          "type": "pick",
+          "settings": {
+            "product": "hangover-chic",
+            "reviewer": "Laura Brown"
+          }
+        },
+        "pick6": {
+          "type": "pick",
+          "settings": {
+            "product": "integrity",
+            "reviewer": "Chica Villalobos"
+          }
+        },
+        "pick7": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "JoyceGail"
+          }
+        },
+        "pick8": {
+          "type": "pick",
+          "settings": {
+            "product": "charli",
+            "reviewer": "Daniel Gentili"
+          }
+        },
+        "pick9": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "Becca"
+          }
+        },
+        "pick10": {
+          "type": "pick",
+          "settings": {
+            "product": "hangover-chic",
+            "reviewer": "Tina Van Aarsen"
+          }
+        },
+        "pick11": {
+          "type": "pick",
+          "settings": {
+            "product": "mvp",
+            "reviewer": "Abigail Reno"
+          }
+        }
+      },
+      "block_order": [
+        "pick1",
+        "pick2",
+        "pick3",
+        "pick4",
+        "pick5",
+        "pick6",
+        "pick7",
+        "pick8",
+        "pick9",
+        "pick10",
+        "pick11"
+      ]
     }
   },
   "order": [
