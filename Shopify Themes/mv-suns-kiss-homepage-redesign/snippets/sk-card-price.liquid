@@ -1,0 +1,44 @@
+{%- doc -%}
+  Works out the price to show on a product card, leaving out the final sale sizes
+  set in Theme settings (for example Petite), so a frame shows its full price and not
+  "From" the Petite price. Outputs "cents|varies", for example "20000|false".
+  When every variant is a final sale size, uses all variants.
+
+  @param {object} product - The product to price
+{%- enddoc -%}
+
+{%- liquid
+  assign skip_sizes = settings.sk_final_sale_sizes | downcase | split: ','
+  assign card_min = nil
+  assign card_max = nil
+  for variant in product.variants
+    assign is_skipped = false
+    for value in variant.options
+      assign first_word = value | downcase | strip | split: ' ' | first
+      for skip in skip_sizes
+        assign skip_word = skip | strip
+        if skip_word != blank and first_word == skip_word
+          assign is_skipped = true
+        endif
+      endfor
+    endfor
+    if is_skipped
+      continue
+    endif
+    if card_min == nil or variant.price < card_min
+      assign card_min = variant.price
+    endif
+    if card_max == nil or variant.price > card_max
+      assign card_max = variant.price
+    endif
+  endfor
+  if card_min == nil
+    assign card_min = product.price_min
+    assign card_max = product.price_max
+  endif
+  assign card_varies = false
+  if card_max > card_min
+    assign card_varies = true
+  endif
+  echo card_min | append: '|' | append: card_varies
+-%}

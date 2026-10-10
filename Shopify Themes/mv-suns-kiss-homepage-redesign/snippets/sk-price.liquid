@@ -1,6 +1,7 @@
 {%- doc -%}
-  Renders a product's starting price for SOL KYST editorial cards, using the
-  theme's "From" wording when variants have different prices.
+  Renders a product's price for SOL KYST editorial cards. Final sale sizes such as
+  Petite are left out (see sk-card-price), and "From" is used only when the other
+  variants have different prices.
 
   @param {object} product - The product to price
 
@@ -9,15 +10,19 @@
 {%- enddoc -%}
 
 {%- liquid
+  capture sk_card
+    render 'sk-card-price', product: product
+  endcapture
+  assign sk_card = sk_card | strip | split: '|'
+  assign sk_cents = sk_card[0] | plus: 0
   if settings.currency_code_enabled_product_cards
-    assign sk_price_min = product.price_min | money_with_currency
+    assign sk_amount = sk_cents | money_with_currency
   else
-    assign sk_price_min = product.price_min | money
+    assign sk_amount = sk_cents | money
   endif
-
-  if product.price_varies
-    echo 'content.price_from' | t: price: sk_price_min
+  if sk_card[1] == 'true'
+    echo 'content.price_from' | t: price: sk_amount
   else
-    echo sk_price_min
+    echo sk_amount
   endif
 -%}

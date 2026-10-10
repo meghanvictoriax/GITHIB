@@ -2,14 +2,22 @@
   assign product = closest.product
   assign block_settings = block.settings
 
+  # SOL KYST: leave out final sale sizes (Petite) so frames don't show "From" the Petite price.
+  capture sk_card
+    render 'sk-card-price', product: product
+  endcapture
+  assign sk_card = sk_card | strip | split: '|'
+  assign sk_card_cents = sk_card[0] | plus: 0
   if settings.currency_code_enabled_product_cards
-    assign price_min = product.price_min | money_with_currency
+    assign price_min = sk_card_cents | money_with_currency
   else
-    assign price_min = product.price_min | money
+    assign price_min = sk_card_cents | money
   endif
 
-  if product.price_varies
+  if sk_card[1] == 'true'
     assign display_price = 'content.price_from' | t: price: price_min
+  else
+    assign display_price = price_min
   endif
 
   assign has_swatches_only = false
