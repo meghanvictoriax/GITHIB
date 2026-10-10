@@ -423,7 +423,7 @@
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
@@ -432,7 +432,7 @@
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fill",
+            "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -467,15 +467,15 @@
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
-                "height": "fill",
+                "height": "fit",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 21,
-                "padding-block-start": 16,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 4
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -485,11 +485,11 @@
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
+                "vertical_alignment": "flex-start",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
+                "gap": 0,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -537,7 +537,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 24,
-                    "padding-block-end": 0,
+                    "padding-block-end": 8,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -546,7 +546,7 @@
                 "text_aEbfjV": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our signature wide face babe fit. Widest on the market - designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight or has ever experienced headaches and discomfort from their frames. . Frame width 158mm +</p>",
+                    "text": "<p>Our signature wide face babe fit. Widest on the market - designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight or has ever experienced headaches and discomfort from their frames.<br/>Frame width 158mm +</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -562,9 +562,9 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 22,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "padding-block-end": 0,
+                    "padding-inline-start": 8,
+                    "padding-inline-end": 8
                   },
                   "blocks": {}
                 }
@@ -586,7 +586,7 @@
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
@@ -625,7 +625,7 @@
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
+                "vertical_alignment": "flex-start",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
@@ -653,7 +653,7 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 21,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -676,8 +676,8 @@
                     "border_radius": 21,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
-                    "padding-inline-start": 4,
-                    "padding-inline-end": 4
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -700,7 +700,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 24,
-                    "padding-block-end": 0,
+                    "padding-block-end": 8,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -709,7 +709,7 @@
                 "text_ULiJwn": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Frame width 135mm +Best for petite or smaller faces who still want an oversized look and a bit of glamour. </p>",
+                    "text": "<p>Best for petite or smaller faces who still want an oversized look and a bit of glamour.<br/>Frame width 135mm +</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -725,9 +725,9 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 21,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "padding-block-end": 0,
+                    "padding-inline-start": 8,
+                    "padding-inline-end": 8
                   },
                   "blocks": {}
                 }
@@ -749,7 +749,7 @@
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
@@ -793,14 +793,14 @@
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
-                "height": "fill",
+                "height": "fit",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 21,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 4,
+                "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {}
@@ -822,9 +822,9 @@
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
+                "vertical_alignment": "flex-start",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 0,
                 "width": "fill",
@@ -874,7 +874,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 24,
-                    "padding-block-end": 0,
+                    "padding-block-end": 8,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -883,7 +883,7 @@
                 "text_JXzQ94": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look. Not sure? START HERE - we offer free exchanges. Frame width 145mm +<br/></p>",
+                    "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look. Not sure? START HERE - we offer free exchanges.<br/>Frame width 145mm +</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -899,9 +899,9 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 22,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "padding-block-end": 0,
+                    "padding-inline-start": 8,
+                    "padding-inline-end": 8
                   },
                   "blocks": {}
                 }
@@ -929,12 +929,12 @@
         "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "center",
-        "vertical_alignment": "center",
+        "vertical_alignment": "flex-start",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "full-width",
+        "gap": 24,
+        "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
@@ -949,8 +949,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 48,
+        "padding-block-end": 64
       }
     },
     "ss_scrolling_logo_cloud_HbLCPF": {
