@@ -62,10 +62,32 @@
           <ul class="sk-rx-lenses__cards sk-rx-lenses__cards--{{ row_blocks.size | at_most: 5 }}" role="list">
             {%- for block in row_blocks -%}
               <li class="sk-rx-lens{% if block.settings.highlight %} is-highlight{% endif %}" {{ block.shopify_attributes }}>
+                {%- liquid
+                  # Price follows the shopper's currency when a lens product is chosen.
+                  assign price_text = block.settings.price
+                  assign lens = block.settings.price_product
+                  if lens != blank
+                    case block.settings.price_mode
+                      when 'range'
+                        assign amount = lens.price_max | minus: lens.price_min
+                      when 'versus'
+                        assign base_lens = block.settings.base_product
+                        assign amount = lens.price_min | minus: base_lens.price_min
+                      else
+                        assign amount = lens.price_min
+                    endcase
+                    assign formatted = amount | at_least: 0 | money_without_trailing_zeros
+                    if price_text contains '[price]'
+                      assign price_text = price_text | replace: '[price]', formatted
+                    else
+                      assign price_text = formatted
+                    endif
+                  endif
+                -%}
                 <div class="sk-rx-lens__top">
                   <h4 class="sk-rx-lens__name">{{ block.settings.title | escape }}</h4>
-                  {%- if block.settings.price != blank -%}
-                    <span class="sk-rx-lens__price">{{ block.settings.price | escape }}</span>
+                  {%- if price_text != blank -%}
+                    <span class="sk-rx-lens__price">{{ price_text | escape }}</span>
                   {%- endif -%}
                 </div>
                 {%- if block.settings.text != blank -%}
@@ -335,7 +357,7 @@
       "type": "text",
       "id": "material_text",
       "label": "Row 2 text",
-      "default": "Single vision prices shown. Anti-reflective coating included."
+      "default": "Single vision prices shown."
     },
     {
       "type": "text",
@@ -391,10 +413,21 @@
       "name": "Vision type",
       "settings": [
         { "type": "text", "id": "title", "label": "Name", "default": "Single vision" },
-        { "type": "text", "id": "price", "label": "Price", "default": "From $105" },
+        { "type": "text", "id": "price", "label": "Price text", "info": "[price] is replaced with the lens price.", "default": "From [price]" },
         { "type": "textarea", "id": "text", "label": "Description" },
         { "type": "text", "id": "tag", "label": "Small tag" },
-        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false },
+        { "type": "product", "id": "price_product", "label": "Price from this lens product", "info": "Shows the lens price in the shopper's currency. Leave empty to use the price text as typed." },
+        {
+          "type": "select", "id": "price_mode", "label": "Price shown",
+          "options": [
+            { "value": "min", "label": "Lowest price of the lens" },
+            { "value": "range", "label": "Extra for its top option (e.g. blue light)" },
+            { "value": "versus", "label": "Extra compared with the base lens below" }
+          ],
+          "default": "min"
+        },
+        { "type": "product", "id": "base_product", "label": "Base lens (for 'compared with')" }
       ]
     },
     {
@@ -402,10 +435,21 @@
       "name": "Lens material",
       "settings": [
         { "type": "text", "id": "title", "label": "Name", "default": "CR39" },
-        { "type": "text", "id": "price", "label": "Price", "default": "$105" },
+        { "type": "text", "id": "price", "label": "Price text", "info": "[price] is replaced with the lens price.", "default": "[price]" },
         { "type": "textarea", "id": "text", "label": "Description" },
         { "type": "text", "id": "tag", "label": "Small tag" },
-        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false },
+        { "type": "product", "id": "price_product", "label": "Price from this lens product", "info": "Shows the lens price in the shopper's currency. Leave empty to use the price text as typed." },
+        {
+          "type": "select", "id": "price_mode", "label": "Price shown",
+          "options": [
+            { "value": "min", "label": "Lowest price of the lens" },
+            { "value": "range", "label": "Extra for its top option (e.g. blue light)" },
+            { "value": "versus", "label": "Extra compared with the base lens below" }
+          ],
+          "default": "min"
+        },
+        { "type": "product", "id": "base_product", "label": "Base lens (for 'compared with')" }
       ]
     },
     {
@@ -413,10 +457,21 @@
       "name": "Finishing touch",
       "settings": [
         { "type": "text", "id": "title", "label": "Name", "default": "Blue light filter" },
-        { "type": "text", "id": "price", "label": "Price", "default": "+$25" },
+        { "type": "text", "id": "price", "label": "Price text", "info": "[price] is replaced with the lens price.", "default": "+[price]" },
         { "type": "textarea", "id": "text", "label": "Description" },
         { "type": "text", "id": "tag", "label": "Small tag" },
-        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false },
+        { "type": "product", "id": "price_product", "label": "Price from this lens product", "info": "Shows the lens price in the shopper's currency. Leave empty to use the price text as typed." },
+        {
+          "type": "select", "id": "price_mode", "label": "Price shown",
+          "options": [
+            { "value": "min", "label": "Lowest price of the lens" },
+            { "value": "range", "label": "Extra for its top option (e.g. blue light)" },
+            { "value": "versus", "label": "Extra compared with the base lens below" }
+          ],
+          "default": "min"
+        },
+        { "type": "product", "id": "base_product", "label": "Base lens (for 'compared with')" }
       ]
     }
   ],

@@ -1664,70 +1664,84 @@
           "type": "vision",
           "settings": {
             "title": "Single vision",
-            "price": "From $105",
+            "price": "From [price]",
             "text": "One prescription across the whole lens – clear, sharp vision for distance or reading.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "min"
           }
         },
         "v2": {
           "type": "vision",
           "settings": {
             "title": "Progressive",
-            "price": "From $185",
+            "price": "From [price]",
             "text": "Near and far in one lens, with a smooth change in between.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-p1-1",
+            "price_mode": "min"
           }
         },
         "v3": {
           "type": "vision",
           "settings": {
             "title": "Non-prescription",
-            "price": "From $85",
+            "price": "From [price]",
             "text": "Style and protection with no vision correction – blue light or a custom tint.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "yellow-1",
+            "price_mode": "min"
           }
         },
         "m1": {
           "type": "material",
           "settings": {
             "title": "CR39",
-            "price": "$105",
+            "price": "[price]",
             "text": "Our most accessible option for everyday wear and clear vision.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "min"
           }
         },
         "m2": {
           "type": "material",
           "settings": {
             "title": "Polycarbonate",
-            "price": "$145",
+            "price": "[price]",
             "text": "Strong, lightweight, shatter resistant. Most durable.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "polycarbonate-s1-1",
+            "price_mode": "min"
           }
         },
         "m3": {
           "type": "material",
           "settings": {
             "title": "Trivex",
-            "price": "$155",
+            "price": "[price]",
             "text": "Crisp optics, feather light comfort. Premium everyday.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "trivex-s1-1",
+            "price_mode": "min"
           }
         },
         "m4": {
           "type": "material",
           "settings": {
             "title": "High Index 1.67",
-            "price": "$185",
+            "price": "[price]",
             "text": "Ultra thin for strong prescriptions. Sleekest fit.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "high-index-s1-1",
+            "price_mode": "min"
           }
         },
         "e0": {
@@ -1744,40 +1758,51 @@
           "type": "extra",
           "settings": {
             "title": "Blue light filter",
-            "price": "+$25",
+            "price": "+[price]",
             "text": "Helps reduce digital eye strain from screens and long work days.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "range"
           }
         },
         "e2": {
           "type": "extra",
           "settings": {
             "title": "Sun tint",
-            "price": "+$25",
+            "price": "+[price]",
             "text": "Fashion and sun tints in a range of colours, with full UV400 protection.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-s3-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
           }
         },
         "e3": {
           "type": "extra",
           "settings": {
             "title": "Polarized",
-            "price": "+$120",
+            "price": "+[price]",
             "text": "Blocks harsh glare from sun, water and roads, so colours look sharper and more vibrant.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-single_vision-clear_photochromic-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
           }
         },
         "e4": {
           "type": "extra",
           "settings": {
             "title": "Transitions",
-            "price": "+$220",
+            "price": "+[price]",
             "text": "Clear indoors, tinted outdoors, in 8 shades. CR39 and Polycarbonate.",
             "tag": "",
-            "highlight": false
+            "highlight": false,
+            "price_product": "cr39-s2-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
           }
         }
       },
@@ -1803,7 +1828,7 @@
         "vision_heading": "Your vision",
         "vision_text": "Pick the type that matches your prescription.",
         "material_heading": "Your lens material",
-        "material_text": "Single vision prices shown. Progressive starts at $185.",
+        "material_text": "Single vision prices shown.",
         "extra_heading": "Finishing touches",
         "extra_text": "Added to the price of your lens.",
         "note_1": "<p><strong>Have your prescription ready.</strong> Upload a photo, type it in, or email it after you order. Your PD (pupillary distance) is needed.</p>",
