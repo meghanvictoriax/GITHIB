@@ -33,29 +33,14 @@
     "hero_kj8Xn6": {
       "type": "hero",
       "blocks": {
-        "jumbo_text_KPKc4N": {
-          "type": "jumbo-text",
-          "name": "t:names.jumbo_text",
-          "settings": {
-            "text": "RX & Custom Lenses",
-            "font": "accent",
-            "alignment": "left",
-            "line_height": "1.2",
-            "letter_spacing": "0.03em",
-            "case": "none",
-            "text_effect": "blur",
-            "animation_repeat": false
-          },
-          "blocks": {}
-        },
         "text_yWpQgM": {
           "type": "text",
           "settings": {
-            "text": "<h1>See & Be Seen</h1>",
+            "text": "<h1>Prescription & Custom Lenses</h1>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
-            "type_preset": "h3",
+            "type_preset": "h2",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -75,15 +60,14 @@
         }
       },
       "block_order": [
-        "jumbo_text_KPKc4N",
         "text_yWpQgM"
       ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/FAD208A1-B03F-4959-B3FB-7C67C88EFF76.jpg",
+        "image_1": "shopify://shop_images/0E115051-65EB-4F2E-9315-838B2EB58964.jpg",
         "media_type_2": "image",
-        "image_2": "shopify://shop_images/IMG_0842.jpg",
+        "image_2": "shopify://shop_images/9E4CD2A1-8451-4EF1-87F2-333C3A245A52.jpg",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
         "media_type_1_mobile": "image",
@@ -112,452 +96,253 @@
         "padding-block-end": 40
       }
     },
-    "section_Y7rMCM": {
-      "type": "section",
+    "sk_rx_frames": {
+      "type": "sk-rx-frames",
+      "settings": {
+        "eyebrow": "Step one",
+        "heading": "Choose your <em>frame</em>",
+        "intro": "",
+        "anchor": "rx-frames",
+        "frames": [
+          "echo-sunglasses-for-wide-face-wide-fit-frames",
+          "ember-sunglasses-for-wide-face-wide-fit-frames",
+          "realm-sunglasses-for-wide-face-wide-fit-frames",
+          "monarch",
+          "cashmere",
+          "regina",
+          "integrity",
+          "froze",
+          "naomi",
+          "jean",
+          "maia",
+          "shadow",
+          "charli",
+          "dylan",
+          "logan",
+          "sj-oversizedsunglasses",
+          "tyler",
+          "hangover",
+          "hangover-chic",
+          "monarch-blue-light",
+          "integrity-blue-light",
+          "breast-cancer-blue-light-frame",
+          "leo-blue-light-rx",
+          "untamed-sunglasses-for-wide-face-wide-fit-frames",
+          "shrew-sunglasses-for-wide-face-wide-fit-frames",
+          "thea",
+          "barbie™-x-sol-kyst-1959-originals",
+          "barbie™-x-sol-kyst-1960s-twist-nturn-red",
+          "barbie™-x-sol-kyst-1970s-superstar-hearts",
+          "barbie™-x-sol-kyst-1980s-black-barbie-square",
+          "barbie™-x-sol-kyst-1980s-crystal-cat-eye"
+        ],
+        "rx_photos": "charli: 4FB29DF1-7583-4338-9BB2-A773C942654E.png\ndylan: RX_3f08de6c-7ea3-4b4a-9331-c65ae5a91291.png\nlogan: B34227E5-EA8F-4FAF-B1BE-F649CCF0068D.jpg\nsj-oversizedsunglasses: 41AD83D3-47A2-4542-8E99-C76F5F74392E.png\ntyler: 51CF6698-5E51-475B-AD26-C9C4307CBBA4.jpg\nhangover: A0B5F830-64C8-413E-8EB3-24CBBF98984C.png\nhangover-chic: 0A4C8C16-03D8-4BE6-ADF2-E1F6E78E65E8.png\nmonarch: 552F8161-9A0D-4DD8-9013-6EB1BE758507.png\ncashmere: D14B1A2B-3C81-49A5-B24D-7ECB523CBDF6.png\nregina: 3_ef751869-850d-4c3e-995d-67c42dda94d9_1.png\nintegrity: 5_852e3ce7-9390-42b1-a793-9c9d5a6cffaa.png\nfroze: 2E7511AD-F877-439E-957C-2E3CA29C65E0.png\nnaomi: A7E96D10-5AD9-4760-8741-9DD4C04D6601.png\njean: C1156D01-FEF3-4E1C-86B1-006FCEA8E3FB.png\nmaia: Maia1transparent.png\nbarbie™-x-sol-kyst-1959-originals: 9E83C3E9-D822-4F37-A6F6-C96725966B4A.png\nbarbie™-x-sol-kyst-1960s-twist-nturn-red: 4E92F747-5E76-4242-9035-734CBE841DBA.png\nbarbie™-x-sol-kyst-1970s-superstar-hearts: 7949AE14-76A1-427C-AF4F-54C1F8844928.png\nbarbie™-x-sol-kyst-1980s-crystal-cat-eye: A094FAF0-B466-4125-91B9-DDD8390CEA19.png\necho-sunglasses-for-wide-face-wide-fit-frames: C9A9FB16-1D80-4685-B105-10EB62D1349F.png\nshrew-sunglasses-for-wide-face-wide-fit-frames: 3D7835C2-DB0D-40BE-B940-22A704744C15.png\nuntamed-sunglasses-for-wide-face-wide-fit-frames: DAF52510-56EB-465E-9BB9-2EBBD87EACD6.png\nbreast-cancer-blue-light-frame: leo-blue-light-rx 1",
+        "show_steps": true,
+        "step_1": "Choose your frame",
+        "step_2": "Build your lenses",
+        "step_3": "Add your prescription",
+        "step_4": "Checkout",
+        "show_filters": true,
+        "filter_label": "Filter frames by shape",
+        "all_label": "All frames",
+        "frame_price_label": "Frame",
+        "button_label": "Build my glasses",
+        "sold_out_label": "Sold out",
+        "lens_note": "<p>Lenses are chosen and priced in the next step.</p>",
+        "color_scheme": "scheme-sk-linen"
+      }
+    },
+    "sk_rx_lenses": {
+      "type": "sk-rx-lenses",
       "blocks": {
-        "group_Lq93fg": {
-          "type": "group",
-          "name": "t:names.column",
+        "v1": {
+          "type": "vision",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 10,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_zpn9Fi": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<p><a href=\"#rx-frames\" title=\"SOL KYST RX\">Select your frame →</a></p><p></p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_K4bkrf": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p> Choose your favourite style.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_FVcEaB": {
-              "type": "button",
-              "name": "t:names.button",
-              "disabled": true,
-              "settings": {
-                "label": "Select Frame",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_zpn9Fi",
-            "text_K4bkrf",
-            "button_FVcEaB"
-          ]
+            "title": "Single vision",
+            "price": "From [price]",
+            "text": "One prescription across the whole lens – clear, sharp vision for distance or reading.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
         },
-        "group_d6Nexz": {
-          "type": "group",
-          "name": "t:names.column",
+        "v2": {
+          "type": "vision",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 10,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_nLBHWj": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<p>Build your lenses → </p><p></p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_9V3zaJ": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Guided through 4 simple steps.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_nLBHWj",
-            "text_9V3zaJ"
-          ]
+            "title": "Progressive",
+            "price": "From [price]",
+            "text": "Near and far in one lens, with a smooth change in between.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-p1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
         },
-        "group_9NN7U7": {
-          "type": "group",
-          "name": "t:names.column",
+        "v3": {
+          "type": "vision",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 10,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_Cniw3Y": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<p>Upload your Rx → </p><p></p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_VMEiKM": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Snap a photo or enter it manually.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_Cniw3Y",
-            "text_VMEiKM"
-          ]
+            "title": "Non-prescription",
+            "price": "From [price]",
+            "text": "Style and protection with no vision correction – blue light or a custom tint.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "yellow-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
         },
-        "group_AtnXMy": {
-          "type": "group",
-          "name": "t:names.column",
+        "m1": {
+          "type": "material",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 10,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_yqiBPU": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<p>We’ll do the rest →</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_KkHYri": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p> Custom-crafted lenses, delivered to you.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_yqiBPU",
-            "text_KkHYri"
-          ]
+            "title": "CR39",
+            "price": "[price]",
+            "text": "Our most accessible option for everyday wear and clear vision.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
+        },
+        "m2": {
+          "type": "material",
+          "settings": {
+            "title": "Polycarbonate",
+            "price": "[price]",
+            "text": "Strong, lightweight, shatter resistant. Most durable.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "polycarbonate-s1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
+        },
+        "m3": {
+          "type": "material",
+          "settings": {
+            "title": "Trivex",
+            "price": "[price]",
+            "text": "Crisp optics, feather light comfort. Premium everyday.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "trivex-s1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
+        },
+        "m4": {
+          "type": "material",
+          "settings": {
+            "title": "High Index 1.67",
+            "price": "[price]",
+            "text": "Ultra thin for strong prescriptions. Sleekest fit.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "high-index-s1-1",
+            "price_mode": "min",
+            "base_product": ""
+          }
+        },
+        "e0": {
+          "type": "extra",
+          "settings": {
+            "title": "AR coating",
+            "price": "Included",
+            "text": "Anti-reflective: crisper vision, less glare and eye strain, tougher lenses. On every lens.",
+            "tag": "",
+            "highlight": true,
+            "price_product": "",
+            "price_mode": "min",
+            "base_product": ""
+          }
+        },
+        "e1": {
+          "type": "extra",
+          "settings": {
+            "title": "Blue light filter",
+            "price": "+[price]",
+            "text": "Helps reduce digital eye strain from screens and long work days.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-s1-1",
+            "price_mode": "range",
+            "base_product": ""
+          }
+        },
+        "e2": {
+          "type": "extra",
+          "settings": {
+            "title": "Sun tint",
+            "price": "+[price]",
+            "text": "Fashion and sun tints in a range of colours, with full UV400 protection.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-s3-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
+          }
+        },
+        "e3": {
+          "type": "extra",
+          "settings": {
+            "title": "Polarized",
+            "price": "+[price]",
+            "text": "Blocks harsh glare from sun, water and roads, so colours look sharper and more vibrant.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-single_vision-clear_photochromic-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
+          }
+        },
+        "e4": {
+          "type": "extra",
+          "settings": {
+            "title": "Transitions",
+            "price": "+[price]",
+            "text": "Clear indoors, tinted outdoors, in 8 shades. CR39 and Polycarbonate.",
+            "tag": "",
+            "highlight": false,
+            "price_product": "cr39-s2-1",
+            "price_mode": "versus",
+            "base_product": "cr39-s1-1"
+          }
         }
       },
       "block_order": [
-        "group_Lq93fg",
-        "group_d6Nexz",
-        "group_9NN7U7",
-        "group_AtnXMy"
+        "v1",
+        "v2",
+        "v3",
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "e0",
+        "e1",
+        "e2",
+        "e3",
+        "e4"
       ],
-      "name": "t:names.multicolumn",
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": false,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": true,
-        "overlay_color": "#2e1504d6",
-        "overlay_style": "gradient",
-        "gradient_direction": "to bottom",
-        "padding-block-start": 6,
-        "padding-block-end": 16
+        "eyebrow": "Step two",
+        "heading": "Build your <em>lenses</em>",
+        "intro": "<p>Here is everything the lens builder will ask, and what it costs, so there are no surprises.</p>",
+        "anchor": "rx-lenses",
+        "vision_heading": "Your vision",
+        "vision_text": "Pick the type that matches your prescription.",
+        "material_heading": "Your lens material",
+        "material_text": "Single vision prices shown.",
+        "extra_heading": "Finishing touches",
+        "extra_text": "Added to the price of your lens.",
+        "note_1": "<p><strong>Have your prescription ready.</strong> Upload a photo, type it in, or email it after you order. Your PD (pupillary distance) is needed.</p>",
+        "note_2": "<p><strong>Made for you.</strong> Ready to ship in 3–4 business days once your prescription is checked. Complex prescriptions can take up to three weeks.</p>",
+        "note_3": "<p><strong>All prescription orders are final sale.</strong> If something is wrong when it arrives, email customer@solkyst.ca.</p>",
+        "button_label": "Choose your frame",
+        "button_link": "#rx-frames",
+        "color_scheme": "scheme-sk-blush"
       }
     },
     "product_list_crmtWG": {
@@ -718,6 +503,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.products_grid",
       "settings": {
         "collection": "best-selling-rx-frames",
@@ -737,8 +523,7 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 10,
         "padding-block-end": 9
-      },
-      "disabled": true
+      }
     },
     "17737488382c6ada81": {
       "type": "_blocks",
@@ -1077,6 +862,7 @@
         "text_cEe9Wy",
         "accordion_RGGb8B"
       ],
+      "disabled": true,
       "name": "t:names.faq_section",
       "settings": {
         "content_direction": "column",
@@ -1104,8 +890,7 @@
         "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
-      },
-      "disabled": true
+      }
     },
     "section_EmbaBx": {
       "type": "section",
@@ -1328,6 +1113,7 @@
         "text_BPAyp3",
         "accordion_VjErE3"
       ],
+      "disabled": true,
       "name": "t:names.faq_section",
       "settings": {
         "content_direction": "column",
@@ -1355,8 +1141,7 @@
         "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
-      },
-      "disabled": true
+      }
     },
     "section_JmpALj": {
       "type": "section",
@@ -1607,243 +1392,11 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "sk_rx_frames": {
-      "type": "sk-rx-frames",
-      "settings": {
-        "eyebrow": "Step one",
-        "heading": "Choose your <em>frame</em>",
-        "intro": "<p>Every frame below can be made with your prescription. Pick one, then build your lenses.</p>",
-        "anchor": "rx-frames",
-        "frames": [
-          "echo-sunglasses-for-wide-face-wide-fit-frames",
-          "ember-sunglasses-for-wide-face-wide-fit-frames",
-          "realm-sunglasses-for-wide-face-wide-fit-frames",
-          "monarch",
-          "cashmere",
-          "regina",
-          "integrity",
-          "froze",
-          "naomi",
-          "jean",
-          "maia",
-          "shadow",
-          "charli",
-          "dylan",
-          "logan",
-          "sj-oversizedsunglasses",
-          "tyler",
-          "hangover",
-          "hangover-chic",
-          "monarch-blue-light",
-          "integrity-blue-light",
-          "breast-cancer-blue-light-frame",
-          "leo-blue-light-rx",
-          "untamed-sunglasses-for-wide-face-wide-fit-frames",
-          "shrew-sunglasses-for-wide-face-wide-fit-frames",
-          "thea",
-          "barbie™-x-sol-kyst-1959-originals",
-          "barbie™-x-sol-kyst-1960s-twist-nturn-red",
-          "barbie™-x-sol-kyst-1970s-superstar-hearts",
-          "barbie™-x-sol-kyst-1980s-black-barbie-square",
-          "barbie™-x-sol-kyst-1980s-crystal-cat-eye"
-        ],
-        "show_steps": true,
-        "show_filters": true,
-        "frame_price_label": "Frame",
-        "button_label": "Build my glasses",
-        "lens_note": "<p>Lenses are chosen and priced in the next step.</p>",
-        "color_scheme": "scheme-sk-linen",
-        "rx_photos": "charli: 4FB29DF1-7583-4338-9BB2-A773C942654E.png\ndylan: RX_3f08de6c-7ea3-4b4a-9331-c65ae5a91291.png\nlogan: B34227E5-EA8F-4FAF-B1BE-F649CCF0068D.jpg\nsj-oversizedsunglasses: 41AD83D3-47A2-4542-8E99-C76F5F74392E.png\ntyler: 51CF6698-5E51-475B-AD26-C9C4307CBBA4.jpg\nhangover: A0B5F830-64C8-413E-8EB3-24CBBF98984C.png\nhangover-chic: 0A4C8C16-03D8-4BE6-ADF2-E1F6E78E65E8.png\nmonarch: 552F8161-9A0D-4DD8-9013-6EB1BE758507.png\ncashmere: D14B1A2B-3C81-49A5-B24D-7ECB523CBDF6.png\nregina: 3_ef751869-850d-4c3e-995d-67c42dda94d9_1.png\nintegrity: 5_852e3ce7-9390-42b1-a793-9c9d5a6cffaa.png\nfroze: 2E7511AD-F877-439E-957C-2E3CA29C65E0.png\nnaomi: A7E96D10-5AD9-4760-8741-9DD4C04D6601.png\njean: C1156D01-FEF3-4E1C-86B1-006FCEA8E3FB.png\nmaia: Maia1transparent.png\nbarbie™-x-sol-kyst-1959-originals: 9E83C3E9-D822-4F37-A6F6-C96725966B4A.png\nbarbie™-x-sol-kyst-1960s-twist-nturn-red: 4E92F747-5E76-4242-9035-734CBE841DBA.png\nbarbie™-x-sol-kyst-1970s-superstar-hearts: 7949AE14-76A1-427C-AF4F-54C1F8844928.png\nbarbie™-x-sol-kyst-1980s-crystal-cat-eye: A094FAF0-B466-4125-91B9-DDD8390CEA19.png\necho-sunglasses-for-wide-face-wide-fit-frames: C9A9FB16-1D80-4685-B105-10EB62D1349F.png\nshrew-sunglasses-for-wide-face-wide-fit-frames: 3D7835C2-DB0D-40BE-B940-22A704744C15.png\nuntamed-sunglasses-for-wide-face-wide-fit-frames: DAF52510-56EB-465E-9BB9-2EBBD87EACD6.png\nbreast-cancer-blue-light-frame: leo-blue-light-rx 1"
-      }
-    },
-    "sk_rx_lenses": {
-      "type": "sk-rx-lenses",
-      "blocks": {
-        "v1": {
-          "type": "vision",
-          "settings": {
-            "title": "Single vision",
-            "price": "From [price]",
-            "text": "One prescription across the whole lens – clear, sharp vision for distance or reading.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-s1-1",
-            "price_mode": "min"
-          }
-        },
-        "v2": {
-          "type": "vision",
-          "settings": {
-            "title": "Progressive",
-            "price": "From [price]",
-            "text": "Near and far in one lens, with a smooth change in between.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-p1-1",
-            "price_mode": "min"
-          }
-        },
-        "v3": {
-          "type": "vision",
-          "settings": {
-            "title": "Non-prescription",
-            "price": "From [price]",
-            "text": "Style and protection with no vision correction – blue light or a custom tint.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "yellow-1",
-            "price_mode": "min"
-          }
-        },
-        "m1": {
-          "type": "material",
-          "settings": {
-            "title": "CR39",
-            "price": "[price]",
-            "text": "Our most accessible option for everyday wear and clear vision.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-s1-1",
-            "price_mode": "min"
-          }
-        },
-        "m2": {
-          "type": "material",
-          "settings": {
-            "title": "Polycarbonate",
-            "price": "[price]",
-            "text": "Strong, lightweight, shatter resistant. Most durable.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "polycarbonate-s1-1",
-            "price_mode": "min"
-          }
-        },
-        "m3": {
-          "type": "material",
-          "settings": {
-            "title": "Trivex",
-            "price": "[price]",
-            "text": "Crisp optics, feather light comfort. Premium everyday.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "trivex-s1-1",
-            "price_mode": "min"
-          }
-        },
-        "m4": {
-          "type": "material",
-          "settings": {
-            "title": "High Index 1.67",
-            "price": "[price]",
-            "text": "Ultra thin for strong prescriptions. Sleekest fit.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "high-index-s1-1",
-            "price_mode": "min"
-          }
-        },
-        "e0": {
-          "type": "extra",
-          "settings": {
-            "title": "AR coating",
-            "price": "Included",
-            "text": "Anti-reflective: crisper vision, less glare and eye strain, tougher lenses. On every lens.",
-            "tag": "",
-            "highlight": true
-          }
-        },
-        "e1": {
-          "type": "extra",
-          "settings": {
-            "title": "Blue light filter",
-            "price": "+[price]",
-            "text": "Helps reduce digital eye strain from screens and long work days.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-s1-1",
-            "price_mode": "range"
-          }
-        },
-        "e2": {
-          "type": "extra",
-          "settings": {
-            "title": "Sun tint",
-            "price": "+[price]",
-            "text": "Fashion and sun tints in a range of colours, with full UV400 protection.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-s3-1",
-            "price_mode": "versus",
-            "base_product": "cr39-s1-1"
-          }
-        },
-        "e3": {
-          "type": "extra",
-          "settings": {
-            "title": "Polarized",
-            "price": "+[price]",
-            "text": "Blocks harsh glare from sun, water and roads, so colours look sharper and more vibrant.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-single_vision-clear_photochromic-1",
-            "price_mode": "versus",
-            "base_product": "cr39-s1-1"
-          }
-        },
-        "e4": {
-          "type": "extra",
-          "settings": {
-            "title": "Transitions",
-            "price": "+[price]",
-            "text": "Clear indoors, tinted outdoors, in 8 shades. CR39 and Polycarbonate.",
-            "tag": "",
-            "highlight": false,
-            "price_product": "cr39-s2-1",
-            "price_mode": "versus",
-            "base_product": "cr39-s1-1"
-          }
-        }
-      },
-      "block_order": [
-        "v1",
-        "v2",
-        "v3",
-        "m1",
-        "m2",
-        "m3",
-        "m4",
-        "e0",
-        "e1",
-        "e2",
-        "e3",
-        "e4"
-      ],
-      "settings": {
-        "eyebrow": "Step two",
-        "heading": "Build your <em>lenses</em>",
-        "intro": "<p>Here is everything the lens builder will ask, and what it costs, so there are no surprises.</p>",
-        "anchor": "rx-lenses",
-        "vision_heading": "Your vision",
-        "vision_text": "Pick the type that matches your prescription.",
-        "material_heading": "Your lens material",
-        "material_text": "Single vision prices shown.",
-        "extra_heading": "Finishing touches",
-        "extra_text": "Added to the price of your lens.",
-        "note_1": "<p><strong>Have your prescription ready.</strong> Upload a photo, type it in, or email it after you order. Your PD (pupillary distance) is needed.</p>",
-        "note_2": "<p><strong>Made for you.</strong> Ready to ship in 3–4 business days once your prescription is checked. Complex prescriptions can take up to three weeks.</p>",
-        "note_3": "<p><strong>All prescription orders are final sale.</strong> If something is wrong when it arrives, email customer@solkyst.ca.</p>",
-        "color_scheme": "scheme-sk-linen",
-        "button_label": "Choose your frame",
-        "button_link": "#rx-frames"
-      }
     }
   },
   "order": [
     "main",
     "hero_kj8Xn6",
-    "section_Y7rMCM",
     "sk_rx_frames",
     "sk_rx_lenses",
     "product_list_crmtWG",

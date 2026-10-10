@@ -72,6 +72,101 @@
     "variant_swatch_radius": 0,
     "variant_button_radius": 16,
     "variant_button_width": "equal-width-buttons",
+    "sk_fit_name_small": "Petite",
+    "sk_final_sale_sizes": "Mini, Petite",
+    "sk_final_sale_products": [
+      "azure-sunglasses-for-wide-face-wide-fit-frames",
+      "barbie™-x-sol-kyst-1959-originals",
+      "barbie™-x-sol-kyst-1960s-twist-nturn-orange",
+      "barbie™-x-sol-kyst-1960s-twist-nturn-red",
+      "barbie™-x-sol-kyst-1970s-superstar-hearts",
+      "barbie™-x-sol-kyst-1970s-superstar-hexagon",
+      "barbie™-x-sol-kyst-1980s-black-barbie-square",
+      "barbie™-x-sol-kyst-1980s-crystal-cat-eye",
+      "barbie™-x-sol-kyst-1990s-totally-hair-frameless",
+      "breast-cancer-blue-light-frame",
+      "bridal",
+      "cashmere",
+      "core-wide-fit-sunglasses",
+      "echo-sunglasses-for-wide-face-wide-fit-frames",
+      "ember-sunglasses-for-wide-face-wide-fit-frames",
+      "kin-sunglasses-for-wide-face-wide-fit-frames",
+      "maia",
+      "monarch",
+      "mvp",
+      "realm-sunglasses-for-wide-face-wide-fit-frames",
+      "shrew-sunglasses-for-wide-face-wide-fit-frames",
+      "terra-sunglasses-for-wide-face-wide-fit-frames",
+      "thea",
+      "untamed-sunglasses-for-wide-face-wide-fit-frames",
+      "juicy",
+      "regina",
+      "butterfly-kyst"
+    ],
+    "sk_final_sale_text": "Final sale — no returns or exchanges",
+    "sk_swatch_photos": "azure-sunglasses-for-wide-face-wide-fit-frames: 1 51 50 70\nbreast-cancer-blue-light-frame: leo-blue-light-rx 1 50 61 90\ncashmere: 1 50 60 90\ncharli: 1 50 50 86\ncore-wide-fit-sunglasses: 1 50 54 82\ndebra: 1 50 50 89\ndylan: 1 50 51 84\necho-sunglasses-for-wide-face-wide-fit-frames: 1 50 51 76\nember-sunglasses-for-wide-face-wide-fit-frames: 1 52 46 86\nfroze: 1 50 61 83\nhangover: 1 50 53 77\nhangover-chic: 1 50 50 81\nintegrity: 1 50 53 90\nintegrity-blue-light: 1 50 60 70\njean: 1 50 55 90\njuicy: 1 50 63 86\nkin-sunglasses-for-wide-face-wide-fit-frames: 1 49 49 84\nlatte: 1 50 59 65\nleo-blue-light-rx: 1 50 61 90\nlogan: 1 50 64 83\nmaia: 1 51 58 98\nmella: 1 50 59 90\nmonarch: 1 50 55 80\nmonarch-blue-light: 1 50 50 86\nmoonstone: 1 49 56 81\nmvp: 1 49 53 64\nnaomi: 1 50 55 86\nrealm-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 77\nregina: 1 50 66 70\nshadow: 1 50 54 80\nshrew-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 91\nsj-oversizedsunglasses: 1 50 54 88\nterra-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 71\ntyler: 1 50 48 85\nuntamed-sunglasses-for-wide-face-wide-fit-frames: 1 50 46 72",
+    "sk_family_1_name": "Kyst Eye",
+    "sk_family_1_products": [
+      "mvp",
+      "mella",
+      "debra",
+      "latte",
+      "moonstone",
+      "juicy"
+    ],
+    "sk_family_2_name": "Square",
+    "sk_family_2_products": [
+      "azure-sunglasses-for-wide-face-wide-fit-frames",
+      "terra-sunglasses-for-wide-face-wide-fit-frames",
+      "core-wide-fit-sunglasses"
+    ],
+    "sk_family_3_name": "Oval",
+    "sk_family_3_products": [
+      "echo-sunglasses-for-wide-face-wide-fit-frames",
+      "ember-sunglasses-for-wide-face-wide-fit-frames",
+      "kin-sunglasses-for-wide-face-wide-fit-frames",
+      "realm-sunglasses-for-wide-face-wide-fit-frames"
+    ],
+    "sk_family_4_name": "Rectangle",
+    "sk_family_4_products": [
+      "monarch",
+      "cashmere",
+      "regina",
+      "integrity",
+      "froze"
+    ],
+    "sk_family_5_name": "Trapezoid",
+    "sk_family_5_products": [
+      "naomi",
+      "jean",
+      "maia",
+      "shadow"
+    ],
+    "sk_family_6_name": "Aviator",
+    "sk_family_6_products": [
+      "charli",
+      "dylan",
+      "logan",
+      "sj-oversizedsunglasses",
+      "tyler"
+    ],
+    "sk_family_7_name": "Hangover",
+    "sk_family_7_products": [
+      "hangover",
+      "hangover-chic"
+    ],
+    "sk_family_8_name": "Blue Light",
+    "sk_family_8_products": [
+      "monarch-blue-light",
+      "integrity-blue-light",
+      "breast-cancer-blue-light-frame",
+      "leo-blue-light-rx"
+    ],
+    "sk_family_9_name": "Hearts",
+    "sk_family_9_products": [
+      "untamed-sunglasses-for-wide-face-wide-fit-frames",
+      "shrew-sunglasses-for-wide-face-wide-fit-frames"
+    ],
     "content_for_index": [],
     "blocks": {
       "11349500561483629931": {
@@ -165,7 +260,7 @@
           "background": "#ffffff",
           "foreground_heading": "#000000",
           "foreground": "#000000",
-          "primary": "#000000",
+          "primary": "#EC9AC4",
           "primary_hover": "#666666",
           "border": "#0000001c",
           "shadow": "#000000",
@@ -477,7 +572,7 @@
           "background": "#faf9f6",
           "foreground_heading": "#000000",
           "foreground": "#000000",
-          "primary": "#ab8a6b",
+          "primary": "#87613C",
           "primary_hover": "#000000",
           "border": "#0000001f",
           "shadow": "#000000",
@@ -552,7 +647,7 @@
       },
       "scheme-sk-sand": {
         "settings": {
-          "background": "#6e5f59",
+          "background": "#75635b",
           "foreground_heading": "#ffffff",
           "foreground": "#ffffff",
           "primary": "#ffffff",
@@ -565,7 +660,7 @@
           "primary_button_hover_background": "#e8dfda",
           "primary_button_hover_text": "#3b2c27",
           "primary_button_hover_border": "#e8dfda",
-          "secondary_button_background": "#6e5f5900",
+          "secondary_button_background": "rgba(0,0,0,0)",
           "secondary_button_text": "#ffffff",
           "secondary_button_border": "#ffffff",
           "secondary_button_hover_background": "#ffffff",
@@ -628,102 +723,7 @@
           "selected_variant_hover_border_color": "#1a1a1a"
         }
       }
-    },
-    "sk_family_1_name": "Kyst Eye",
-    "sk_family_1_products": [
-      "mvp",
-      "mella",
-      "debra",
-      "latte",
-      "moonstone",
-      "juicy"
-    ],
-    "sk_family_2_name": "Square",
-    "sk_family_2_products": [
-      "azure-sunglasses-for-wide-face-wide-fit-frames",
-      "terra-sunglasses-for-wide-face-wide-fit-frames",
-      "core-wide-fit-sunglasses"
-    ],
-    "sk_family_3_name": "Oval",
-    "sk_family_3_products": [
-      "echo-sunglasses-for-wide-face-wide-fit-frames",
-      "ember-sunglasses-for-wide-face-wide-fit-frames",
-      "kin-sunglasses-for-wide-face-wide-fit-frames",
-      "realm-sunglasses-for-wide-face-wide-fit-frames"
-    ],
-    "sk_family_4_name": "Rectangle",
-    "sk_family_4_products": [
-      "monarch",
-      "cashmere",
-      "regina",
-      "integrity",
-      "froze"
-    ],
-    "sk_family_5_name": "Trapezoid",
-    "sk_family_5_products": [
-      "naomi",
-      "jean",
-      "maia",
-      "shadow"
-    ],
-    "sk_family_6_name": "Aviator",
-    "sk_family_6_products": [
-      "charli",
-      "dylan",
-      "logan",
-      "sj-oversizedsunglasses",
-      "tyler"
-    ],
-    "sk_family_7_name": "Hangover",
-    "sk_family_7_products": [
-      "hangover",
-      "hangover-chic"
-    ],
-    "sk_family_8_name": "Blue Light",
-    "sk_family_8_products": [
-      "monarch-blue-light",
-      "integrity-blue-light",
-      "breast-cancer-blue-light-frame",
-      "leo-blue-light-rx"
-    ],
-    "sk_family_9_name": "Hearts",
-    "sk_family_9_products": [
-      "untamed-sunglasses-for-wide-face-wide-fit-frames",
-      "shrew-sunglasses-for-wide-face-wide-fit-frames"
-    ],
-    "sk_final_sale_sizes": "Mini, Petite",
-    "sk_final_sale_products": [
-      "azure-sunglasses-for-wide-face-wide-fit-frames",
-      "barbie™-x-sol-kyst-1959-originals",
-      "barbie™-x-sol-kyst-1960s-twist-nturn-orange",
-      "barbie™-x-sol-kyst-1960s-twist-nturn-red",
-      "barbie™-x-sol-kyst-1970s-superstar-hearts",
-      "barbie™-x-sol-kyst-1970s-superstar-hexagon",
-      "barbie™-x-sol-kyst-1980s-black-barbie-square",
-      "barbie™-x-sol-kyst-1980s-crystal-cat-eye",
-      "barbie™-x-sol-kyst-1990s-totally-hair-frameless",
-      "breast-cancer-blue-light-frame",
-      "bridal",
-      "cashmere",
-      "core-wide-fit-sunglasses",
-      "echo-sunglasses-for-wide-face-wide-fit-frames",
-      "ember-sunglasses-for-wide-face-wide-fit-frames",
-      "kin-sunglasses-for-wide-face-wide-fit-frames",
-      "maia",
-      "monarch",
-      "mvp",
-      "realm-sunglasses-for-wide-face-wide-fit-frames",
-      "shrew-sunglasses-for-wide-face-wide-fit-frames",
-      "terra-sunglasses-for-wide-face-wide-fit-frames",
-      "thea",
-      "untamed-sunglasses-for-wide-face-wide-fit-frames",
-      "juicy",
-      "regina",
-      "butterfly-kyst"
-    ],
-    "sk_final_sale_text": "Final sale — no returns or exchanges",
-    "sk_fit_name_small": "Petite",
-    "sk_swatch_photos": "azure-sunglasses-for-wide-face-wide-fit-frames: 1 51 50 70\nbreast-cancer-blue-light-frame: leo-blue-light-rx 1 50 61 90\ncashmere: 1 50 60 90\ncharli: 1 50 50 86\ncore-wide-fit-sunglasses: 1 50 54 82\ndebra: 1 50 50 89\ndylan: 1 50 51 84\necho-sunglasses-for-wide-face-wide-fit-frames: 1 50 51 76\nember-sunglasses-for-wide-face-wide-fit-frames: 1 52 46 86\nfroze: 1 50 61 83\nhangover: 1 50 53 77\nhangover-chic: 1 50 50 81\nintegrity: 1 50 53 90\nintegrity-blue-light: 1 50 60 70\njean: 1 50 55 90\njuicy: 1 50 63 86\nkin-sunglasses-for-wide-face-wide-fit-frames: 1 49 49 84\nlatte: 1 50 59 65\nleo-blue-light-rx: 1 50 61 90\nlogan: 1 50 64 83\nmaia: 1 51 58 98\nmella: 1 50 59 90\nmonarch: 1 50 55 80\nmonarch-blue-light: 1 50 50 86\nmoonstone: 1 49 56 81\nmvp: 1 49 53 64\nnaomi: 1 50 55 86\nrealm-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 77\nregina: 1 50 66 70\nshadow: 1 50 54 80\nshrew-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 91\nsj-oversizedsunglasses: 1 50 54 88\nterra-sunglasses-for-wide-face-wide-fit-frames: 1 50 52 71\ntyler: 1 50 48 85\nuntamed-sunglasses-for-wide-face-wide-fit-frames: 1 50 46 72"
+    }
   },
   "presets": {
     "Atelier": {

@@ -12,6 +12,13 @@
     "hero_gMmcq6": {
       "type": "hero",
       "blocks": {
+        "sk_collection_h1": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<h1 class=\"visually-hidden\">{{ collection.title }}</h1>"
+          },
+          "blocks": {}
+        },
         "text_ztK37x": {
           "type": "text",
           "name": "t:names.text",
@@ -62,12 +69,6 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "sk_collection_h1": {
-          "type": "custom-liquid",
-          "settings": {
-            "custom_liquid": "<h1 class=\"visually-hidden\">{{ collection.title }}</h1>"
-          }
         }
       },
       "block_order": [
@@ -489,6 +490,75 @@
         "padding-block-end": 10
       }
     },
+    "sk_collection_fit": {
+      "type": "sk-fit-index",
+      "blocks": {
+        "w_standard": {
+          "type": "width",
+          "settings": {
+            "name": "Standard",
+            "mm": 135,
+            "text": "<p>Best for petite or smaller faces who still want an oversized look and a bit of glamour.</p>",
+            "link_label": "Shop Standard",
+            "link": "shopify://collections/shop-mini-styles"
+          }
+        },
+        "w_soft": {
+          "type": "width",
+          "settings": {
+            "name": "Soft Wide",
+            "mm": 145,
+            "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look. Not sure? START HERE - we offer free exchanges.</p>",
+            "link_label": "Shop Soft Wide",
+            "link": "shopify://collections/shop-midi-styles"
+          }
+        },
+        "w_wide": {
+          "type": "width",
+          "settings": {
+            "name": "Wide",
+            "mm": 158,
+            "text": "<p>Our signature wide face babe fit. Widest on the market - designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight or has ever experienced headaches and discomfort from their frames.</p>",
+            "link_label": "Shop Wide",
+            "link": "shopify://collections/shop-wide-face-babe"
+          }
+        }
+      },
+      "block_order": [
+        "w_standard",
+        "w_soft",
+        "w_wide"
+      ],
+      "settings": {
+        "eyebrow": "Three distinct widths for your perfect fit.",
+        "heading": "Find your <em>fit</em>",
+        "intro": "",
+        "anchor": "find-your-fit",
+        "layout": "cards",
+        "here_label": "You're here",
+        "scale_max": 160,
+        "show_mm": false,
+        "unit_label": "mm",
+        "show_ref": false,
+        "ref_mm": 140,
+        "ref_label": "Standard designer sunglasses",
+        "scale_note": "",
+        "show_anatomy": false,
+        "anatomy_heading": "",
+        "anatomy_text": "",
+        "overall_label": "Overall width",
+        "overall": "158mm",
+        "lens_label": "Lens",
+        "lens": "67",
+        "bridge_label": "Nose bridge",
+        "bridge": "19",
+        "arm_label": "Arm",
+        "arm": "145",
+        "anatomy_caption": "Shown: AURA, Wide — 158mm | 67-19-145",
+        "specs_heading": "",
+        "color_scheme": "scheme-sk-linen"
+      }
+    },
     "section": {
       "type": "section",
       "blocks": {
@@ -733,6 +803,7 @@
         "accordion_JMHday",
         "divider_agfR7J"
       ],
+      "disabled": true,
       "name": "Collection heading",
       "settings": {
         "content_direction": "column",
@@ -760,8 +831,7 @@
         "gradient_direction": "to bottom",
         "padding-block-start": 36,
         "padding-block-end": 0
-      },
-      "disabled": true
+      }
     },
     "main": {
       "type": "main-collection",
@@ -850,6 +920,7 @@
             "text_jXMxGL": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<p>Eyewear for Wide Face | Wide Fit Frames</p>",
                 "width": "fit-content",
@@ -871,8 +942,14 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {},
-              "disabled": true
+              "blocks": {}
+            },
+            "sk_card_type": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "<p style=\"margin:0;font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;\">{% render 'sk-shape-name', product: closest.product %}</p>"
+              },
+              "blocks": {}
             },
             "price_tainzq": {
               "type": "price",
@@ -894,6 +971,18 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "sk_card_stars": {
+              "type": "review",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "foreground",
+                "type_preset": "h6",
+                "width": "fit-content",
+                "alignment": "left"
               },
               "blocks": {}
             },
@@ -948,23 +1037,6 @@
                 }
               },
               "block_order": []
-            },
-            "sk_card_stars": {
-              "type": "review",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "foreground",
-                "type_preset": "h6",
-                "width": "fit-content",
-                "alignment": "left"
-              }
-            },
-            "sk_card_type": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "<p style=\"margin:0;font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;\">{% render 'sk-shape-name', product: closest.product %}</p>"
-              }
             }
           },
           "block_order": [
@@ -1085,63 +1157,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 0
-      }
-    },
-    "sk_collection_fit": {
-      "type": "sk-fit-index",
-      "blocks": {
-        "w_standard": {
-          "type": "width",
-          "settings": {
-            "name": "Standard",
-            "mm": 135,
-            "text": "<p>Best for petite or smaller faces who still want an oversized look and a bit of glamour.</p>",
-            "link_label": "Shop Standard",
-            "link": "shopify://collections/shop-mini-styles"
-          }
-        },
-        "w_soft": {
-          "type": "width",
-          "settings": {
-            "name": "Soft Wide",
-            "mm": 145,
-            "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look. Not sure? START HERE - we offer free exchanges.</p>",
-            "link_label": "Shop Soft Wide",
-            "link": "shopify://collections/shop-midi-styles"
-          }
-        },
-        "w_wide": {
-          "type": "width",
-          "settings": {
-            "name": "Wide",
-            "mm": 158,
-            "text": "<p>Our signature wide face babe fit. Widest on the market - designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight or has ever experienced headaches and discomfort from their frames.</p>",
-            "link_label": "Shop Wide",
-            "link": "shopify://collections/shop-wide-face-babe"
-          }
-        }
-      },
-      "block_order": [
-        "w_standard",
-        "w_soft",
-        "w_wide"
-      ],
-      "settings": {
-        "eyebrow": "Three widths, one for you",
-        "heading": "Find your <em>fit</em>",
-        "intro": "",
-        "anchor": "find-your-fit",
-        "layout": "cards",
-        "here_label": "You're here",
-        "scale_max": 170,
-        "unit_label": "mm",
-        "scale_note": "",
-        "show_anatomy": false,
-        "anatomy_heading": "",
-        "anatomy_text": "",
-        "specs_heading": "",
-        "color_scheme": "scheme-sk-linen",
-        "show_mm": false
       }
     }
   },
