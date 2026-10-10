@@ -227,7 +227,7 @@
     grid-auto-flow: column;
     grid-auto-columns: calc((100% - 3 * 1rem) / 4);
     gap: 1rem;
-    align-items: start;
+    align-items: stretch;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -239,8 +239,8 @@
 
   .sk-loox__card {
     scroll-snap-align: start;
-    display: grid;
-    align-content: start;
+    display: flex;
+    flex-direction: column;
     border-radius: 1.25rem;
     overflow: hidden;
     background: rgb(var(--color-foreground-rgb) / 0.04);
@@ -249,7 +249,8 @@
 
   .sk-loox__photo {
     display: block;
-    aspect-ratio: 1;
+    flex: none;
+    aspect-ratio: 2 / 1;
     overflow: hidden;
   }
 
@@ -261,15 +262,32 @@
   }
 
   .sk-loox__body {
-    display: grid;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     gap: 0.6rem;
     padding: 1.1rem 1.2rem 1.3rem;
   }
 
+  /* Text is capped at a set number of lines so every card is the same height. */
   .sk-loox__text {
+    --sk-lines: 4;
     margin: 0;
     font-size: 0.9375rem;
     line-height: 1.55;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--sk-lines);
+    overflow: hidden;
+  }
+
+  .sk-loox__card--pick .sk-loox__text {
+    --sk-lines: 9;
+  }
+
+  /* Name and product sit at the bottom of every card. */
+  .sk-loox__author {
+    margin-top: auto !important;
   }
 
   .sk-loox__author {
@@ -308,12 +326,13 @@
     font-family: var(--font-heading--family);
     font-size: 3.5rem;
     line-height: 0.6;
-    height: 1.6rem;
+    height: 1.4rem;
+    flex: none;
     opacity: 0.35;
   }
 
   .sk-loox__product {
-    justify-self: start;
+    align-self: flex-start;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
