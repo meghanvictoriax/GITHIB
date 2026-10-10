@@ -12,6 +12,7 @@
 {%- liquid
   assign sizes = sizes | strip | split: '^'
   assign scale_max = section.settings.scale_max
+  assign ref_pct = section.settings.ref_mm | times: 100.0 | divided_by: scale_max | at_most: 100
 -%}
 
 {%- if sizes.size > 0 -%}
@@ -70,6 +71,9 @@
               aria-label="{{ s[5] | default: s[1] | escape }}: {{ s[0] }}mm"
             >
               <span class="sk-fit__bar"></span>
+              {%- if section.settings.show_ref -%}
+                <span class="sk-fit__ref" style="--sk-ref: {{ ref_pct | round: 2 }}%;" aria-hidden="true"></span>
+              {%- endif -%}
             </div>
             <div class="sk-fit__desc">
               <p class="sk-fit__text sk-fit__measure">
@@ -83,6 +87,12 @@
           </li>
         {%- endfor -%}
       </ol>
+      {%- if section.settings.show_ref and section.settings.ref_label != blank -%}
+        <p class="sk-fit__ref-key">
+          <span class="sk-fit__ref-dot" aria-hidden="true"></span>
+          <span>{{ section.settings.ref_label | escape }} · {{ section.settings.ref_mm }}mm</span>
+        </p>
+      {%- endif -%}
       {%- if section.settings.scale_note != blank -%}
         <p class="sk-fit__scale-note">{{ section.settings.scale_note | escape }}</p>
       {%- endif -%}
@@ -228,6 +238,29 @@
       "step": 5,
       "unit": "mm",
       "default": 170
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ref",
+      "label": "Show standard designer frame marker",
+      "info": "A dot on every ruler at the width of typical designer sunglasses, for comparison.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "ref_mm",
+      "label": "Standard designer frame width",
+      "min": 120,
+      "max": 160,
+      "step": 1,
+      "unit": "mm",
+      "default": 140
+    },
+    {
+      "type": "text",
+      "id": "ref_label",
+      "label": "Marker label",
+      "default": "Standard designer sunglasses"
     },
     {
       "type": "text",

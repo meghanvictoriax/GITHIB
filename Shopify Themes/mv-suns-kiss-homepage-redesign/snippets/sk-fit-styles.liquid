@@ -145,6 +145,39 @@
     margin: 0;
   }
 
+  /* Marker for typical designer frame width, drawn on every ruler. */
+  .sk-fit__ref {
+    position: absolute;
+    inset-block-start: 0.825rem;
+    inset-inline-start: var(--sk-ref);
+    z-index: 1;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--color-background);
+    border: 2px solid var(--color-foreground);
+    box-shadow: 0 0 0 2px var(--color-background);
+    transform: translate(-50%, -50%);
+  }
+
+  .sk-fit__ref-key {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+  }
+
+  .sk-fit__ref-dot {
+    flex: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--color-background);
+    border: 2px solid var(--color-foreground);
+  }
+
   .sk-fit__scale-note {
     margin: 1rem 0 0;
     font-size: 0.75rem;

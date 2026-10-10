@@ -13,6 +13,7 @@
 
 {%- liquid
   assign scale_max = section.settings.scale_max
+  assign ref_pct = section.settings.ref_mm | times: 100.0 | divided_by: scale_max | at_most: 100
   assign width_blocks = section.blocks | where: 'type', 'width'
   assign spec_blocks = section.blocks | where: 'type', 'spec'
   assign anchor = section.settings.anchor | handleize | default: section.id
@@ -72,6 +73,9 @@
               aria-label="{{ block.settings.name | escape }}{% if section.settings.show_mm %}: {{ block.settings.mm }} {{ section.settings.unit_label | escape }}{% endif %}"
             >
               <span class="sk-fit__bar"></span>
+              {%- if section.settings.show_ref -%}
+                <span class="sk-fit__ref" style="--sk-ref: {{ ref_pct | round: 2 }}%;" aria-hidden="true"></span>
+              {%- endif -%}
             </div>
             <div class="sk-fit__desc">
               {%- if block.settings.text != blank -%}
@@ -84,6 +88,12 @@
           </li>
         {%- endfor -%}
       </ol>
+      {%- if section.settings.show_ref and section.settings.ref_label != blank -%}
+        <p class="sk-fit__ref-key">
+          <span class="sk-fit__ref-dot" aria-hidden="true"></span>
+          <span>{{ section.settings.ref_label | escape }}{% if section.settings.show_mm %} · {{ section.settings.ref_mm }}{{ section.settings.unit_label | escape }}{% endif %}</span>
+        </p>
+      {%- endif -%}
       {%- if section.settings.scale_note != blank -%}
         <p class="sk-fit__scale-note">{{ section.settings.scale_note | escape }}</p>
       {%- endif -%}
@@ -227,6 +237,29 @@
       "id": "unit_label",
       "label": "Unit",
       "default": "mm"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ref",
+      "label": "Show standard designer frame marker",
+      "info": "A dot on every ruler at the width of typical designer sunglasses, for comparison.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "ref_mm",
+      "label": "Standard designer frame width",
+      "min": 120,
+      "max": 160,
+      "step": 1,
+      "unit": "mm",
+      "default": 140
+    },
+    {
+      "type": "text",
+      "id": "ref_label",
+      "label": "Marker label",
+      "default": "Standard designer sunglasses"
     },
     {
       "type": "text",
