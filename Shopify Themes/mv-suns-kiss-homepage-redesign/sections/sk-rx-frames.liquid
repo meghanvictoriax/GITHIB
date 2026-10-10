@@ -96,6 +96,35 @@
               assign card_cents = card[0] | plus: 0
               assign card_amount = card_cents | money
               assign rx_url = frame.url | append: '?view=rx'
+
+              # RX photo: a frame-only photo from Theme settings, if one is set for this frame.
+              assign rx_photo = frame.featured_media.preview_image
+              assign photo_lines = section.settings.rx_photos | newline_to_br | split: '<br />'
+              for line in photo_lines
+                assign parts = line | strip | split: ':'
+                if parts.size < 2
+                  continue
+                endif
+                assign line_handle = parts[0] | strip
+                if line_handle != frame.handle
+                  continue
+                endif
+                assign line_value = parts[1] | strip
+                if line_value contains '.'
+                  assign rx_photo = images[line_value] | default: rx_photo
+                else
+                  assign words = line_value | split: ' '
+                  assign source = frame
+                  assign number_word = words[0]
+                  assign first_number = words[0] | plus: 0
+                  if first_number == 0 and words[0] != '0'
+                    assign source = all_products[words[0]]
+                    assign number_word = words[1] | default: '1'
+                  endif
+                  assign photo_index = number_word | plus: 0 | at_least: 1 | minus: 1
+                  assign rx_photo = source.media[photo_index].preview_image | default: rx_photo
+                endif
+              endfor
               assign shape_key = shape | handleize
               assign key_last = shape_key | slice: -1
               if key_last == 's'
@@ -105,15 +134,15 @@
             <li class="sk-rx-frames__item" data-shape="{{ shape_key }}">
               <a class="sk-rx-card{% unless frame.available %} is-sold-out{% endunless %}" href="{{ rx_url }}">
                 <span class="sk-rx-card__media">
-                  {%- if frame.featured_media -%}
+                  {%- if rx_photo != blank -%}
                     {{
-                      frame.featured_media.preview_image
+                      rx_photo
                       | image_url: width: 900
                       | image_tag:
                         widths: '300, 450, 600, 900',
                         sizes: '(min-width: 990px) 23vw, (min-width: 750px) 31vw, 48vw',
                         loading: 'lazy',
-                        alt: frame.featured_media.preview_image.alt | default: frame.title
+                        alt: frame.title
                     }}
                   {%- endif -%}
                 </span>
@@ -400,6 +429,12 @@
       "label": "Frames",
       "info": "Only add frames that are switched on in the LensAdvizor app.",
       "limit": 50
+    },
+    {
+      "type": "textarea",
+      "id": "rx_photos",
+      "label": "Frame-only photos",
+      "info": "Optional. One line per frame: frame-handle: a file name from Content > Files, or a photo number, or another product's handle and photo number. Example: echo-sunglasses-for-wide-face-wide-fit-frames: C9A9FB16-1D80-4685-B105-10EB62D1349F.png"
     },
     {
       "type": "header",

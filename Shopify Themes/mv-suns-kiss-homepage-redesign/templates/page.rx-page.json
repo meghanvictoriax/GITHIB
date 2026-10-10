@@ -1104,7 +1104,8 @@
         "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
-      }
+      },
+      "disabled": true
     },
     "section_EmbaBx": {
       "type": "section",
@@ -1354,7 +1355,8 @@
         "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
-      }
+      },
+      "disabled": true
     },
     "section_JmpALj": {
       "type": "section",
@@ -1651,7 +1653,165 @@
         "frame_price_label": "Frame",
         "button_label": "Build my glasses",
         "lens_note": "<p>Lenses are chosen and priced in the next step.</p>",
-        "color_scheme": "scheme-sk-linen"
+        "color_scheme": "scheme-sk-linen",
+        "rx_photos": "charli: 4FB29DF1-7583-4338-9BB2-A773C942654E.png\ndylan: RX_3f08de6c-7ea3-4b4a-9331-c65ae5a91291.png\nlogan: B34227E5-EA8F-4FAF-B1BE-F649CCF0068D.jpg\nsj-oversizedsunglasses: 41AD83D3-47A2-4542-8E99-C76F5F74392E.png\ntyler: 51CF6698-5E51-475B-AD26-C9C4307CBBA4.jpg\nhangover: A0B5F830-64C8-413E-8EB3-24CBBF98984C.png\nhangover-chic: 0A4C8C16-03D8-4BE6-ADF2-E1F6E78E65E8.png\nmonarch: 552F8161-9A0D-4DD8-9013-6EB1BE758507.png\ncashmere: D14B1A2B-3C81-49A5-B24D-7ECB523CBDF6.png\nregina: 3_ef751869-850d-4c3e-995d-67c42dda94d9_1.png\nintegrity: 5_852e3ce7-9390-42b1-a793-9c9d5a6cffaa.png\nfroze: 2E7511AD-F877-439E-957C-2E3CA29C65E0.png\nnaomi: A7E96D10-5AD9-4760-8741-9DD4C04D6601.png\njean: C1156D01-FEF3-4E1C-86B1-006FCEA8E3FB.png\nmaia: Maia1transparent.png\nbarbie™-x-sol-kyst-1959-originals: 9E83C3E9-D822-4F37-A6F6-C96725966B4A.png\nbarbie™-x-sol-kyst-1960s-twist-nturn-red: 4E92F747-5E76-4242-9035-734CBE841DBA.png\nbarbie™-x-sol-kyst-1970s-superstar-hearts: 7949AE14-76A1-427C-AF4F-54C1F8844928.png\nbarbie™-x-sol-kyst-1980s-crystal-cat-eye: A094FAF0-B466-4125-91B9-DDD8390CEA19.png\necho-sunglasses-for-wide-face-wide-fit-frames: C9A9FB16-1D80-4685-B105-10EB62D1349F.png\nshrew-sunglasses-for-wide-face-wide-fit-frames: 3D7835C2-DB0D-40BE-B940-22A704744C15.png\nuntamed-sunglasses-for-wide-face-wide-fit-frames: DAF52510-56EB-465E-9BB9-2EBBD87EACD6.png\nbreast-cancer-blue-light-frame: leo-blue-light-rx 1"
+      }
+    },
+    "sk_rx_lenses": {
+      "type": "sk-rx-lenses",
+      "blocks": {
+        "v1": {
+          "type": "vision",
+          "settings": {
+            "title": "Single vision",
+            "price": "From $105",
+            "text": "One prescription across the whole lens – clear, sharp vision for distance or reading.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "v2": {
+          "type": "vision",
+          "settings": {
+            "title": "Progressive",
+            "price": "From $185",
+            "text": "Near and far in one lens, with a smooth change in between.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "v3": {
+          "type": "vision",
+          "settings": {
+            "title": "Non-prescription",
+            "price": "From $85",
+            "text": "Style and protection with no vision correction – blue light or a custom tint.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m1": {
+          "type": "material",
+          "settings": {
+            "title": "CR39",
+            "price": "$105",
+            "text": "Our most accessible option for everyday wear and clear vision.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m2": {
+          "type": "material",
+          "settings": {
+            "title": "Polycarbonate",
+            "price": "$145",
+            "text": "Strong, lightweight, shatter resistant. Most durable.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m3": {
+          "type": "material",
+          "settings": {
+            "title": "Trivex",
+            "price": "$155",
+            "text": "Crisp optics, feather light comfort. Premium everyday.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m4": {
+          "type": "material",
+          "settings": {
+            "title": "High Index 1.67",
+            "price": "$185",
+            "text": "Ultra thin for strong prescriptions. Sleekest fit.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e0": {
+          "type": "extra",
+          "settings": {
+            "title": "AR coating",
+            "price": "Included",
+            "text": "Anti-reflective: crisper vision, less glare and eye strain, tougher lenses. On every lens.",
+            "tag": "",
+            "highlight": true
+          }
+        },
+        "e1": {
+          "type": "extra",
+          "settings": {
+            "title": "Blue light filter",
+            "price": "+$25",
+            "text": "Helps reduce digital eye strain from screens and long work days.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e2": {
+          "type": "extra",
+          "settings": {
+            "title": "Sun tint",
+            "price": "+$25",
+            "text": "Fashion and sun tints in a range of colours, with full UV400 protection.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e3": {
+          "type": "extra",
+          "settings": {
+            "title": "Polarized",
+            "price": "+$120",
+            "text": "Blocks harsh glare from sun, water and roads, so colours look sharper and more vibrant.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e4": {
+          "type": "extra",
+          "settings": {
+            "title": "Transitions",
+            "price": "+$220",
+            "text": "Clear indoors, tinted outdoors, in 8 shades. CR39 and Polycarbonate.",
+            "tag": "",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "e0",
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Step two",
+        "heading": "Build your <em>lenses</em>",
+        "intro": "<p>Here is everything the lens builder will ask, and what it costs, so there are no surprises.</p>",
+        "anchor": "rx-lenses",
+        "vision_heading": "Your vision",
+        "vision_text": "Pick the type that matches your prescription.",
+        "material_heading": "Your lens material",
+        "material_text": "Single vision prices shown. Progressive starts at $185.",
+        "extra_heading": "Finishing touches",
+        "extra_text": "Added to the price of your lens.",
+        "note_1": "<p><strong>Have your prescription ready.</strong> Upload a photo, type it in, or email it after you order. Your PD (pupillary distance) is needed.</p>",
+        "note_2": "<p><strong>Made for you.</strong> Ready to ship in 3–4 business days once your prescription is checked. Complex prescriptions can take up to three weeks.</p>",
+        "note_3": "<p><strong>All prescription orders are final sale.</strong> If something is wrong when it arrives, email customer@solkyst.ca.</p>",
+        "color_scheme": "scheme-sk-linen",
+        "button_label": "Choose your frame",
+        "button_link": "#rx-frames"
       }
     }
   },
@@ -1660,6 +1820,7 @@
     "hero_kj8Xn6",
     "section_Y7rMCM",
     "sk_rx_frames",
+    "sk_rx_lenses",
     "product_list_crmtWG",
     "17737488382c6ada81",
     "section_fkQ6q8",

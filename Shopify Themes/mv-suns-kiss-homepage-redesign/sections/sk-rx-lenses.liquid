@@ -1,0 +1,429 @@
+{% comment %}
+  Section contract.
+  Step 2 of the prescription builder: what the lens builder will ask, in order, with
+  prices. Three rows of cards (vision type, lens material, finishing touches), each
+  card a block so names, prices and words can be edited in the theme editor.
+  @example
+  <!-- Add "SK · RX lens guide" to the RX page or the RX product template -->
+{% endcomment %}
+
+{%- liquid
+  assign vision_blocks = section.blocks | where: 'type', 'vision'
+  assign material_blocks = section.blocks | where: 'type', 'material'
+  assign extra_blocks = section.blocks | where: 'type', 'extra'
+  assign anchor = section.settings.anchor | handleize | default: section.id
+-%}
+
+{% render 'sk-styles' %}
+<section
+  id="{{ anchor }}"
+  class="sk sk-rx-lenses color-{{ section.settings.color_scheme }}"
+  aria-labelledby="SkRxLensHeading-{{ section.id }}"
+>
+  <div class="sk-rx-lenses__inner">
+    <header class="sk-rx-lenses__head sk-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 id="SkRxLensHeading-{{ section.id }}" class="sk-display sk-rx-lenses__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.intro != blank -%}
+        <div class="sk-lede sk-rx-lenses__intro">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- for row in (1..3) -%}
+      {%- liquid
+        case row
+          when 1
+            assign row_blocks = vision_blocks
+            assign row_title = section.settings.vision_heading
+            assign row_text = section.settings.vision_text
+          when 2
+            assign row_blocks = material_blocks
+            assign row_title = section.settings.material_heading
+            assign row_text = section.settings.material_text
+          else
+            assign row_blocks = extra_blocks
+            assign row_title = section.settings.extra_heading
+            assign row_text = section.settings.extra_text
+        endcase
+      -%}
+      {%- if row_blocks.size > 0 -%}
+        <div class="sk-rx-lenses__row sk-reveal">
+          <div class="sk-rx-lenses__row-head">
+            <span class="sk-rx-lenses__row-no" aria-hidden="true">0{{ row }}</span>
+            {%- if row_title != blank -%}
+              <h3 class="sk-rx-lenses__row-title">{{ row_title | escape }}</h3>
+            {%- endif -%}
+            {%- if row_text != blank -%}
+              <p class="sk-rx-lenses__row-text">{{ row_text | escape }}</p>
+            {%- endif -%}
+          </div>
+          <ul class="sk-rx-lenses__cards sk-rx-lenses__cards--{{ row_blocks.size | at_most: 5 }}" role="list">
+            {%- for block in row_blocks -%}
+              <li class="sk-rx-lens{% if block.settings.highlight %} is-highlight{% endif %}" {{ block.shopify_attributes }}>
+                <div class="sk-rx-lens__top">
+                  <h4 class="sk-rx-lens__name">{{ block.settings.title | escape }}</h4>
+                  {%- if block.settings.price != blank -%}
+                    <span class="sk-rx-lens__price">{{ block.settings.price | escape }}</span>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.text != blank -%}
+                  <p class="sk-rx-lens__text">{{ block.settings.text | escape }}</p>
+                {%- endif -%}
+                {%- if block.settings.tag != blank -%}
+                  <span class="sk-rx-lens__tag">{{ block.settings.tag | escape }}</span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if section.settings.note_1 != blank or section.settings.note_2 != blank or section.settings.note_3 != blank -%}
+      <ul class="sk-rx-lenses__notes sk-reveal" role="list">
+        {%- for n in (1..3) -%}
+          {%- assign note_key = 'note_' | append: n -%}
+          {%- if section.settings[note_key] != blank -%}
+            <li>{{ section.settings[note_key] }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+      <div class="sk-rx-lenses__cta">
+        <a class="sk-link" href="{{ section.settings.button_link }}">{{ section.settings.button_label | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .sk-rx-lenses {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .sk-rx-lenses__inner {
+    max-width: 1500px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.25rem);
+  }
+
+  .sk-rx-lenses__head {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .sk-rx-lenses__heading {
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+  }
+
+  .sk-rx-lenses__intro {
+    max-width: 38rem;
+  }
+
+  .sk-rx-lenses__intro p {
+    margin: 0;
+  }
+
+  .sk-rx-lenses__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: clamp(1rem, 3vw, 3rem);
+    padding-block-start: clamp(1.5rem, 3vw, 2.25rem);
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / 0.25);
+  }
+
+  .sk-rx-lenses__row-head {
+    display: grid;
+    align-content: start;
+    gap: 0.4rem;
+  }
+
+  .sk-rx-lenses__row-no {
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: 1.25rem;
+    opacity: 0.8;
+  }
+
+  .sk-rx-lenses__row-title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .sk-rx-lenses__row-text {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  .sk-rx-lenses__cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--sk-cols, 4), minmax(0, 1fr));
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+  }
+
+  .sk-rx-lenses__cards--1 { --sk-cols: 1; }
+  .sk-rx-lenses__cards--2 { --sk-cols: 2; }
+  .sk-rx-lenses__cards--3 { --sk-cols: 3; }
+  .sk-rx-lenses__cards--5 { --sk-cols: 5; }
+
+  .sk-rx-lens {
+    display: grid;
+    align-content: start;
+    gap: 0.6rem;
+    padding: 1.25rem 1.25rem 1.4rem;
+    border-radius: 1.25rem;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.08);
+  }
+
+  .sk-rx-lens.is-highlight {
+    border-color: rgb(var(--color-foreground-rgb) / 0.45);
+  }
+
+  .sk-rx-lens__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 0.75rem;
+  }
+
+  .sk-rx-lens__name {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-size: 1.375rem;
+    line-height: 1.1;
+  }
+
+  .sk-rx-lens__price {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .sk-rx-lens__text {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  .sk-rx-lens__tag {
+    justify-self: start;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  .sk-rx-lenses__notes {
+    list-style: none;
+    margin: 0;
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    border-radius: 1.25rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.2);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem 2rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .sk-rx-lenses__notes p {
+    margin: 0;
+  }
+
+  .sk-rx-lenses__cta {
+    text-align: center;
+  }
+
+  @media (max-width: 989px) {
+    .sk-rx-lenses__row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sk-rx-lenses__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sk-rx-lenses__cards--1 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sk-rx-lenses__notes {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-rx-lenses__cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · RX lens guide",
+  "tag": "div",
+  "class": "sk-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading",
+      "default": "Step two"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build your <em>lenses</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro",
+      "default": "<p>Here is everything the lens builder will ask, and what it costs, so there are no surprises.</p>"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Link name for this section",
+      "default": "rx-lenses"
+    },
+    {
+      "type": "header",
+      "content": "Rows"
+    },
+    {
+      "type": "text",
+      "id": "vision_heading",
+      "label": "Row 1 heading (vision cards)",
+      "default": "Your vision"
+    },
+    {
+      "type": "text",
+      "id": "vision_text",
+      "label": "Row 1 text",
+      "default": "Pick the type that matches your prescription."
+    },
+    {
+      "type": "text",
+      "id": "material_heading",
+      "label": "Row 2 heading (material cards)",
+      "default": "Your lens material"
+    },
+    {
+      "type": "text",
+      "id": "material_text",
+      "label": "Row 2 text",
+      "default": "Single vision prices shown. Anti-reflective coating included."
+    },
+    {
+      "type": "text",
+      "id": "extra_heading",
+      "label": "Row 3 heading (finishing touch cards)",
+      "default": "Finishing touches"
+    },
+    {
+      "type": "text",
+      "id": "extra_text",
+      "label": "Row 3 text",
+      "default": "Added to the price of your lens material."
+    },
+    {
+      "type": "header",
+      "content": "Good to know"
+    },
+    {
+      "type": "richtext",
+      "id": "note_1",
+      "label": "Note 1"
+    },
+    {
+      "type": "richtext",
+      "id": "note_2",
+      "label": "Note 2"
+    },
+    {
+      "type": "richtext",
+      "id": "note_3",
+      "label": "Note 3"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "vision",
+      "name": "Vision type",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Name", "default": "Single vision" },
+        { "type": "text", "id": "price", "label": "Price", "default": "From $105" },
+        { "type": "textarea", "id": "text", "label": "Description" },
+        { "type": "text", "id": "tag", "label": "Small tag" },
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+      ]
+    },
+    {
+      "type": "material",
+      "name": "Lens material",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Name", "default": "CR39" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$105" },
+        { "type": "textarea", "id": "text", "label": "Description" },
+        { "type": "text", "id": "tag", "label": "Small tag" },
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+      ]
+    },
+    {
+      "type": "extra",
+      "name": "Finishing touch",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Name", "default": "Blue light filter" },
+        { "type": "text", "id": "price", "label": "Price", "default": "+$25" },
+        { "type": "textarea", "id": "text", "label": "Description" },
+        { "type": "text", "id": "tag", "label": "Small tag" },
+        { "type": "checkbox", "id": "highlight", "label": "Outline this card", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · RX lens guide"
+    }
+  ]
+}
+{% endschema %}

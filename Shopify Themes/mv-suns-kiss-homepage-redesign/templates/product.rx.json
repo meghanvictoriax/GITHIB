@@ -545,506 +545,6 @@
         "color_scheme": "scheme-sk-sand"
       }
     },
-    "section_Qt6iDz": {
-      "type": "section",
-      "blocks": {
-        "text_cEe9Wy": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h3>Lens Materials</h3>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "accordion_RGGb8B": {
-          "type": "accordion",
-          "name": "t:names.accordion",
-          "settings": {
-            "icon": "caret",
-            "dividers": true,
-            "type_preset": "h5",
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "accordion_row_NT3Gfw": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Cr39",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_KjLUwT": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Our most accessible option for everyday wear and clear vision.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_KjLUwT"
-              ]
-            },
-            "accordion_row_Re8wqr": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Polycarbonate",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_6cnxWc": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Strong, lightweight, shatter resistant. Most durable.</p><p></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_6cnxWc"
-              ]
-            },
-            "accordion_row_nEgeFB": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Trivex",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_pYqxVq": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Crisp optics, feather light comfort. Premium everyday.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_pYqxVq"
-              ]
-            },
-            "accordion_row_GTakQw": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "High Index 1.67",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_UUfmrf": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Ultra thin for strong prescriptions. Sleekest fit.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_UUfmrf"
-              ]
-            }
-          },
-          "block_order": [
-            "accordion_row_NT3Gfw",
-            "accordion_row_Re8wqr",
-            "accordion_row_nEgeFB",
-            "accordion_row_GTakQw"
-          ]
-        }
-      },
-      "block_order": [
-        "text_cEe9Wy",
-        "accordion_RGGb8B"
-      ],
-      "name": "t:names.faq_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
-    "section_EmbaBx": {
-      "type": "section",
-      "blocks": {
-        "text_BPAyp3": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h3>Lens Enhancements</h3>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "accordion_VjErE3": {
-          "type": "accordion",
-          "name": "t:names.accordion",
-          "settings": {
-            "icon": "caret",
-            "dividers": true,
-            "type_preset": "h5",
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "accordion_row_QXhgft": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Blue Light Filter",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_YzBRYX": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Helps reduce digital eye strain from screens and long work days. Clear comfort for everyday wear. Add to any custom/rx lens. </p><p></p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_YzBRYX"
-              ]
-            },
-            "accordion_row_WbR8Xx": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Polarized Lens",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_exMqWf": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Blocks harsh glare from sunlight, water, and roads making vision sharper, and colours appear more vibrant.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_exMqWf"
-              ]
-            },
-            "accordion_row_tBK8iY": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Transitions",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_DhKpzX": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<h3></h3><p>Photochromatic Light-Adaptive lenses that automatically shift from clear indoors to tinted outdoors. One pair that does it all in 8 stunning shades. UV & Blue Block included.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_DhKpzX"
-              ]
-            },
-            "accordion_row_UC9RNa": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Anti Reflective Coating",
-                "open_by_default": false,
-                "icon": "eye",
-                "width": 20
-              },
-              "blocks": {
-                "text_AxMNqW": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>The difference between ‘just glasses’ and a luxury optical experience.\" For crisper vision, less eye strain, superior lens durability and protection, a 1 year warranty and much clearer brighter you!</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_AxMNqW"
-              ]
-            }
-          },
-          "block_order": [
-            "accordion_row_QXhgft",
-            "accordion_row_WbR8Xx",
-            "accordion_row_tBK8iY",
-            "accordion_row_UC9RNa"
-          ]
-        }
-      },
-      "block_order": [
-        "text_BPAyp3",
-        "accordion_VjErE3"
-      ],
-      "name": "t:names.faq_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "section_JmpALj": {
       "type": "section",
       "blocks": {
@@ -1323,12 +823,166 @@
         "padding-block-end": 32,
         "gap": 12
       }
+    },
+    "sk_rx_lenses": {
+      "type": "sk-rx-lenses",
+      "blocks": {
+        "v1": {
+          "type": "vision",
+          "settings": {
+            "title": "Single vision",
+            "price": "From $105",
+            "text": "One prescription across the whole lens – clear, sharp vision for distance or reading.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "v2": {
+          "type": "vision",
+          "settings": {
+            "title": "Progressive",
+            "price": "From $185",
+            "text": "Near and far in one lens, with a smooth change in between.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "v3": {
+          "type": "vision",
+          "settings": {
+            "title": "Non-prescription",
+            "price": "From $85",
+            "text": "Style and protection with no vision correction – blue light or a custom tint.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m1": {
+          "type": "material",
+          "settings": {
+            "title": "CR39",
+            "price": "$105",
+            "text": "Our most accessible option for everyday wear and clear vision.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m2": {
+          "type": "material",
+          "settings": {
+            "title": "Polycarbonate",
+            "price": "$145",
+            "text": "Strong, lightweight, shatter resistant. Most durable.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m3": {
+          "type": "material",
+          "settings": {
+            "title": "Trivex",
+            "price": "$155",
+            "text": "Crisp optics, feather light comfort. Premium everyday.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "m4": {
+          "type": "material",
+          "settings": {
+            "title": "High Index 1.67",
+            "price": "$185",
+            "text": "Ultra thin for strong prescriptions. Sleekest fit.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e0": {
+          "type": "extra",
+          "settings": {
+            "title": "AR coating",
+            "price": "Included",
+            "text": "Anti-reflective: crisper vision, less glare and eye strain, tougher lenses. On every lens.",
+            "tag": "",
+            "highlight": true
+          }
+        },
+        "e1": {
+          "type": "extra",
+          "settings": {
+            "title": "Blue light filter",
+            "price": "+$25",
+            "text": "Helps reduce digital eye strain from screens and long work days.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e2": {
+          "type": "extra",
+          "settings": {
+            "title": "Sun tint",
+            "price": "+$25",
+            "text": "Fashion and sun tints in a range of colours, with full UV400 protection.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e3": {
+          "type": "extra",
+          "settings": {
+            "title": "Polarized",
+            "price": "+$120",
+            "text": "Blocks harsh glare from sun, water and roads, so colours look sharper and more vibrant.",
+            "tag": "",
+            "highlight": false
+          }
+        },
+        "e4": {
+          "type": "extra",
+          "settings": {
+            "title": "Transitions",
+            "price": "+$220",
+            "text": "Clear indoors, tinted outdoors, in 8 shades. CR39 and Polycarbonate.",
+            "tag": "",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "e0",
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Step two",
+        "heading": "Build your <em>lenses</em>",
+        "intro": "<p>Here is everything the lens builder will ask, and what it costs, so there are no surprises.</p>",
+        "anchor": "rx-lenses",
+        "vision_heading": "Your vision",
+        "vision_text": "Pick the type that matches your prescription.",
+        "material_heading": "Your lens material",
+        "material_text": "Single vision prices shown. Progressive starts at $185.",
+        "extra_heading": "Finishing touches",
+        "extra_text": "Added to the price of your lens.",
+        "note_1": "<p><strong>Have your prescription ready.</strong> Upload a photo, type it in, or email it after you order. Your PD (pupillary distance) is needed.</p>",
+        "note_2": "<p><strong>Made for you.</strong> Ready to ship in 3–4 business days once your prescription is checked. Complex prescriptions can take up to three weeks.</p>",
+        "note_3": "<p><strong>All prescription orders are final sale.</strong> If something is wrong when it arrives, email customer@solkyst.ca.</p>",
+        "color_scheme": "scheme-sk-linen"
+      }
     }
   },
   "order": [
     "main",
-    "section_Qt6iDz",
-    "section_EmbaBx",
+    "sk_rx_lenses",
     "sk_product_fit",
     "sk_reviews",
     "section_JmpALj"
