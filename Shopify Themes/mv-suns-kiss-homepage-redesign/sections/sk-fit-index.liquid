@@ -1,0 +1,444 @@
+{% comment %}
+  Section contract.
+  The Fit Index: a field guide to frame fit. Frame widths are drawn to true scale
+  against a millimetre ruler, a diagram explains how to read a frame's measurements
+  (overall width | lens – bridge – arm), and numbered notes list the technical details.
+  Every word, number and link is a setting or block setting.
+  @example
+  <!-- Add "SK · The Fit Index", then add Width and Detail blocks -->
+{% endcomment %}
+
+{% render 'sk-styles' %}
+{% render 'sk-fit-styles' %}
+
+{%- liquid
+  assign scale_max = section.settings.scale_max
+  assign width_blocks = section.blocks | where: 'type', 'width'
+  assign spec_blocks = section.blocks | where: 'type', 'spec'
+  assign anchor = section.settings.anchor | handleize | default: section.id
+-%}
+
+<section
+  id="{{ anchor }}"
+  class="sk sk-fit sk-fit--{{ section.settings.layout }}{% unless section.settings.show_mm %} sk-fit--broad{% endunless %} color-{{ section.settings.color_scheme }}"
+  aria-labelledby="SkFitHeading-{{ section.id }}"
+>
+  <div class="sk-fit__inner">
+    <header class="sk-fit__head sk-reveal">
+      <div class="sk-fit__title">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        <h2 id="SkFitHeading-{{ section.id }}" class="sk-display sk-fit__heading">
+          {{- section.settings.heading -}}
+        </h2>
+      </div>
+      {%- if section.settings.intro != blank -%}
+        <div class="sk-lede sk-fit__intro">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- if width_blocks.size > 0 -%}
+      <ol class="sk-fit__widths" role="list">
+        {%- for block in width_blocks -%}
+          {%- liquid
+            assign pct = block.settings.mm | times: 100.0 | divided_by: scale_max
+            if pct > 100
+              assign pct = 100
+            endif
+          -%}
+          {%- liquid
+            assign is_here = false
+            if collection != blank and block.settings.link != blank and block.settings.link == collection.url
+              assign is_here = true
+            endif
+          -%}
+          <li class="sk-fit__row sk-reveal{% if is_here %} is-here{% endif %}" {{ block.shopify_attributes }}>
+            {%- if is_here and section.settings.here_label != blank -%}
+              <span class="sk-fit__here">{{ section.settings.here_label | escape }}</span>
+            {%- endif -%}
+            <span class="sk-fit__no" aria-hidden="true">No. {{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <h3 class="sk-fit__name">{{ block.settings.name | escape }}</h3>
+{%- if section.settings.show_mm -%}
+            <span class="sk-fit__mm">
+              <span class="sk-fit__mm-num">{{ block.settings.mm }}</span>
+              <span class="sk-fit__mm-unit">{{ section.settings.unit_label | escape }}</span>
+            </span>
+            {%- endif -%}
+            <div
+              class="sk-fit__ruler"
+              style="--sk-ticks: {{ scale_max | divided_by: 10.0 }}; --sk-fill: {{ pct | round: 2 }}%;"
+              role="img"
+              aria-label="{{ block.settings.name | escape }}{% if section.settings.show_mm %}: {{ block.settings.mm }} {{ section.settings.unit_label | escape }}{% endif %}"
+            >
+              <span class="sk-fit__bar"></span>
+            </div>
+            <div class="sk-fit__desc">
+              {%- if block.settings.text != blank -%}
+                <div class="sk-fit__text">{{ block.settings.text }}</div>
+              {%- endif -%}
+              {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+                <a class="sk-link" href="{{ block.settings.link }}">{{ block.settings.link_label | escape }}</a>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+      {%- if section.settings.scale_note != blank -%}
+        <p class="sk-fit__scale-note">{{ section.settings.scale_note | escape }}</p>
+      {%- endif -%}
+    {%- endif -%}
+
+    <div class="sk-fit__lower">
+      {%- if section.settings.show_anatomy -%}
+        <figure class="sk-fit__anatomy sk-reveal">
+          <figcaption class="sk-fit__sub">
+            {%- if section.settings.anatomy_heading != blank -%}
+              <h3 class="sk-fit__subheading">{{ section.settings.anatomy_heading | escape }}</h3>
+            {%- endif -%}
+            {%- if section.settings.anatomy_text != blank -%}
+              <div class="sk-fit__text">{{ section.settings.anatomy_text }}</div>
+            {%- endif -%}
+          </figcaption>
+
+          {% render 'sk-frame-diagram' %}
+
+          <dl class="sk-fit__legend">
+            <div>
+              <dt><span aria-hidden="true">A · </span>{{ section.settings.overall_label | escape }}</dt>
+              <dd>{{ section.settings.overall | escape }}</dd>
+            </div>
+            <div>
+              <dt><span aria-hidden="true">B · </span>{{ section.settings.lens_label | escape }}</dt>
+              <dd>{{ section.settings.lens | escape }}</dd>
+            </div>
+            <div>
+              <dt><span aria-hidden="true">C · </span>{{ section.settings.bridge_label | escape }}</dt>
+              <dd>{{ section.settings.bridge | escape }}</dd>
+            </div>
+            <div>
+              <dt><span aria-hidden="true">D · </span>{{ section.settings.arm_label | escape }}</dt>
+              <dd>{{ section.settings.arm | escape }}</dd>
+            </div>
+          </dl>
+          {%- if section.settings.anatomy_caption != blank -%}
+            <p class="sk-fit__caption">{{ section.settings.anatomy_caption | escape }}</p>
+          {%- endif -%}
+        </figure>
+      {%- endif -%}
+
+      {%- if spec_blocks.size > 0 -%}
+        <div class="sk-fit__specs sk-reveal">
+          {%- if section.settings.specs_heading != blank -%}
+            <h3 class="sk-fit__subheading">{{ section.settings.specs_heading | escape }}</h3>
+          {%- endif -%}
+          <ol class="sk-fit__spec-list" role="list">
+            {%- for block in spec_blocks -%}
+              <li class="sk-fit__spec" {{ block.shopify_attributes }}>
+                <span class="sk-fit__spec-no" aria-hidden="true">
+                  {{- forloop.index | prepend: '0' | slice: -2, 2 -}}
+                </span>
+                <span class="sk-fit__spec-body">
+                  <span class="sk-fit__spec-title">{{ block.settings.title | escape }}</span>
+                  {%- if block.settings.text != blank -%}
+                    <span class="sk-fit__spec-text">{{ block.settings.text | escape }}</span>
+                  {%- endif -%}
+                </span>
+              </li>
+            {%- endfor -%}
+          </ol>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SK · The Fit Index",
+  "tag": "div",
+  "class": "sk-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading",
+      "default": "A field guide to fit"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The <em>Fit</em> Index"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>We have different bodies, we also have different faces. Three distinct sizes of frames, engineered to your proportions &amp; facial harmony.</p>"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Link name for this section",
+      "info": "Link to this section from anywhere with #this-name",
+      "default": "fit-index"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "index", "label": "Full field guide" },
+        { "value": "cards", "label": "Compact cards" }
+      ],
+      "default": "index"
+    },
+    {
+      "type": "text",
+      "id": "here_label",
+      "label": "Label on the fit that matches the current collection",
+      "default": "You're here"
+    },
+    {
+      "type": "header",
+      "content": "Ruler"
+    },
+    {
+      "type": "range",
+      "id": "scale_max",
+      "label": "Ruler length",
+      "info": "Every frame width is drawn to scale against this length.",
+      "min": 150,
+      "max": 200,
+      "step": 5,
+      "unit": "mm",
+      "default": 170
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mm",
+      "label": "Show measurements",
+      "info": "Turn off to show only the relative width bars.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "unit_label",
+      "label": "Unit",
+      "default": "mm"
+    },
+    {
+      "type": "text",
+      "id": "scale_note",
+      "label": "Note under the ruler",
+      "default": "Overall frame width, drawn to scale."
+    },
+    {
+      "type": "header",
+      "content": "How to read a frame"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_anatomy",
+      "label": "Show frame diagram",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "anatomy_heading",
+      "label": "Heading",
+      "default": "How to read a frame"
+    },
+    {
+      "type": "richtext",
+      "id": "anatomy_text",
+      "label": "Text",
+      "default": "<p>Every Sol Kyst frame lists its size as overall width | lens – nose bridge – arm.</p>"
+    },
+    {
+      "type": "text",
+      "id": "overall_label",
+      "label": "A · label",
+      "default": "Overall width"
+    },
+    {
+      "type": "text",
+      "id": "overall",
+      "label": "A · value",
+      "default": "158mm"
+    },
+    {
+      "type": "text",
+      "id": "lens_label",
+      "label": "B · label",
+      "default": "Lens"
+    },
+    {
+      "type": "text",
+      "id": "lens",
+      "label": "B · value",
+      "default": "67"
+    },
+    {
+      "type": "text",
+      "id": "bridge_label",
+      "label": "C · label",
+      "default": "Nose bridge"
+    },
+    {
+      "type": "text",
+      "id": "bridge",
+      "label": "C · value",
+      "default": "19"
+    },
+    {
+      "type": "text",
+      "id": "arm_label",
+      "label": "D · label",
+      "default": "Arm"
+    },
+    {
+      "type": "text",
+      "id": "arm",
+      "label": "D · value",
+      "default": "145"
+    },
+    {
+      "type": "text",
+      "id": "anatomy_caption",
+      "label": "Caption",
+      "default": "Shown: AURA, Wide — 158mm | 67-19-145"
+    },
+    {
+      "type": "header",
+      "content": "Details list"
+    },
+    {
+      "type": "text",
+      "id": "specs_heading",
+      "label": "Heading",
+      "default": "The technical stuff"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "width",
+      "name": "Width",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Wide"
+        },
+        {
+          "type": "range",
+          "id": "mm",
+          "label": "Overall frame width",
+          "min": 120,
+          "max": 200,
+          "step": 1,
+          "unit": "mm",
+          "default": 158
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Who it's for"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link text",
+          "default": "Shop this fit"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "spec",
+      "name": "Detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Detail",
+          "default": "UV 400 protection"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Note"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · The Fit Index",
+      "blocks": [
+        {
+          "type": "width",
+          "settings": {
+            "name": "Standard",
+            "mm": 135
+          }
+        },
+        {
+          "type": "width",
+          "settings": {
+            "name": "Soft Wide",
+            "mm": 145
+          }
+        },
+        {
+          "type": "width",
+          "settings": {
+            "name": "Wide",
+            "mm": 158
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "title": "UV 400 protection"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "title": "Polarized nylon lenses"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "title": "Acetate framework"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "title": "Scratch resistant coating"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+{%- doc -%}
+  Line drawing of a Kyst Eye frame with dimension lines marked A (overall width),
+  B (lens), C (nose bridge) and D (arm). Decorative; pair it with a text legend.
+
+  @example
+  {% render 'sk-frame-diagram' %}
+{%- enddoc -%}
+
+<svg
+  class="sk-fit__diagram"
+  viewBox="0 0 640 300"
+  aria-hidden="true"
+  focusable="false"
+>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 30 64 C 70 60 200 70 262 82 C 290 88 294 104 290 124 C 286 170 282 212 232 214 C 180 216 130 216 100 210 C 60 202 50 160 44 112 C 40 86 34 72 30 64 Z" />
+    <path d="M 610 64 C 570 60 440 70 378 82 C 350 88 346 104 350 124 C 354 170 358 212 408 214 C 460 216 510 216 540 210 C 580 202 590 160 596 112 C 600 86 606 72 610 64 Z" />
+    <path d="M290 106 Q320 90 350 106" />
+    <path d="M30 64 L18 60 M610 64 L622 60" />
+  </g>
+  <g class="sk-fit__dims" fill="none" stroke="currentColor" stroke-width="1.25">
+    <path d="M18 38 H622 M18 30 V46 M622 30 V46" />
+    <path d="M30 246 H290 M30 238 V254 M290 238 V254" />
+    <path d="M290 132 H350 M290 124 V140 M350 124 V140" />
+    <path d="M60 284 H560 Q590 284 600 270 M60 276 V292" />
+  </g>
+  <g class="sk-fit__keys" fill="currentColor" text-anchor="middle">
+    <text x="320" y="24">A</text>
+    <text x="160" y="240">B</text>
+    <text x="320" y="160">C</text>
+    <text x="310" y="276">D</text>
+  </g>
+</svg>

@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "header_announcements_xEgLjz": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_pGHY8L": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Free Shipping - Tariff and Duty FREE Shipping on Eyewear for North America over $150",
+            "link": "shopify://collections/shop-wide-face-babe",
+            "font": "var(--font-accent--family)",
+            "font_size": "",
+            "weight": "700",
+            "letter_spacing": "loose",
+            "case": "uppercase"
+          },
+          "blocks": {}
+        },
+        "announcement_Tzbk9A": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "Viral & Best Seller : Shop the frame that started it all.",
+            "link": "shopify://products/mvp",
+            "font": "var(--font-accent--family)",
+            "font_size": "",
+            "weight": "700",
+            "letter_spacing": "loose",
+            "case": "uppercase"
+          },
+          "blocks": {}
+        },
+        "announcement_gzfH6d": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "NEW Prescription Eyewear Frames & Lenses",
+            "link": "shopify://pages/brand-story",
+            "font": "var(--font-accent--family)",
+            "font_size": "",
+            "weight": "700",
+            "letter_spacing": "loose",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_pGHY8L",
+        "announcement_Tzbk9A",
+        "announcement_gzfH6d"
+      ],
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 4,
+        "section_width": "page-width",
+        "color_scheme": "scheme-4",
+        "divider_width": 0,
+        "padding-block-start": 6,
+        "padding-block-end": 6
+      }
+    },
+    "header_section": {
+      "type": "header",
+      "blocks": {
+        "header-logo": {
+          "type": "_header-logo",
+          "static": true,
+          "settings": {
+            "hide_logo_on_home_page": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "header-menu": {
+          "type": "_header-menu",
+          "static": true,
+          "settings": {
+            "menu": "main-menu",
+            "color_scheme": "scheme-5",
+            "type_font_primary_size": "0.75rem",
+            "menu_font_style": "inverse",
+            "type_font_primary_link": "body",
+            "type_case_primary_link": "uppercase",
+            "menu_style": "featured_products",
+            "featured_products_aspect_ratio": "4 / 5",
+            "featured_collections_aspect_ratio": "16 / 9",
+            "image_border_radius": 7,
+            "navigation_bar": false,
+            "color_scheme_navigation_bar": "scheme-1",
+            "drawer_accordion": true,
+            "drawer_accordion_expand_first": true,
+            "drawer_dividers": true
+          },
+          "blocks": {}
+        }
+      },
+      "settings": {
+        "logo_position": "center",
+        "menu_position": "center",
+        "menu_row": "bottom",
+        "show_search": true,
+        "search_position": "right",
+        "search_row": "top",
+        "show_country": true,
+        "country_selector_style": true,
+        "show_language": true,
+        "localization_font": "body",
+        "localization_font_size": "0.875rem",
+        "localization_position": "right",
+        "localization_row": "top",
+        "section_width": "page-width",
+        "section_height": "compact",
+        "enable_sticky_header": "always",
+        "divider_width": 0,
+        "divider_size": "page-width",
+        "border_width": 0,
+        "color_scheme_top": "scheme-5",
+        "color_scheme_bottom": "scheme-1",
+        "color_scheme_transparent": "scheme-1",
+        "enable_transparent_header_home": false,
+        "home_color_scheme": "default",
+        "enable_transparent_header_product": false,
+        "product_color_scheme": "inverse",
+        "enable_transparent_header_collection": true,
+        "collection_color_scheme": "default"
+      }
+    },
+    "header_announcements_tpYNiV": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_RLYTmr": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Introducing Our Breast Cancer Collection: Eyewear with a Purpose",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "1.5rem",
+            "weight": "400",
+            "letter_spacing": "tight",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_RLYTmr"
+      ],
+      "disabled": true,
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "divider_width": 0,
+        "padding-block-start": 15,
+        "padding-block-end": 15
+      }
+    }
+  },
+  "order": [
+    "header_announcements_xEgLjz",
+    "header_section",
+    "header_announcements_tpYNiV"
+  ]
+}

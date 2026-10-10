@@ -1,0 +1,23 @@
+{%- doc -%}
+  Renders a product's starting price for SOL KYST editorial cards, using the
+  theme's "From" wording when variants have different prices.
+
+  @param {object} product - The product to price
+
+  @example
+  {% render 'sk-price', product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  if settings.currency_code_enabled_product_cards
+    assign sk_price_min = product.price_min | money_with_currency
+  else
+    assign sk_price_min = product.price_min | money
+  endif
+
+  if product.price_varies
+    echo 'content.price_from' | t: price: sk_price_min
+  else
+    echo sk_price_min
+  endif
+-%}

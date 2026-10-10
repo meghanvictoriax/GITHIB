@@ -1,0 +1,33 @@
+{%- doc -%}
+  Outputs a product's shape name: the name of its colour family (Theme settings >
+  Colour families) when it belongs to one, otherwise its product type.
+
+  @param {object} product - The product
+
+  @example
+  {% render 'sk-shape-name', product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign sk_shape = product.type
+  for i in (1..10)
+    assign list_key = 'sk_family_' | append: i | append: '_products'
+    assign name_key = 'sk_family_' | append: i | append: '_name'
+    assign list = settings[list_key]
+    if list == blank or settings[name_key] == blank
+      continue
+    endif
+    assign sk_found = false
+    for item in list
+      if item.id == product.id
+        assign sk_found = true
+        break
+      endif
+    endfor
+    if sk_found
+      assign sk_shape = settings[name_key]
+      break
+    endif
+  endfor
+  echo sk_shape | escape
+-%}

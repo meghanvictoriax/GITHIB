@@ -1,0 +1,479 @@
+{%- doc -%}
+  Shared styles for the Fit Index layout (frame widths to scale, frame diagram,
+  legend and numbered details). Rendered by sk-fit-index and sk-product-fit.
+
+  @example
+  {% render 'sk-fit-styles' %}
+{%- enddoc -%}
+
+{% stylesheet %}
+  .sk-fit {
+    padding-block: clamp(4rem, 9vw, 9rem);
+    scroll-margin-block-start: var(--header-height, 0px);
+  }
+
+  .sk-fit__inner {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  .sk-fit__head {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1.5rem clamp(1rem, 2vw, 2rem);
+    align-items: end;
+    padding-block-end: clamp(2.5rem, 5vw, 4.5rem);
+    border-block-end: 1px solid currentColor;
+  }
+
+  .sk-fit__title {
+    grid-column: 1 / span 7;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .sk-fit__heading {
+    font-size: clamp(3.25rem, 7.5vw, 8rem);
+  }
+
+  .sk-fit__intro {
+    grid-column: 9 / span 4;
+  }
+
+  .sk-fit__widths {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sk-fit__row {
+    display: grid;
+    grid-template-columns: 5rem minmax(8rem, 1.1fr) minmax(0, 3fr) 9rem minmax(14rem, 1.4fr);
+    grid-template-areas: 'no name ruler mm desc';
+    align-items: center;
+    gap: 1.5rem clamp(1rem, 2vw, 2.5rem);
+    padding-block: clamp(1.75rem, 3vw, 2.75rem);
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / 0.25);
+  }
+
+  .sk-fit__no {
+    grid-area: no;
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: 1.25rem;
+  }
+
+  .sk-fit__name {
+    grid-area: name;
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: clamp(1.75rem, 2.6vw, 2.75rem);
+    line-height: 1;
+    color: var(--color-foreground-heading);
+  }
+
+  .sk-fit__mm {
+    grid-area: mm;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  .sk-fit__mm-num {
+    font-family: var(--font-heading--family);
+    font-size: clamp(2.5rem, 4.4vw, 4.75rem);
+    line-height: 0.9;
+    color: var(--color-primary);
+  }
+
+  .sk-fit__mm-unit {
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .sk-fit__ruler {
+    grid-area: ruler;
+    position: relative;
+    height: 2.25rem;
+    background-image: repeating-linear-gradient(
+      to right,
+      currentColor 0 1px,
+      transparent 1px calc(100% / var(--sk-ticks))
+    );
+    background-size: 100% 0.6rem;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    border-block-end: 1px solid currentColor;
+  }
+
+  .sk-fit__bar {
+    position: absolute;
+    inset-block: 0.35rem 0.95rem;
+    inset-inline-start: 0;
+    width: var(--sk-fill);
+    background: var(--color-primary);
+    border-radius: 999px;
+    transform-origin: left center;
+  }
+
+  .sk-fit__bar::after {
+    content: '';
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block: -0.35rem -0.95rem;
+    width: 2px;
+    background: var(--color-primary);
+  }
+
+  .sk-fit__desc {
+    grid-area: desc;
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+  }
+
+  .sk-fit__text {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .sk-fit__text p {
+    margin: 0;
+  }
+
+  .sk-fit__scale-note {
+    margin: 1rem 0 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+  }
+
+  .sk-fit__lower {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 3rem clamp(1rem, 2vw, 2rem);
+    padding-block-start: clamp(4rem, 8vw, 7rem);
+  }
+
+  .sk-fit__anatomy {
+    grid-column: 1 / span 7;
+    margin: 0;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .sk-fit__sub {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 34rem;
+  }
+
+  .sk-fit__subheading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: clamp(1.75rem, 2.8vw, 2.75rem);
+    line-height: 1.05;
+    color: var(--color-foreground-heading);
+  }
+
+  .sk-fit__diagram {
+    width: 100%;
+    height: auto;
+    color: var(--color-foreground);
+    overflow: visible;
+  }
+
+  .sk-fit__dims {
+    color: var(--color-primary);
+  }
+
+  .sk-fit__dims path {
+    stroke: var(--color-primary);
+  }
+
+  .sk-fit__keys {
+    font-family: var(--font-body--family);
+    font-size: 15px;
+    font-weight: 600;
+    fill: var(--color-primary);
+  }
+
+  .sk-fit__legend {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .sk-fit__legend > div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.35rem;
+    padding-block-start: 0.75rem;
+    border-block-start: 1px solid currentColor;
+    min-width: 0;
+  }
+
+  .sk-fit__legend dt {
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .sk-fit__legend dd {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-size: clamp(2rem, 3.4vw, 3.5rem);
+    line-height: 1;
+    font-variant-numeric: lining-nums;
+  }
+
+  .sk-fit__caption {
+    margin: 0;
+    font-size: 0.8125rem;
+    opacity: 0.85;
+  }
+
+  .sk-fit__specs {
+    grid-column: 9 / span 4;
+    display: grid;
+    align-content: start;
+    gap: 1.5rem;
+  }
+
+  .sk-fit__spec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sk-fit__spec {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: 1rem;
+    padding-block: 1.1rem;
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / 0.25);
+  }
+
+  .sk-fit__spec:last-child {
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / 0.25);
+  }
+
+  .sk-fit__spec-no {
+    font-family: var(--font-heading--family);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--color-foreground);
+  }
+
+  .sk-fit__spec-body {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .sk-fit__spec-title {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .sk-fit__spec-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .sk-fit__bar {
+        animation: sk-fit-draw linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 90%;
+      }
+    }
+  }
+
+  @keyframes sk-fit-draw {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (max-width: 989px) {
+    .sk-fit__title,
+    .sk-fit__intro,
+    .sk-fit__anatomy,
+    .sk-fit__specs {
+      grid-column: 1 / -1;
+    }
+
+    .sk-fit__row {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        'no no no'
+        'name name mm'
+        'ruler ruler ruler'
+        'desc desc desc';
+      gap: 0.75rem 1rem;
+    }
+
+    .sk-fit__name {
+      align-self: end;
+    }
+
+    .sk-fit__desc {
+      padding-block-start: 0.5rem;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .sk-fit__heading {
+      font-size: clamp(3rem, 14vw, 4.5rem);
+    }
+
+    .sk-fit__legend {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 1rem;
+    }
+
+    .sk-fit__keys {
+      font-size: 22px;
+    }
+  }
+
+  /* Compact cards: three fits side by side, built to lead into the products. */
+  .sk-fit--cards {
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .sk-fit--cards .sk-fit__head {
+    padding-block-end: 1.5rem;
+    border-block-end: 0;
+  }
+
+  .sk-fit--cards .sk-fit__heading {
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+  }
+
+  .sk-fit--cards .sk-fit__widths {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .sk-fit--cards .sk-fit__row {
+    position: relative;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'no no no'
+      'name name mm'
+      'ruler ruler ruler'
+      'desc desc desc';
+    align-content: start;
+    gap: 0.6rem 1rem;
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+    border-radius: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .sk-fit--cards .sk-fit__row:hover {
+    border-color: rgb(var(--color-foreground-rgb) / 0.35);
+  }
+
+  .sk-fit--cards .sk-fit__row.is-here {
+    border: 1.5px solid var(--color-foreground);
+  }
+
+  .sk-fit__here {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-background);
+    background: var(--color-foreground);
+  }
+
+  .sk-fit--cards .sk-fit__name {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  }
+
+  .sk-fit--cards .sk-fit__mm-num {
+    font-size: clamp(2.25rem, 3.2vw, 3.25rem);
+  }
+
+  .sk-fit--cards .sk-fit__ruler {
+    height: 1.75rem;
+  }
+
+  .sk-fit--cards .sk-fit__desc {
+    padding-block-start: 0.25rem;
+    gap: 0.9rem;
+  }
+
+  .sk-fit--cards .sk-fit__text {
+    font-size: 0.875rem;
+  }
+
+  .sk-fit--cards .sk-fit__scale-note {
+    margin-block-start: 0.75rem;
+  }
+
+  /* Phone: swipeable cards so the products stay close. */
+  @media (max-width: 749px) {
+    .sk-fit--cards .sk-fit__widths {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      margin-inline: calc(var(--sk-gutter) * -1);
+      padding-inline: var(--sk-gutter);
+      scroll-padding-inline: var(--sk-gutter);
+    }
+
+    .sk-fit--cards .sk-fit__widths::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sk-fit--cards .sk-fit__row {
+      flex: 0 0 82%;
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Broad version: relative width bars only, no ruler ticks or numbers. */
+  .sk-fit--broad .sk-fit__ruler {
+    background-image: none;
+    border-block-end: 0;
+    height: 0.75rem;
+  }
+
+  .sk-fit--broad .sk-fit__bar {
+    inset-block: 0;
+  }
+
+  .sk-fit--broad .sk-fit__bar::after {
+    display: none;
+  }
+
+  .sk-fit--broad .sk-fit__row {
+    grid-template-areas:
+      'no no no'
+      'name name name'
+      'ruler ruler ruler'
+      'desc desc desc';
+  }
+{% endstylesheet %}

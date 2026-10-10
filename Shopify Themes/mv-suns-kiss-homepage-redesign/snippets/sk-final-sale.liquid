@@ -1,0 +1,35 @@
+{%- doc -%}
+  Outputs "final" when a variant is a final sale size: the product is in
+  Theme settings > Final sale sizes > Products, and one of the variant's option
+  values starts with one of the listed sizes (for example "Mini" or "Petite").
+
+  @param {object} product - The product
+  @param {object} variant - The variant to check
+
+  @example
+  {% capture is_final %}{% render 'sk-final-sale', product: product, variant: variant %}{% endcapture %}
+{%- enddoc -%}
+
+{%- liquid
+  assign sk_listed = false
+  for item in settings.sk_final_sale_products
+    if item.id == product.id
+      assign sk_listed = true
+      break
+    endif
+  endfor
+
+  if sk_listed
+    assign sk_sizes = settings.sk_final_sale_sizes | downcase | split: ','
+    for value in variant.options
+      assign sk_first = value | downcase | strip | split: ' ' | first
+      for size in sk_sizes
+        assign sk_size = size | strip
+        if sk_size != blank and sk_first == sk_size
+          echo 'final'
+          break
+        endif
+      endfor
+    endfor
+  endif
+-%}

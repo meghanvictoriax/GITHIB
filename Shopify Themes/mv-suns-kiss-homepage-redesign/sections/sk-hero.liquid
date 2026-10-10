@@ -1,0 +1,506 @@
+{% comment %}
+  Section contract.
+  Editorial first screen: oversized headline, one featured product as the hero,
+  a short promise, and up to two calls to action. Product photos come from the
+  chosen product's own media, picked by position, or from an optional image override.
+  @example
+  <!-- Add "SK · Editorial hero" to a template and choose a product -->
+{% endcomment %}
+
+{% render 'sk-styles' %}
+
+{% liquid
+  assign product = section.settings.product
+  assign is_first = false
+  if section.index == 1
+    assign is_first = true
+  endif
+
+  assign hero_image = section.settings.image
+  if hero_image == blank and product != blank
+    assign photo_index = section.settings.photo | minus: 1
+    assign hero_media = product.media[photo_index] | default: product.featured_media
+    assign hero_image = hero_media.preview_image
+  endif
+
+  if is_first
+    assign loading = 'eager'
+    assign priority = 'high'
+  else
+    assign loading = 'lazy'
+    assign priority = 'auto'
+  endif
+
+  assign detail_image = blank
+  if product != blank and section.settings.detail_photo > 0
+    assign detail_index = section.settings.detail_photo | minus: 1
+    assign detail_media = product.media[detail_index]
+    assign detail_image = detail_media.preview_image
+  endif
+%}
+
+<section
+  class="sk sk-hero color-{{ section.settings.color_scheme }}"
+  aria-labelledby="SkHeroHeading-{{ section.id }}"
+>
+  <div class="sk-hero__grid">
+    <div class="sk-hero__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sk-eyebrow sk-hero__eyebrow sk-hero__in" style="--sk-delay: 0ms;">
+          {{- section.settings.eyebrow | escape -}}
+        </p>
+      {%- endif -%}
+
+      <h1
+        id="SkHeroHeading-{{ section.id }}"
+        class="sk-display sk-hero__heading sk-hero__in"
+        style="--sk-delay: 80ms;"
+      >
+        {{- section.settings.heading -}}
+      </h1>
+
+      <div class="sk-hero__foot sk-hero__in" style="--sk-delay: 240ms;">
+        {%- if section.settings.subheading != blank -%}
+          <p class="sk-lede sk-hero__sub">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+
+        <div class="sk-hero__actions">
+          {%- if section.settings.button_label != blank -%}
+            <a
+              class="sk-button"
+              {% if section.settings.button_link != blank %}
+                href="{{ section.settings.button_link }}"
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+            >
+              {{- section.settings.button_label | escape -}}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.link_label != blank and section.settings.link != blank -%}
+            <a class="sk-link" href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-hero__visual">
+      {%- if hero_image != blank -%}
+        <a
+          class="sk-media sk-media--zoom sk-hero__photo sk-shape--{{ section.settings.image_shape }}"
+          {% if product != blank %}
+            href="{{ product.url }}"
+          {% endif %}
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          {%- liquid
+            assign alt_text = hero_image.alt | default: product.title
+          -%}
+          {{
+            hero_image
+            | image_url: width: 2400
+            | image_tag:
+              widths: '480, 640, 800, 1000, 1200, 1500, 1800, 2400',
+              sizes: '(min-width: 990px) 46vw, 100vw',
+              loading: loading,
+              fetchpriority: priority,
+              alt: alt_text
+          }}
+        </a>
+      {%- else -%}
+        <div class="sk-media sk-hero__photo sk-shape--{{ section.settings.image_shape }}">
+          {{ 'product-1' | placeholder_svg_tag: 'sk-placeholder' }}
+        </div>
+      {%- endif -%}
+
+      {%- if product != blank -%}
+        <a class="sk-hero__card sk-zoom-trigger" href="{{ product.url }}">
+          {%- if detail_image != blank -%}
+            <span class="sk-media sk-media--zoom sk-hero__card-media sk-shape--soft">
+              {{
+                detail_image
+                | image_url: width: 600
+                | image_tag:
+                  widths: '200, 300, 400, 600',
+                  sizes: '(min-width: 990px) 12vw, 34vw',
+                  loading: loading,
+                  alt: ''
+              }}
+            </span>
+          {%- endif -%}
+          <span class="sk-hero__card-text">
+            {%- if section.settings.product_label != blank -%}
+              <span class="sk-hero__card-label">{{ section.settings.product_label | escape }}</span>
+            {%- endif -%}
+            <span class="sk-hero__card-title">{{ product.title | escape }}</span>
+            {%- if section.settings.show_price -%}
+              <span class="sk-hero__card-price">{% render 'sk-price', product: product %}</span>
+            {%- endif -%}
+          </span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .sk-hero {
+    padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .sk-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2vw, 2rem);
+    align-items: stretch;
+    max-width: 1680px;
+    margin-inline: auto;
+  }
+
+  .sk-hero__copy {
+    grid-column: 1 / span 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 4rem);
+    min-width: 0;
+    padding-block: clamp(1rem, 3vw, 2.5rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  .sk-hero__heading {
+    font-size: clamp(3.5rem, 8.6vw, 10.5rem);
+    margin-inline-end: -12%;
+  }
+
+  .sk-hero__foot {
+    display: grid;
+    gap: 1.75rem;
+    max-width: 34rem;
+  }
+
+  .sk-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+  }
+
+  .sk-hero__visual {
+    grid-column: 8 / span 5;
+    position: relative;
+    min-width: 0;
+  }
+
+  .sk-hero__photo {
+    display: block;
+    height: 100%;
+    min-height: min(78svh, 860px);
+    aspect-ratio: 4 / 5;
+  }
+
+  .sk-hero__photo .sk-placeholder {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    opacity: 0.25;
+  }
+
+  .sk-hero__card {
+    position: absolute;
+    inset-inline-start: -18%;
+    inset-block-end: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: min(22rem, 60%);
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+    color: var(--color-foreground);
+    background: var(--color-background);
+    border-radius: var(--sk-soft);
+    text-decoration: none;
+    box-shadow: 0 1.5rem 3rem -1.5rem rgb(var(--color-foreground-rgb) / 0.35);
+  }
+
+  .sk-hero__card-media {
+    flex: 0 0 5.5rem;
+    aspect-ratio: 2 / 3;
+  }
+
+  .sk-hero__card-text {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .sk-hero__card-label {
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: 1.125rem;
+    line-height: 1.15;
+    color: var(--color-foreground);
+  }
+
+  .sk-hero__card-title {
+    font-family: var(--font-heading--family);
+    font-size: 1.625rem;
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .sk-hero__card-price {
+    font-size: 0.875rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sk-hero__in {
+      animation: sk-hero-in 1.1s var(--sk-ease) both;
+      animation-delay: var(--sk-delay, 0ms);
+    }
+
+    .sk-hero__photo img {
+      animation: sk-hero-settle 1.8s var(--sk-ease) both;
+    }
+
+    .sk-hero__card {
+      animation: sk-hero-in 1.1s var(--sk-ease) 420ms both;
+    }
+  }
+
+  @keyframes sk-hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(1.75rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes sk-hero-settle {
+    from {
+      transform: scale(1.08);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Phone: headline first, then a full-bleed photo with the product tag
+     overlapping its lower edge, then the promise and a full-width button. */
+  @media (max-width: 749px) {
+    .sk-hero {
+      padding-block: 1.25rem 2.5rem;
+    }
+
+    .sk-hero__grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sk-hero__copy {
+      display: contents;
+    }
+
+    .sk-hero__eyebrow {
+      order: 1;
+      margin-block-end: 0.75rem;
+    }
+
+    .sk-hero__heading {
+      order: 2;
+      font-size: clamp(3rem, 15.5vw, 5rem);
+      margin-inline-end: 0;
+      margin-block-end: 1.5rem;
+    }
+
+    .sk-hero__visual {
+      order: 3;
+      margin-inline: calc(var(--sk-gutter) * -1);
+      margin-block-end: 3.5rem;
+    }
+
+    .sk-hero__photo {
+      min-height: 0;
+      aspect-ratio: 4 / 5;
+    }
+
+    .sk-hero__card {
+      inset-inline: auto var(--sk-gutter);
+      inset-block-end: -2.25rem;
+      width: min(19rem, 78%);
+    }
+
+    .sk-hero__card-media {
+      flex-basis: 4.25rem;
+    }
+
+    .sk-hero__card-title {
+      font-size: 1.375rem;
+    }
+
+    .sk-hero__foot {
+      order: 4;
+      gap: 1.5rem;
+    }
+
+    .sk-hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+
+    .sk-hero__actions .sk-link {
+      align-self: center;
+    }
+  }
+
+  @media (min-width: 750px) and (max-width: 989px) {
+    .sk-hero__copy {
+      grid-column: 1 / span 12;
+    }
+
+    .sk-hero__heading {
+      margin-inline-end: 0;
+    }
+
+    .sk-hero__visual {
+      grid-column: 1 / span 12;
+      margin-block-start: 2rem;
+    }
+
+    .sk-hero__photo {
+      min-height: 0;
+    }
+
+    .sk-hero__card {
+      inset-inline-start: 1.5rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Editorial hero",
+  "tag": "div",
+  "class": "sk-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Words"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the headline",
+      "default": "SOL KYST · Wide fit eyewear"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Headline (your promise)",
+      "info": "Keep it under ten words. Italic text is shown in the accent colour.",
+      "default": "Finally — frames that <em>actually</em> fit."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Line under the headline",
+      "default": "Sunglasses designed to fit &amp; flatter wide face babes."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Second link text",
+      "default": "Find your fit"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Second link"
+    },
+    {
+      "type": "header",
+      "content": "Hero product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Small label on the product tag",
+      "default": "The frame that started it all"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "photo",
+      "label": "Main photo (position in the product's photos)",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "detail_photo",
+      "label": "Small tag photo (0 hides it)",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Photo shape",
+      "options": [{"value": "rounded", "label": "Rounded rectangle"}, {"value": "soft", "label": "Soft corners"}, {"value": "square", "label": "Square"}],
+      "default": "rounded"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main photo override",
+      "info": "Optional. Replaces the product photo above."
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Editorial hero"
+    }
+  ]
+}
+{% endschema %}

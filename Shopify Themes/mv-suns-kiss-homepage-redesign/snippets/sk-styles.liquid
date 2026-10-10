@@ -1,0 +1,197 @@
+{%- doc -%}
+  Shared styles for the SOL KYST editorial sections (sk-*): type scale, eyebrow,
+  links, image zoom on hover, and scroll reveal. Render once from each sk section.
+
+  @example
+  {% render 'sk-styles' %}
+{%- enddoc -%}
+
+{%- style -%}
+  {{ settings.sk_script_font | font_face: font_display: 'swap' }}
+  :root {
+    --sk-script: {{ settings.sk_script_font.family }}, {{ settings.sk_script_font.fallback_families }};
+  }
+{%- endstyle -%}
+
+{% stylesheet %}
+  .sk {
+    --sk-gutter: clamp(1.25rem, 4vw, 3.5rem);
+    --sk-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --sk-soft: clamp(0.75rem, 1.5vw, 1.5rem);
+
+    position: relative;
+    padding-inline: var(--sk-gutter);
+    color: var(--color-foreground);
+    background: var(--color-background);
+    overflow: clip;
+  }
+
+  .sk-eyebrow {
+    margin: 0;
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: clamp(1.5rem, 1.2rem + 0.8vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-primary);
+  }
+
+  .sk-display {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    color: var(--color-foreground-heading);
+    text-wrap: balance;
+  }
+
+  .sk-display em,
+  .sk-display i {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .sk-lede {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .sk-lede p {
+    margin: 0;
+  }
+
+  .sk-lede p + p {
+    margin-block-start: 0.75em;
+  }
+
+  .sk-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    text-decoration: none;
+    padding-block: 0.5em;
+    border-block-end: 1px solid currentColor;
+    min-height: 44px;
+  }
+
+  .sk-link::after {
+    content: '→';
+    transition: transform 0.4s var(--sk-ease);
+  }
+
+  .sk-link:hover::after {
+    transform: translateX(0.3em);
+  }
+
+  .sk-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 2.25rem;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-primary-button-text);
+    background: var(--color-primary-button-background);
+    border: 1px solid var(--color-primary-button-border, var(--color-primary-button-background));
+    border-radius: 999px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  .sk-button:hover {
+    color: var(--color-primary-button-hover-text);
+    background: var(--color-primary-button-hover-background);
+    border-color: var(--color-primary-button-hover-border, var(--color-primary-button-hover-background));
+  }
+
+  .sk-link:focus-visible,
+  .sk-button:focus-visible,
+  .sk-card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .sk-media {
+    position: relative;
+    overflow: hidden;
+    background: rgb(var(--color-foreground-rgb) / 0.06);
+  }
+
+  /* Image shapes: rounded rectangle (20% corners) or gently rounded corners. */
+  .sk-shape--rounded {
+    border-radius: 20%;
+  }
+
+  .sk-shape--soft {
+    border-radius: var(--sk-soft);
+  }
+
+  .sk-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .sk-media--zoom img {
+      transition: transform 1.2s var(--sk-ease), opacity 0.6s;
+    }
+
+    .sk-zoom-trigger:hover .sk-media--zoom img,
+    .sk-media--zoom:hover img {
+      transform: scale(1.06);
+    }
+  }
+
+  /* Scroll reveal: fade and rise as elements enter the viewport.
+     Uses CSS scroll-driven animations, so content is never hidden where they
+     are unsupported, and nothing moves for people who prefer reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .sk-reveal,
+      main[data-template='index'] > .shopify-section:not(:first-child):not(:has(.sk)) {
+        animation: sk-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+      }
+    }
+  }
+
+  @keyframes sk-rise {
+    from {
+      opacity: 0;
+      transform: translateY(2.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .sk-visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+{% endstylesheet %}

@@ -1,0 +1,71 @@
+{%- doc -%}
+  Reads a product's frame sizes from its description, written as
+  "NAME - 158mm wide | 67-19-145" (overall width | lens – nose bridge – arm), and
+  outputs them sorted by width as "158~Wide~67~19~145~Wide" entries joined with "^"
+  (width, name in the description, lens, bridge, arm, display name from the theme's
+  fit name settings).
+  Outputs nothing when the description has no sizes in that format.
+
+  @param {object} product - The product to read
+
+  @example
+  {% capture sizes %}{% render 'sk-sizes', product: product %}{% endcapture %}
+  {% assign sizes = sizes | strip | split: '^' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign sizes = ''
+  assign desc = product.description | strip_html | replace: '&nbsp;', ' ' | replace: ' ', ' ' | replace: '–', '-' | replace: '—', '-'
+  assign parts = desc | split: 'mm wide'
+
+  for part in parts
+    if forloop.last
+      break
+    endif
+    assign next_index = forloop.index
+    assign next_part = parts[next_index] | strip | remove_first: '|' | strip
+    assign measures = next_part | split: ' ' | first | split: '-'
+    if measures.size < 3
+      continue
+    endif
+
+    assign pieces = part | split: ' - '
+    if pieces.size < 2
+      continue
+    endif
+    assign mm = pieces.last | strip | split: ' ' | last
+    assign mm_number = mm | plus: 0
+    if mm_number < 100 or mm_number > 200
+      continue
+    endif
+    assign name_index = pieces.size | minus: 2
+    assign name = pieces[name_index] | strip | split: ' ' | last | capitalize
+
+    assign lens = measures[0] | plus: 0
+    assign bridge = measures[1] | plus: 0
+    assign arm = measures[2] | plus: 0
+    if lens == 0 or bridge == 0 or arm == 0
+      continue
+    endif
+
+    assign name_key = name | downcase
+    case name_key
+      when 'mini', 'petite', 'standard'
+        assign label = settings.sk_fit_name_small | default: name
+      when 'midi', 'oversized', 'soft'
+        assign label = settings.sk_fit_name_mid | default: name
+      when 'wide'
+        assign label = settings.sk_fit_name_wide | default: name
+      else
+        assign label = name
+    endcase
+
+    assign entry = mm_number | append: '~' | append: name | append: '~' | append: lens | append: '~' | append: bridge | append: '~' | append: arm | append: '~' | append: label
+    unless sizes contains entry
+      assign sizes = sizes | append: entry | append: '^'
+    endunless
+  endfor
+
+  assign sizes = sizes | split: '^' | sort | join: '^'
+  echo sizes
+-%}

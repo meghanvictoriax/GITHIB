@@ -1,0 +1,211 @@
+{%- doc -%}
+  Product tag card: a small product photo, a short handwritten label, the product
+  name and price, linking to the product. Can float over the corner of a hero photo
+  on larger screens, or sit in line with the other content.
+{%- enddoc -%}
+
+{%- liquid
+  assign product = block.settings.product
+  if product != blank
+    assign photo_index = block.settings.photo | minus: 1
+    assign photo = product.media[photo_index].preview_image | default: product.featured_image
+  endif
+-%}
+
+{%- if product != blank -%}
+  {% render 'sk-styles' %}
+  <a
+    href="{{ product.url }}"
+    class="sk-tag sk-tag--{{ block.settings.placement }} color-{{ block.settings.color_scheme }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- if photo != blank -%}
+      <span class="sk-tag__media">
+        {{
+          photo
+          | image_url: width: 400
+          | image_tag: widths: '160, 240, 320, 400', sizes: '96px', loading: 'lazy', alt: product.title
+        }}
+      </span>
+    {%- endif -%}
+    <span class="sk-tag__text">
+      {%- if block.settings.label != blank -%}
+        <span class="sk-tag__label">{{ block.settings.label | escape }}</span>
+      {%- endif -%}
+      <span class="sk-tag__title">{{ product.title | escape }}</span>
+      {%- if block.settings.show_price -%}
+        <span class="sk-tag__price">{% render 'sk-price', product: product %}</span>
+      {%- endif -%}
+    </span>
+  </a>
+{%- elsif request.design_mode -%}
+  <p class="sk-tag sk-tag--inline" {{ block.shopify_attributes }}>Choose a product for this tag.</p>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-tag {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: min(22rem, 100%);
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+    border-radius: 1.25rem;
+    color: var(--color-foreground);
+    background: var(--color-background);
+    text-decoration: none;
+    box-shadow: 0 1.5rem 3rem -1.5rem rgb(0 0 0 / 0.45);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Opt out of link underlines that a host section's custom CSS may add. */
+  .sk-tag,
+  .sk-tag * {
+    text-decoration: none !important;
+  }
+
+  .sk-tag:hover {
+    transform: translateY(-3px);
+  }
+
+  .sk-tag:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .sk-tag__media {
+    flex: 0 0 5.5rem;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 20%;
+    background: rgb(var(--color-foreground-rgb) / 0.06);
+  }
+
+  .sk-tag__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sk-tag__text {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .sk-tag__label {
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: 1.125rem;
+    line-height: 1.15;
+  }
+
+  .sk-tag__title {
+    font-family: var(--font-heading--family);
+    font-size: 1.625rem;
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .sk-tag__price {
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+  }
+
+  /* Larger screens: float over the lower right of the hero photo. */
+  @media (min-width: 750px) {
+    .sk-tag--corner {
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-end: 0;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .sk-tag {
+      width: auto;
+      max-width: 100%;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+      margin-block-start: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .sk-tag__media {
+      flex-basis: 3rem;
+    }
+
+    .sk-tag__label {
+      font-size: 0.9375rem;
+    }
+
+    .sk-tag__title {
+      font-size: 1.125rem;
+    }
+
+    .sk-tag__price {
+      font-size: 0.8125rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sk-tag {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Product tag",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Handwritten label",
+      "default": "The frame that started it all"
+    },
+    {
+      "type": "range",
+      "id": "photo",
+      "label": "Photo (position in the product's photos)",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "placement",
+      "label": "Placement on larger screens",
+      "options": [
+        { "value": "corner", "label": "Lower right corner, over the photo" },
+        { "value": "inline", "label": "In line with the other content" }
+      ],
+      "default": "corner"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Card colours",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Product tag"
+    }
+  ]
+}
+{% endschema %}

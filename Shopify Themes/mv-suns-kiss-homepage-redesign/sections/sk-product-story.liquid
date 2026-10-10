@@ -1,0 +1,288 @@
+{% comment %}
+  Section contract.
+  Product page editorial story: the product name set large, the opening of the
+  product's own description (the words before "The Sizing Details"), and up to three
+  of the product's own photos in an asymmetric layout. Photos are chosen by position.
+  Renders nothing when the product has fewer than two of the chosen photos.
+  @example
+  <!-- Add "SK · Product story" to a product template -->
+{% endcomment %}
+
+{%- liquid
+  assign positions = section.settings.photos | split: ','
+  assign image_count = 0
+  for position in positions
+    assign index = position | strip | plus: 0 | minus: 1
+    if index < 0
+      continue
+    endif
+    assign media = product.media[index]
+    if media == blank or media.preview_image == blank
+      continue
+    endif
+    assign image_count = image_count | plus: 1
+    if image_count > 3
+      break
+    endif
+  endfor
+
+  assign story_text = product.description | split: section.settings.text_stop | first | strip_html | strip
+  if section.settings.text_stop == blank
+    assign story_text = product.description | strip_html | strip
+  endif
+  assign story_text = story_text | truncatewords: section.settings.max_words
+-%}
+
+{%- if image_count >= 2 -%}
+  {% render 'sk-styles' %}
+
+  <section
+    class="sk sk-story sk-story--{{ section.settings.image_shape }} color-{{ section.settings.color_scheme }}"
+    aria-labelledby="SkStoryHeading-{{ section.id }}"
+  >
+    <div class="sk-story__inner">
+      <header class="sk-story__head sk-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          {%- capture sk_shape_name -%}{% render 'sk-shape-name', product: product %}{%- endcapture -%}
+          <p class="sk-eyebrow">{{ section.settings.eyebrow | escape | replace: '[type]', sk_shape_name }}</p>
+        {%- endif -%}
+        <h2 id="SkStoryHeading-{{ section.id }}" class="sk-display sk-story__title">{{ product.title | escape }}</h2>
+        {%- if section.settings.show_text and story_text != blank -%}
+          <p class="sk-lede sk-story__text">{{ story_text | escape }}</p>
+        {%- endif -%}
+      </header>
+
+      <div class="sk-story__photos">
+        {%- assign shown = 0 -%}
+        {%- for position in positions -%}
+          {%- liquid
+            assign index = position | strip | plus: 0 | minus: 1
+            if index < 0
+              continue
+            endif
+            assign media = product.media[index]
+            if media == blank or media.preview_image == blank
+              continue
+            endif
+            assign shown = shown | plus: 1
+            if shown > 3
+              break
+            endif
+            if shown == 1
+              assign sizes = '(min-width: 990px) 50vw, 100vw'
+            else
+              assign sizes = '(min-width: 990px) 30vw, 50vw'
+            endif
+          -%}
+          <figure class="sk-story__photo sk-story__photo--{{ shown }} sk-reveal">
+            <span class="sk-media sk-media--zoom sk-story__media">
+              {{
+                media.preview_image
+                | image_url: width: 2000
+                | image_tag:
+                  widths: '400, 600, 800, 1000, 1300, 1600, 2000',
+                  sizes: sizes,
+                  loading: 'lazy',
+                  alt: media.alt
+              }}
+            </span>
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-story {
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+
+  .sk-story__inner {
+    max-width: 1600px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2vw, 2rem);
+    row-gap: clamp(2.5rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .sk-story__head {
+    grid-column: 1 / span 5;
+    position: sticky;
+    top: calc(var(--header-height, 0px) + 2rem);
+    display: grid;
+    gap: 1.25rem;
+    padding-block-start: clamp(0rem, 4vw, 4rem);
+  }
+
+  .sk-story__title {
+    font-size: clamp(2.75rem, 5.4vw, 6.5rem);
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+
+  .sk-story__text {
+    max-width: 30rem;
+  }
+
+  .sk-story__photos {
+    grid-column: 6 / span 7;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2vw, 2rem);
+    row-gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  .sk-story__photo {
+    margin: 0;
+    min-width: 0;
+  }
+
+  .sk-story__photo--1 {
+    grid-column: 1 / -1;
+  }
+
+  .sk-story__photo--2 {
+    grid-column: 1 / span 4;
+  }
+
+  .sk-story__photo--3 {
+    grid-column: 5 / span 3;
+    margin-block-start: clamp(4rem, 10vw, 10rem);
+  }
+
+  .sk-story__media {
+    display: block;
+    aspect-ratio: 4 / 5;
+  }
+
+  .sk-story__photo--1 .sk-story__media {
+    aspect-ratio: 5 / 6;
+  }
+
+  .sk-story--rounded .sk-story__media {
+    border-radius: 20%;
+  }
+
+  .sk-story--soft .sk-story__media {
+    border-radius: var(--sk-soft);
+  }
+
+  /* Phone: name and words first, then one full-bleed photo and a staggered pair. */
+  @media (max-width: 749px) {
+    .sk-story__inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 0.75rem;
+    }
+
+    .sk-story__head {
+      grid-column: 1 / -1;
+      position: static;
+      padding-block-start: 0;
+    }
+
+    .sk-story__title {
+      font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
+    .sk-story__photos {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 0.75rem;
+    }
+
+    .sk-story__photo--1 {
+      grid-column: 1 / -1;
+    }
+
+    .sk-story--square .sk-story__photo--1 {
+      margin-inline: calc(var(--sk-gutter) * -1);
+    }
+
+    .sk-story__photo--2,
+    .sk-story__photo--3 {
+      grid-column: auto;
+    }
+
+    .sk-story__photo--3 {
+      margin-block-start: 3rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Product story",
+  "tag": "div",
+  "class": "sk-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Uses the product's own name, description and photos. Hidden when fewer than two of the chosen photos exist."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the name",
+      "info": "[type] is replaced with the frame shape: its colour family name, or the product type.",
+      "default": "[type]"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text",
+      "label": "Show the opening of the description",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text_stop",
+      "label": "Stop the description text at",
+      "info": "Words from this phrase on are left out.",
+      "default": "The Sizing Details"
+    },
+    {
+      "type": "range",
+      "id": "max_words",
+      "label": "Most words to show",
+      "min": 15,
+      "max": 80,
+      "step": 5,
+      "default": 45
+    },
+    {
+      "type": "text",
+      "id": "photos",
+      "label": "Photos to show (positions)",
+      "info": "Positions in the product's photos, separated by commas. Up to three are shown.",
+      "default": "3, 4, 5"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Photo shape",
+      "options": [
+        { "value": "rounded", "label": "Rounded rectangle" },
+        { "value": "soft", "label": "Soft corners" },
+        { "value": "square", "label": "Square" }
+      ],
+      "default": "rounded"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Product story"
+    }
+  ]
+}
+{% endschema %}

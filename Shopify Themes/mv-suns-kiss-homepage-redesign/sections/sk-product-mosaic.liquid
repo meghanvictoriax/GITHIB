@@ -1,0 +1,521 @@
+{% comment %}
+  Section contract.
+  Asymmetric editorial grid of hand-picked products with large photography.
+  Each product block chooses which of the product's own photos to show, plus an
+  optional second photo revealed on hover. Links go to the product page.
+  @example
+  <!-- Add "SK · Product mosaic", then add Product blocks and pick products -->
+{% endcomment %}
+
+{% render 'sk-styles' %}
+
+<section
+  class="sk sk-mosaic sk-mosaic--{{ section.settings.image_ratio }} sk-mosaic--shape-{{ section.settings.image_shape }} color-{{ section.settings.color_scheme }}"
+  {% if section.settings.heading != blank %}
+    aria-labelledby="SkMosaicHeading-{{ section.id }}"
+  {% endif %}
+>
+  <div class="sk-mosaic__inner">
+    <header class="sk-mosaic__head sk-reveal">
+      <div class="sk-mosaic__title">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 id="SkMosaicHeading-{{ section.id }}" class="sk-display sk-mosaic__heading">
+            {{- section.settings.heading -}}
+          </h2>
+        {%- endif -%}
+      </div>
+      <div class="sk-mosaic__aside">
+        {%- if section.settings.text != blank -%}
+          <div class="sk-lede sk-mosaic__text">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.link_label != blank and section.settings.link != blank -%}
+          <a class="sk-link" href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </header>
+
+    <ul class="sk-mosaic__grid" role="list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign product = block.settings.product
+          assign photo_index = block.settings.photo | minus: 1
+          assign hover_index = block.settings.hover_photo | minus: 1
+          assign image = block.settings.image
+          if image == blank and product != blank
+            assign media = product.media[photo_index] | default: product.featured_media
+            assign image = media.preview_image
+          endif
+          assign hover_image = blank
+          if product != blank and block.settings.hover_photo > 0 and block.settings.hover_photo != block.settings.photo
+            assign hover_media = product.media[hover_index]
+            assign hover_image = hover_media.preview_image
+          endif
+          assign card_alt = image.alt | default: product.title | default: ''
+          capture sk_shape_name
+            render 'sk-shape-name', product: product
+          endcapture
+          assign caption = block.settings.caption | default: sk_shape_name
+          assign caption_key = caption | downcase | strip
+          assign title_key = product.title | downcase | strip
+          if caption_key == title_key
+            assign caption = blank
+          endif
+          if forloop.first
+            assign sizes = '(min-width: 990px) 56vw, 100vw'
+          else
+            assign sizes = '(min-width: 990px) 34vw, 50vw'
+          endif
+        -%}
+        <li class="sk-mosaic__item sk-reveal" {{ block.shopify_attributes }}>
+          <a
+            class="sk-card sk-zoom-trigger"
+            {% if product != blank %}
+              href="{{ product.url }}"
+            {% else %}
+              role="link" aria-disabled="true"
+            {% endif %}
+          >
+            <span class="sk-media sk-media--zoom sk-card__media">
+              {%- if image != blank -%}
+                {{
+                  image
+                  | image_url: width: 1800
+                  | image_tag:
+                    widths: '360, 480, 640, 800, 1000, 1200, 1500, 1800',
+                    sizes: sizes,
+                    loading: 'lazy',
+                    alt: card_alt,
+                    class: 'sk-card__img'
+                }}
+                {%- if hover_image != blank -%}
+                  {{
+                    hover_image
+                    | image_url: width: 1500
+                    | image_tag:
+                      widths: '360, 480, 640, 800, 1000, 1200, 1500',
+                      sizes: sizes,
+                      loading: 'lazy',
+                      alt: '',
+                      class: 'sk-card__img sk-card__img--hover'
+                  }}
+                {%- endif -%}
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'sk-placeholder' }}
+              {%- endif -%}
+            </span>
+            <span class="sk-card__meta">
+              <span class="sk-card__no" aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+              <span class="sk-card__title">{{ product.title | default: block.settings.caption | escape }}</span>
+              {%- if section.settings.show_caption and caption != blank -%}
+                <span class="sk-card__caption">{{ caption | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.show_price and product != blank -%}
+                <span class="sk-card__price">{% render 'sk-price', product: product %}</span>
+              {%- endif -%}
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="sk-mosaic__footnote">{{ section.settings.footnote | escape }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .sk-mosaic {
+    --sk-ratio: 4 / 5;
+
+    padding-block: clamp(4rem, 9vw, 8.5rem);
+  }
+
+  .sk-mosaic--square {
+    --sk-ratio: 1 / 1;
+  }
+
+  .sk-mosaic--tall {
+    --sk-ratio: 2 / 3;
+  }
+
+  .sk-mosaic__inner {
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  .sk-mosaic__head {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1.5rem clamp(1rem, 2vw, 2rem);
+    align-items: end;
+    margin-block-end: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .sk-mosaic__title {
+    grid-column: 1 / span 8;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .sk-mosaic__heading {
+    font-size: clamp(3rem, 6.8vw, 7.5rem);
+  }
+
+  .sk-mosaic__aside {
+    grid-column: 9 / span 4;
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+  }
+
+  .sk-mosaic__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2vw, 2rem);
+    row-gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .sk-mosaic__item {
+    min-width: 0;
+  }
+
+  /* Repeating asymmetric rhythm: large left, small right dropped lower,
+     small inset left, large right. */
+  .sk-mosaic__item:nth-child(4n + 1) {
+    grid-column: 1 / span 7;
+  }
+
+  .sk-mosaic__item:nth-child(4n + 2) {
+    grid-column: 9 / span 4;
+    margin-block-start: clamp(6rem, 18vw, 18rem);
+  }
+
+  .sk-mosaic__item:nth-child(4n + 3) {
+    grid-column: 2 / span 4;
+    margin-block-start: clamp(2rem, 6vw, 6rem);
+  }
+
+  .sk-mosaic__item:nth-child(4n + 4) {
+    grid-column: 7 / span 6;
+  }
+
+  .sk-card {
+    display: grid;
+    gap: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sk-card__media {
+    display: block;
+    aspect-ratio: var(--sk-ratio);
+  }
+
+  .sk-mosaic--shape-rounded .sk-card__media {
+    border-radius: 20%;
+  }
+
+  .sk-mosaic--shape-soft .sk-card__media {
+    border-radius: var(--sk-soft);
+  }
+
+  .sk-card__img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .sk-card__img--hover {
+    opacity: 0;
+  }
+
+  @media (hover: hover) {
+    .sk-card:hover .sk-card__img--hover,
+    .sk-card:focus-visible .sk-card__img--hover {
+      opacity: 1;
+    }
+  }
+
+  .sk-card .sk-placeholder {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    opacity: 0.25;
+  }
+
+  .sk-card__meta {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'no title price'
+      'no caption caption';
+    column-gap: 1rem;
+    row-gap: 0.2rem;
+    align-items: baseline;
+  }
+
+  .sk-card__no {
+    grid-area: no;
+    font-family: var(--font-heading--family);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-foreground);
+  }
+
+  .sk-card__title {
+    grid-area: title;
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.375rem, 2vw, 2rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .sk-card__caption {
+    grid-area: caption;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .sk-card__price {
+    grid-area: price;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
+  .sk-mosaic__footnote {
+    margin: clamp(3rem, 6vw, 5rem) 0 0;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    max-width: 48rem;
+  }
+
+  @media (max-width: 989px) {
+    .sk-mosaic__title,
+    .sk-mosaic__aside {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Phone: first product full-bleed, then a staggered two-column rhythm. */
+  @media (max-width: 749px) {
+    .sk-mosaic__heading {
+      font-size: clamp(2.75rem, 12.5vw, 4rem);
+    }
+
+    .sk-mosaic__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 0.75rem;
+      row-gap: 2rem;
+    }
+
+    .sk-mosaic__item:nth-child(n) {
+      grid-column: auto;
+      margin-block-start: 0;
+    }
+
+    .sk-mosaic__item:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .sk-mosaic--shape-square .sk-mosaic__item:first-child {
+      margin-inline: calc(var(--sk-gutter) * -1);
+    }
+
+    .sk-mosaic--shape-square .sk-mosaic__item:first-child .sk-card__meta {
+      padding-inline: var(--sk-gutter);
+    }
+
+    .sk-mosaic__item:nth-child(odd):not(:first-child) {
+      margin-block-start: 3rem;
+    }
+
+    .sk-card__meta {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        'no title'
+        'no price'
+        'no caption';
+      column-gap: 0.5rem;
+    }
+
+    .sk-mosaic__item:first-child .sk-card__meta {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        'no title price'
+        'no caption caption';
+    }
+
+    .sk-card__title {
+      font-size: 1.25rem;
+    }
+
+    .sk-mosaic__item:first-child .sk-card__title {
+      font-size: 1.75rem;
+    }
+
+    .sk-card__price {
+      font-size: 0.875rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Product mosaic",
+  "tag": "div",
+  "class": "sk-section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Iconic style, <em>starts with fit.</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link text",
+      "default": "Shop all"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Photo shape",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "tall",
+          "label": "Tall"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Photo shape",
+      "options": [{"value": "rounded", "label": "Rounded rectangle"}, {"value": "soft", "label": "Soft corners"}, {"value": "square", "label": "Square"}],
+      "default": "rounded"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show prices",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_caption",
+      "label": "Show captions",
+      "info": "Uses the product type unless a block has its own caption.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Small print under the products"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "range",
+          "id": "photo",
+          "label": "Photo (position in the product's photos)",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "hover_photo",
+          "label": "Photo shown on hover (0 for none)",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo override",
+          "info": "Optional. Replaces the product photo."
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "info": "Optional. Defaults to the product type."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Product mosaic",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

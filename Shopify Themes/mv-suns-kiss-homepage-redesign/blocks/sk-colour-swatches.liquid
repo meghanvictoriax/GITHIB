@@ -1,0 +1,343 @@
+{%- doc -%}
+  Colour swatches for products that are the same frame in different colours.
+  Families are set in Theme settings > Colour families. Each swatch shows the other
+  product's own photo and links to that product, opening the same size when it has one.
+{%- enddoc -%}
+
+{%- liquid
+  assign current = closest.product
+  assign family = blank
+  for i in (1..10)
+    assign list_key = 'sk_family_' | append: i | append: '_products'
+    assign list = settings[list_key]
+    if list == blank
+      continue
+    endif
+    for item in list
+      if item.id == current.id
+        assign family = list
+        break
+      endif
+    endfor
+    if family != blank
+      break
+    endif
+  endfor
+
+  assign size_key = current.selected_or_first_available_variant.option1 | downcase | split: ' ' | first
+-%}
+
+{%- if family != blank and family.size > 1 -%}
+  {% render 'sk-styles' %}
+  <sk-colour-swatches class="sk-swatches" {{ block.shopify_attributes }}>
+    <p class="sk-swatches__label">
+      {%- if block.settings.label != blank -%}
+        <span>{{ block.settings.label | escape }}:</span>
+      {% endif -%}
+      <strong data-swatch-name>{{ current.title | escape }}</strong>
+      {%- if block.settings.show_count -%}
+        <span class="sk-swatches__count">
+          {{- block.settings.count_text | replace: '[count]', family.size | escape -}}
+        </span>
+      {%- endif -%}
+    </p>
+    <ul class="sk-swatches__list" role="list">
+      {%- for item in family -%}
+        {%- liquid
+          assign is_current = false
+          if item.id == current.id
+            assign is_current = true
+          endif
+
+          assign variant_map = ''
+          assign href = item.url
+          for variant in item.variants
+            assign v_key = variant.option1 | downcase | split: ' ' | first
+            unless variant_map contains v_key
+              assign variant_map = variant_map | append: v_key | append: ':' | append: variant.id | append: ','
+            endunless
+            if v_key == size_key and href == item.url
+              assign href = item.url | append: '?variant=' | append: variant.id
+            endif
+          endfor
+
+          assign photo = item.featured_media.preview_image
+          assign photo_focus = 'center'
+          assign photo_crop = false
+          assign swatch_lines = settings.sk_swatch_photos | newline_to_br | split: '<br />'
+          for line in swatch_lines
+            assign parts = line | strip | split: ':'
+            if parts.size < 2
+              continue
+            endif
+            assign line_handle = parts[0] | strip
+            if line_handle == item.handle
+              assign line_words = parts[1] | strip | split: ' '
+              assign photo_source = item
+              assign word_index = 0
+              assign first_number = line_words[0] | plus: 0
+              if first_number == 0 and line_words[0] != '0'
+                # Another product's photo, e.g. "leo-blue-light-rx 1"
+                assign photo_source = all_products[line_words[0]]
+                assign word_index = 1
+              endif
+              assign photo_number = line_words[word_index] | plus: 0 | at_least: 1
+              assign photo_index = photo_number | minus: 1
+              assign photo = photo_source.media[photo_index].preview_image | default: photo
+              assign focus_index = word_index | plus: 1
+              if line_words[focus_index] != blank
+                assign photo_focus = line_words[focus_index] | downcase
+              endif
+              # Optional frame position: centre across %, centre down %, frame width %
+              assign fit_x_index = word_index | plus: 3
+              if line_words[fit_x_index] != blank and photo != blank
+                assign fit_cx = line_words[focus_index] | plus: 0
+                assign fit_cy_index = word_index | plus: 2
+                assign fit_cy = line_words[fit_cy_index] | plus: 0
+                assign fit_w = line_words[fit_x_index] | plus: 0
+                assign img_w = photo.width
+                assign img_h = photo.height
+                assign crop_side = img_w | times: fit_w | divided_by: 82.0 | at_most: img_w | at_most: img_h | round
+                assign half_side = crop_side | divided_by: 2
+                assign max_left = img_w | minus: crop_side
+                assign max_top = img_h | minus: crop_side
+                assign crop_left = img_w | times: fit_cx | divided_by: 100.0 | minus: half_side | round | at_least: 0 | at_most: max_left
+                assign crop_top = img_h | times: fit_cy | divided_by: 100.0 | minus: half_side | round | at_least: 0 | at_most: max_top
+                assign photo_crop = true
+                assign photo_focus = 'center'
+              endif
+            endif
+          endfor
+          case photo_focus
+            when 'left'
+              assign sk_focus_style = 'object-position: 0% 50%;'
+            when 'right'
+              assign sk_focus_style = 'object-position: 100% 50%;'
+            when 'top'
+              assign sk_focus_style = 'object-position: 50% 0%;'
+            when 'bottom'
+              assign sk_focus_style = 'object-position: 50% 100%;'
+            else
+              assign sk_focus_style = 'object-position: 50% 50%;'
+          endcase
+        -%}
+        <li>
+          <a
+            class="sk-swatch{% if is_current %} is-current{% endif %}{% unless item.available %} is-sold-out{% endunless %}"
+            href="{{ href }}"
+            data-base="{{ item.url }}"
+            data-variants="{{ variant_map }}"
+            data-name="{{ item.title | escape }}"
+            title="{{ item.title | escape }}{% unless item.available %} — {{ block.settings.sold_out_text | escape }}{% endunless %}"
+            aria-label="{{ item.title | escape }}{% unless item.available %}, {{ block.settings.sold_out_text | escape }}{% endunless %}"
+            {% if is_current %}
+              aria-current="page"
+            {% endif %}
+          >
+            {%- if photo != blank and photo_crop -%}
+              {%- liquid
+                assign crop_1x = photo | image_url: width: 96, height: 96, crop: 'region', crop_left: crop_left, crop_top: crop_top, crop_width: crop_side, crop_height: crop_side
+                assign crop_2x = photo | image_url: width: 192, height: 192, crop: 'region', crop_left: crop_left, crop_top: crop_top, crop_width: crop_side, crop_height: crop_side
+              -%}
+              <img
+                src="{{ crop_2x }}"
+                srcset="{{ crop_1x }} 1x, {{ crop_2x }} 2x"
+                width="96"
+                height="96"
+                loading="lazy"
+                alt=""
+                class="sk-swatch__img sk-swatch__img--fit"
+              >
+            {%- elsif photo != blank -%}
+              {{
+                photo
+                | image_url: width: 160
+                | image_tag: widths: '80, 120, 160, 240', sizes: '48px', loading: 'lazy', alt: '', class: 'sk-swatch__img', style: sk_focus_style
+              }}
+            {%- else -%}
+              <span class="sk-swatch__fallback" aria-hidden="true">{{ item.title | slice: 0 }}</span>
+            {%- endif -%}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </sk-colour-swatches>
+
+  <script>
+    if (!customElements.get('sk-colour-swatches')) {
+      customElements.define(
+        'sk-colour-swatches',
+        class extends HTMLElement {
+          connectedCallback() {
+            this.abort = new AbortController();
+            const { signal } = this.abort;
+            document.addEventListener('variant:update', (event) => {
+              const variant = event.detail?.resource;
+              if (variant?.option1) this.setSize(variant.option1);
+            }, { signal });
+            const label = this.querySelector('[data-swatch-name]');
+            const currentName = label?.textContent;
+            for (const swatch of this.querySelectorAll('.sk-swatch')) {
+              swatch.addEventListener('mouseenter', () => { if (label) label.textContent = swatch.dataset.name; }, { signal });
+              swatch.addEventListener('mouseleave', () => { if (label) label.textContent = currentName; }, { signal });
+            }
+          }
+
+          disconnectedCallback() {
+            this.abort?.abort();
+          }
+
+          setSize(option) {
+            const key = String(option).toLowerCase().split(' ')[0];
+            for (const swatch of this.querySelectorAll('.sk-swatch')) {
+              const pairs = Object.fromEntries(
+                swatch.dataset.variants.split(',').filter(Boolean).map((pair) => pair.split(':'))
+              );
+              swatch.href = pairs[key] ? `${swatch.dataset.base}?variant=${pairs[key]}` : swatch.dataset.base;
+            }
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-swatches {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .sk-swatches__label {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+  }
+
+  .sk-swatches__label strong {
+    font-weight: 600;
+  }
+
+  .sk-swatches__count {
+    margin-inline-start: auto;
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .sk-swatches__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .sk-swatch {
+    position: relative;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(var(--color-foreground-rgb) / 0.06);
+    box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.15);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .sk-swatch:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.5);
+  }
+
+  .sk-swatch.is-current {
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3.5px var(--color-foreground);
+  }
+
+  .sk-swatch:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 3px;
+  }
+
+  .sk-swatch__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.35);
+  }
+
+  /* Photos cropped to the frame in Theme settings are already sized; no zoom. */
+  .sk-swatch__img--fit {
+    transform: none;
+  }
+
+  .sk-swatch__fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.875rem;
+  }
+
+  .sk-swatch.is-sold-out::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent calc(50% - 0.75px), rgb(var(--color-foreground-rgb) / 0.55) calc(50% - 0.75px), rgb(var(--color-foreground-rgb) / 0.55) calc(50% + 0.75px), transparent calc(50% + 0.75px));
+  }
+
+  .sk-swatch.is-sold-out .sk-swatch__img {
+    opacity: 0.55;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sk-swatch {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Colour swatches",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Choose which products are colours of the same frame in Theme settings > Colour families."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Colour"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "Show number of colours",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "count_text",
+      "label": "Number of colours text",
+      "info": "[count] is replaced with the number.",
+      "default": "[count] colours"
+    },
+    {
+      "type": "text",
+      "id": "sold_out_text",
+      "label": "Sold out text (read by screen readers and shown on hover)",
+      "default": "Sold out"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Colour swatches"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,231 @@
+{%- doc -%}
+  Product page fit line: shows the measurements of the selected size
+  (overall width | lens – nose bridge – arm), read from the product description,
+  and follows the size picker as shoppers change size. Hidden when the product has
+  no sizes in its description.
+{%- enddoc -%}
+
+{%- liquid
+  assign product = closest.product
+  assign selected = product.selected_or_first_available_variant
+  assign selected_text = selected.options | join: ' ' | downcase
+-%}
+{%- capture sizes -%}{%- render 'sk-sizes', product: product -%}{%- endcapture -%}
+{%- assign sizes = sizes | strip | split: '^' -%}
+
+{%- if sizes.size > 0 -%}
+  {% render 'sk-styles' %}
+  {%- liquid
+    assign active_name = ''
+    assign option_values = selected.options
+    # 1. exact millimetres in the option label, e.g. "OVERSIZED - 145mm wide"
+    for size in sizes
+      assign s = size | split: '~'
+      assign mm_key = s[0] | append: 'mm'
+      if selected_text contains mm_key
+        assign active_name = s[1] | downcase
+        break
+      endif
+    endfor
+    # 2. option value equal to the size name, or starting with it
+    if active_name == ''
+      for size in sizes
+        assign s = size | split: '~'
+        assign name_key = s[1] | downcase
+        for value in option_values
+          assign value_key = value | downcase | strip
+          assign value_start = value_key | split: ' ' | first
+          # Petite and Mini are the same size; descriptions may use either name.
+          if value_start == 'petite' and name_key == 'mini'
+            assign value_start = 'mini'
+          endif
+          if value_start == 'mini' and name_key == 'petite'
+            assign value_start = 'petite'
+          endif
+          if value_key == name_key or value_start == name_key
+            assign active_name = name_key
+          endif
+        endfor
+      endfor
+    endif
+  -%}
+
+  <sk-fit-line
+    class="sk-fit-line"
+    data-product-id="{{ product.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- if block.settings.label != blank -%}
+      <span class="sk-fit-line__label">{{ block.settings.label | escape }}</span>
+    {%- endif -%}
+    <span class="sk-fit-line__rows" aria-live="polite">
+      {%- for size in sizes -%}
+        {%- liquid
+          assign s = size | split: '~'
+          assign row_key = s[1] | downcase
+          assign row_hidden = false
+          if active_name != '' and row_key != active_name
+            assign row_hidden = true
+          endif
+        -%}
+        <span
+          class="sk-fit-line__row"
+          data-name="{{ s[1] | downcase | escape }}"
+          data-mm="{{ s[0] }}"
+          {% if row_hidden %}hidden{% endif %}
+        >
+          <strong>{{ s[5] | default: s[1] | escape }} · {{ s[0] }}mm</strong>
+          <span>
+            {{- block.settings.lens_label | escape }} {{ s[2] }} · {{ block.settings.bridge_label | escape }} {{ s[3] }} ·
+            {{ block.settings.arm_label | escape }} {{ s[4] -}}
+          </span>
+        </span>
+      {%- endfor -%}
+    </span>
+    {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+      <a class="sk-fit-line__link" href="{{ block.settings.link }}">{{ block.settings.link_label | escape }}</a>
+    {%- endif -%}
+  </sk-fit-line>
+
+  <script>
+    if (!customElements.get('sk-fit-line')) {
+      customElements.define(
+        'sk-fit-line',
+        class extends HTMLElement {
+          connectedCallback() {
+            this.abort = new AbortController();
+            document.addEventListener('variant:update', (event) => this.onVariant(event), { signal: this.abort.signal });
+            this.closest('product-information, [data-product-id], form')
+              ?.addEventListener?.('change', () => requestAnimationFrame(() => this.fromPicker()), { signal: this.abort.signal });
+          }
+
+          disconnectedCallback() {
+            this.abort?.abort();
+          }
+
+          onVariant(event) {
+            const detail = event.detail || {};
+            if (detail.data?.productId && String(detail.data.productId) !== this.dataset.productId) return;
+            const variant = detail.resource;
+            if (!variant) return;
+            const text = (variant.options && variant.options.length ? variant.options : [variant.title]).join('  ');
+            this.show(text);
+          }
+
+          fromPicker() {
+            const scope = this.closest('product-information') || document;
+            const checked = [...scope.querySelectorAll('variant-picker input:checked, variant-picker select')]
+              .map((el) => (el.tagName === 'SELECT' ? el.selectedOptions[0]?.textContent : el.value) || '');
+            if (checked.length) this.show(checked.join('  '));
+          }
+
+          show(text) {
+            const alias = { petite: 'mini', mini: 'petite' };
+            const values = String(text).toLowerCase().split(/\s*\/\s*|\s{2,}/).map((v) => v.trim()).filter(Boolean);
+            const all = values.join(' ');
+            const rows = [...this.querySelectorAll('.sk-fit-line__row')];
+            const match =
+              rows.find((row) => all.includes(row.dataset.mm + 'mm')) ||
+              rows.find((row) => values.some((v) => { const w = v.split(' ')[0]; return v === row.dataset.name || w === row.dataset.name || alias[w] === row.dataset.name; }));
+            for (const row of rows) row.hidden = Boolean(match) && row !== match;
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-fit-line {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    background: rgb(var(--color-foreground-rgb) / 0.04);
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  .sk-fit-line__label {
+    font-family: var(--sk-script, var(--font-accent--family));
+    font-size: 1.125rem;
+    line-height: 1.1;
+  }
+
+  .sk-fit-line__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .sk-fit-line__row[hidden] {
+    display: none;
+  }
+
+  .sk-fit-line__row strong {
+    font-weight: 600;
+  }
+
+  .sk-fit-line__link {
+    justify-self: start;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: inherit;
+    text-underline-offset: 0.3em;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Fit line",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Shows the selected size's measurements, read from the product description."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Your fit"
+    },
+    {
+      "type": "text",
+      "id": "lens_label",
+      "label": "Lens label",
+      "default": "Lens"
+    },
+    {
+      "type": "text",
+      "id": "bridge_label",
+      "label": "Nose bridge label",
+      "default": "Bridge"
+    },
+    {
+      "type": "text",
+      "id": "arm_label",
+      "label": "Arm label",
+      "default": "Arm"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link text",
+      "default": "See every size, drawn to scale ↓"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Use #fit to jump to the fit section on the same page."
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Fit line"
+    }
+  ]
+}
+{% endschema %}

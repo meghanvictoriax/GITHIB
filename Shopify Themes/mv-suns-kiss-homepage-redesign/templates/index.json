@@ -1,0 +1,2937 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_iyt6zg": {
+      "type": "hero",
+      "blocks": {
+        "text_9km8L3": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<h1>Finally - frames that actually fit.</h1><h3><em>Sunglasses designed to fit & flatter wide face babes.</em></h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_rqHngY": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/shop-wide-face-babe",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "sk_product_tag": {
+          "type": "sk-product-tag",
+          "settings": {
+            "product": "mvp",
+            "label": "The frame that started it all",
+            "photo": 1,
+            "show_price": true,
+            "placement": "corner",
+            "color_scheme": "scheme-sk-linen"
+          }
+        }
+      },
+      "block_order": [
+        "text_9km8L3",
+        "button_rqHngY",
+        "sk_product_tag"
+      ],
+      "custom_css": [
+        "a,.button,.link {text-decoration: underline; text-underline-offset: 0.22em; text-decoration-thickness: 1px;}",
+        "h1 {font-size: clamp(2.5rem, 5.2vw, 5.5rem); line-height: 1.02; letter-spacing: 0.005em; font-weight: 400; text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);}",
+        "h3, h3 em {font-family: var(--font-body--family); font-style: normal; font-weight: 400; font-size: clamp(1rem, 1.5vw, 1.375rem); letter-spacing: 0.04em; line-height: 1.5; margin-block-start: 1rem; max-width: 34ch; text-shadow: 0 1px 12px rgb(0 0 0 / 0.4);}"
+      ],
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/801B7EB5-C063-4B9B-B0AF-4A949E0C897F_1_201_a.jpg",
+        "video_1": "shopify://files/videos/v14044g50000d2mf72nog65vtaf5t0kg.MP4",
+        "media_type_2": "image",
+        "image_2": "shopify://shop_images/6C2C73EB-EB85-4296-BCA6-2A10D8E64AFC_1_201_a_14abc720-3dd6-4efd-9a20-aecfa790e216.jpg",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": true,
+        "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/6C2C73EB-EB85-4296-BCA6-2A10D8E64AFC_1_201_a_14abc720-3dd6-4efd-9a20-aecfa790e216.jpg",
+        "video_1_mobile": "shopify://files/videos/Content 2.mov",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": true,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 0,
+        "section_width": "page-width",
+        "section_height": "full-screen",
+        "section_height_custom": 87,
+        "color_scheme": "scheme-4",
+        "toggle_overlay": true,
+        "overlay_color": "#0000008c",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 58
+      }
+    },
+    "section_rj9EgA": {
+      "type": "section",
+      "blocks": {
+        "text_TmFLR4": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<h4>We have different bodies, we also have different faces. Sol Kyst designs for your unique face - three distinct sizes of frames engineered to your proportions & facial harmony.&nbsp;</h4><p></p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 41,
+            "padding-block-end": 9,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_EKQ39X": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_TmFLR4",
+        "text_EKQ39X"
+      ],
+      "name": "t:names.rich_text_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 6,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-sk-blush",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#562d16ad",
+        "overlay_style": "gradient",
+        "gradient_direction": "to bottom",
+        "padding-block-start": 96,
+        "padding-block-end": 96
+      }
+    },
+    "ss_circle_menu_kfhzxX": {
+      "type": "ss-circle-menu",
+      "blocks": {
+        "image_r8eFax": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/617E1406-3845-4C22-ADAC-7961D15CC479.jpg",
+            "bubble_text": "Ovals",
+            "bubble_link": "shopify://collections/ovals"
+          }
+        },
+        "image_DRA7fw": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/instagram-image.jpg",
+            "bubble_text": "Traps",
+            "bubble_link": "shopify://collections/shop-trapezoids"
+          }
+        },
+        "image_nCr3c3": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/IMG_2309_1_aa69d526-0447-4dd8-a220-5efe43370a7a.jpg",
+            "bubble_text": "Recs",
+            "bubble_link": "shopify://collections/shop-rectangles"
+          }
+        },
+        "image_h6BLYC": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/CACC3EAF-6B4F-4368-AD26-C8082ADF4BE5.jpg",
+            "bubble_text": "Aviators",
+            "bubble_link": "shopify://collections/aviators"
+          }
+        },
+        "image_KzB3RX": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/4E8FC2B5-47FB-44EB-8438-B2C209EA454C_1_105_c_beae9ada-d344-40f6-bcd0-1df444cd8ed9.jpg",
+            "bubble_text": "Hangovers",
+            "bubble_link": "shopify://collections/shop-hangovers"
+          }
+        },
+        "image_4nti3p": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/IG_post_meghanvictoriax_2026-08-03.jpg",
+            "bubble_text": "Heart",
+            "bubble_link": "shopify://collections/hearts"
+          }
+        },
+        "image_bpPwwk": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/IMG_1092_3ded42ac-4e53-412f-ad04-e24213831572.jpg",
+            "bubble_text": "Kyst Eye",
+            "bubble_link": "shopify://collections/shop-kyst-eyes"
+          }
+        },
+        "image_9fd79r": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/instagram-image_efa708a2-6d57-4457-9c08-c5439e87b9cb.jpg",
+            "bubble_text": "Square",
+            "bubble_link": "shopify://collections/square"
+          }
+        },
+        "image_PtyAhe": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/kyst.png",
+            "bubble_text": "Accessories",
+            "bubble_link": "shopify://collections/accesories"
+          }
+        },
+        "image_JPgH9m": {
+          "type": "Image",
+          "settings": {
+            "bubble_img": "shopify://shop_images/Barbie_Shoot_-_Solkyst0115_AUG_15.jpg",
+            "bubble_text": "Barbie",
+            "bubble_link": "shopify://collections/shop-all-barbie"
+          }
+        }
+      },
+      "block_order": [
+        "image_r8eFax",
+        "image_DRA7fw",
+        "image_nCr3c3",
+        "image_h6BLYC",
+        "image_KzB3RX",
+        "image_4nti3p",
+        "image_bpPwwk",
+        "image_9fd79r",
+        "image_PtyAhe",
+        "image_JPgH9m"
+      ],
+      "name": "SS - Circle Menu",
+      "settings": {
+        "slider_width": 100,
+        "slider_gap": 12,
+        "slider_gap_mobile": 6,
+        "icon_size": 200,
+        "icon_size_mobile": 132,
+        "icon_space": 4,
+        "icon_space_mobile": 4,
+        "icon_border_thickness": 0,
+        "icon_square": false,
+        "use_hover": true,
+        "text_custom": false,
+        "text_font": "josefin_sans_n7",
+        "text_size": 12,
+        "text_size_mobile": 10,
+        "text_height": 130,
+        "text_mt": 8,
+        "icon_border_color": "#121212",
+        "icon_border_gradient": "",
+        "text_color": "#4b3b34",
+        "background_color": "#fdfdfd",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "border_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1500,
+        "border_thickness": 0,
+        "lazy": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "section_NWpYxm": {
+      "type": "section",
+      "blocks": {
+        "text_GeK4nn": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Specializing in our Wide Face Babe fit - the widest women's glasses on the market to genuinely fit & flatter wide, round and square faces.</p><p>Never one size fits all.</p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-accent--family)",
+            "font_size": "1.5rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_LrVJQD": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "SHOP ALL",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "link",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_GeK4nn",
+        "button_LrVJQD"
+      ],
+      "name": "t:names.rich_text_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 31,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#562d16ad",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 48
+      }
+    },
+    "section_aCCTtH": {
+      "type": "section",
+      "blocks": {
+        "group_Gm8NkV": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fill",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_4JB8T9": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/0E6885C4-D658-407C-9311-174A23A666FD.jpg",
+                "link": "shopify://collections/shop-wide-face-babe",
+                "image_ratio": "portrait",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fill",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 21,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 4
+              },
+              "blocks": {}
+            },
+            "group_3FYP9A": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 4,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_7CQnVk": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Wide</h2>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 24,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_aEbfjV": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Our signature wide face babe fit. Widest on the market - designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight or has ever experienced headaches and discomfort from their frames. . Frame width 158mm +</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 22,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_7CQnVk",
+                "text_aEbfjV"
+              ]
+            }
+          },
+          "block_order": [
+            "image_4JB8T9",
+            "group_3FYP9A"
+          ]
+        },
+        "group_LdE8iA": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_i9pnwE": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 0,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 21,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "image_WhQLP8": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/Peachy_20250823191140498.jpg",
+                    "link": "shopify://collections/shop-mini-styles",
+                    "image_ratio": "portrait",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 21,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 4,
+                    "padding-inline-end": 4
+                  },
+                  "blocks": {}
+                },
+                "text_8M3qTa": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Standard</h2>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 24,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_ULiJwn": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Frame width 135mm +Best for petite or smaller faces who still want an oversized look and a bit of glamour. </p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 21,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_WhQLP8",
+                "text_8M3qTa",
+                "text_ULiJwn"
+              ]
+            }
+          },
+          "block_order": [
+            "group_i9pnwE"
+          ]
+        },
+        "group_AtMG8N": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_UVKycC": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/AJ9A8122.jpg",
+                "link": "shopify://collections/shop-midi-styles",
+                "image_ratio": "portrait",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fill",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 21,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 4,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "icon_4rgbUF": {
+              "type": "icon",
+              "disabled": true,
+              "settings": {
+                "icon": "eye",
+                "width": 32,
+                "link": "",
+                "open_in_new_tab": false
+              },
+              "blocks": {}
+            },
+            "group_ne3UWd": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 0,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_PBdEjz": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Soft Wide</h2>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 24,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_JXzQ94": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look. Not sure? START HERE - we offer free exchanges. Frame width 145mm +<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 22,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_PBdEjz",
+                "text_JXzQ94"
+              ]
+            }
+          },
+          "block_order": [
+            "image_UVKycC",
+            "icon_4rgbUF",
+            "group_ne3UWd"
+          ]
+        }
+      },
+      "block_order": [
+        "group_Gm8NkV",
+        "group_LdE8iA",
+        "group_AtMG8N"
+      ],
+      "name": "t:names.icons_with_text",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "ss_scrolling_logo_cloud_HbLCPF": {
+      "type": "ss-scrolling-logo-cloud",
+      "blocks": {
+        "slide_WL4QAi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Hello__Fashion_digital_editor_-_fashion_lifestyle_editorial_media_job_-_LOGO.jpg",
+            "link": "https://www.hellomagazine.com/hfm/culture/20221027155405/50s-fashion-trends/"
+          }
+        },
+        "slide_gGE9VJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vector-Smart-Object.png",
+            "link": "https://frowmagazine.com/how-to-nail-the-rebellious-brat-summer-trend-everyones-talking-about/"
+          }
+        },
+        "slide_6qefe8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Refinery29_logo_svg.png",
+            "link": "https://www.refinery29.com/en-us/fall-clothes-accessories-2024"
+          }
+        },
+        "slide_n7khKK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/images.png",
+            "link": "https://www.instagram.com/cosmopolitanuk/"
+          }
+        },
+        "slide_y9TTHp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0204.webp",
+            "link": "https://www.cbc.ca/dragonsden/pitches/sol-kyst"
+          }
+        },
+        "slide_GhXfBw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_82556426-859e-4611-93ae-318d60779ad1.png",
+            "link": "https://www.marieclaire.co.uk/fashion/shopping/mc-fashion-team-payday-picks"
+          }
+        },
+        "slide_FHbQwE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/daily-mail-logo-png-transparent.png",
+            "link": ""
+          }
+        },
+        "slide_Fb8zTb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/QVC-logo_1.png",
+            "link": ""
+          }
+        },
+        "slide_ANjzke": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/elle.png",
+            "link": "https://www.ellecanada.com/fashion/5-canadian-female-led-brands-create-barbie-collection"
+          }
+        },
+        "slide_DNBqXq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/page-six-logo-708C01711E-seeklogo.com.png",
+            "link": "https://pagesix.com/2024/08/29/style/jenna-ortega-carries-the-beetlejuice-house-as-a-purse-at-the-films-london-premiere/"
+          }
+        },
+        "slide_WcMGQ6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/VITA-Black.png",
+            "link": "https://vitamagazine.com/2024/09/15/its-a-barbie-world-for-these-5-canadian-female-founded-brands-win/"
+          }
+        },
+        "slide_84P4Gz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/unnamed.png",
+            "link": "https://sheerluxe.com/fashion/trends/bikini-and-shirt"
+          }
+        },
+        "slide_APc8aj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/00F6EB25-29FA-4B93-AA59-77D37BC8C0EC.png",
+            "link": "https://www.ecoluxlifestyle.co/sol-kyst-canadian-eyewear-brand-size-inclusivity-dragons-den/"
+          }
+        }
+      },
+      "block_order": [
+        "slide_WL4QAi",
+        "slide_gGE9VJ",
+        "slide_6qefe8",
+        "slide_n7khKK",
+        "slide_y9TTHp",
+        "slide_GhXfBw",
+        "slide_FHbQwE",
+        "slide_Fb8zTb",
+        "slide_ANjzke",
+        "slide_DNBqXq",
+        "slide_WcMGQ6",
+        "slide_84P4Gz",
+        "slide_APc8aj"
+      ],
+      "name": "SS - Scrolling logo cloud",
+      "settings": {
+        "ss_title": "FEAUTURED",
+        "heading_custom": true,
+        "heading_font": "serif",
+        "header_size": 10,
+        "header_align": "center",
+        "scrolling_velocity": 25,
+        "slider_direction": "left",
+        "pause_hover": true,
+        "shadow": true,
+        "slider_advanced": false,
+        "sliders_mt": 24,
+        "logo_padding_top": 0,
+        "logo_padding_bottom": 0,
+        "slider_gap": 30,
+        "slider_gap_mobile": 30,
+        "icon_width": 100,
+        "slider_background_color": "#ffffff",
+        "header_color": "#121212",
+        "background_style": "gradient",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(242, 242, 242, 1) 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 16,
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "width": "full",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "1776970902f668fc85": {
+      "type": "_blocks",
+      "blocks": {
+        "loox_reviews_loox_trust_badge_VJEE44": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "layout": "horizontal",
+            "alignment": "center",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": false,
+            "loox-branding": false,
+            "review-count": true,
+            "open-reviews": false,
+            "show-border": true,
+            "border-radius": 14,
+            "font-size": 20,
+            "background-color": "#e8dfda",
+            "secondary-background-color": "",
+            "text-color": "",
+            "rating-icon-color": "#181212",
+            "border-color": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_trust_badge_VJEE44"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_G7JJkY": {
+      "type": "section",
+      "blocks": {
+        "video_BcqJtf": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/RPReplay_Final1700868469.mov",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": false,
+            "alt": "",
+            "custom_width": 88,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "solid",
+            "border_width": 0,
+            "border_opacity": 100,
+            "border_radius": 31,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_inhDkq": {
+          "type": "group",
+          "name": "t:names.caption",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_mcnkwi": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h4>As seen & loved on Dragons Den Canada</h4>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_8CE8Qt": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_mcnkwi",
+            "button_8CE8Qt"
+          ]
+        }
+      },
+      "block_order": [
+        "video_BcqJtf",
+        "group_inhDkq"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
+    "178422256487e7a2a3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_48118d9_akiNYE": {
+          "type": "ai_gen_block_48118d9",
+          "settings": {
+            "section_title": "15,000+ wide face babes served",
+            "section_subtitle": "Real reviews from real customers",
+            "header_alignment": "center",
+            "header_spacing": 40,
+            "desktop_width_percent": 100,
+            "section_padding": 30,
+            "columns_desktop": 4,
+            "columns_mobile": "2",
+            "grid_gap": 15,
+            "background_color": "#faf9f6",
+            "card_background": "#ffffff",
+            "card_padding": 20,
+            "card_spacing": 15,
+            "card_border_width": 1,
+            "card_border_color": "#e6e6e6",
+            "card_border_radius": 16,
+            "show_ratings": true,
+            "star_size": 16,
+            "star_color": "#69451b",
+            "avatar_size": 45,
+            "author_spacing": 12,
+            "avatar_placeholder_bg": "#dfd1c0",
+            "avatar_placeholder_text": "#000000",
+            "title_font": "bodoni_moda_n4",
+            "title_size": 48,
+            "title_spacing": 15,
+            "subtitle_size": 14,
+            "body_font": "dm_sans_n4",
+            "text_size": 14,
+            "author_name_size": 14,
+            "author_title_size": 12,
+            "title_color": "#000000",
+            "subtitle_color": "#666666",
+            "text_color": "#000000",
+            "author_name_color": "#000000",
+            "author_title_color": "#666666",
+            "testimonial_1_text": "\"I love love love every single detail of these Sol Kyst sunglasses! I have never been more grateful for a pair of sunnies that do not make me look wider than I actually am in pictures! I feel seen, heard, embraced, and confident in these beauties. A must-have staple!\"",
+            "testimonial_1_author_name": "Ana D",
+            "testimonial_1_author_title": "Verified Buyer",
+            "testimonial_1_rating": 5,
+            "testimonial_2_text": "\"The relief I had when I tried them on made me so happy I cried. Never have I ever tried a more perfect pair of glasses in my life. Thank you from the bottom of my heart.\"",
+            "testimonial_2_author_name": "Jazmin Rico",
+            "testimonial_2_author_title": "Verified Buyer",
+            "testimonial_2_rating": 5,
+            "testimonial_3_text": "\"When I tell you I haven’t been able to find a good pair of sunglasses since my D&G's and I am finally SO SO happy with my purchase! These sunnies are a confidence booster I didn’t know I needed. I had bought about 13 pairs of different sunglasses in the last 4 years trying to get a new pair that would flatter my chubby face and Sol Kyst are finally the ones I absolutely love. They are made with great material. They feel tough enough that you know they don’t break easily but it doesn’t look like cheap plastic. Super fashionable and the case it comes with is a perfect color and material. It will match with whatever purse you have that day! I had a question about my order (before receiving them) and I got a reply right away about my concerns. Overall, this brand is fantastic and she’s just getting started! I can’t wait to see what’s next ♥ Will definitely be buying again.\"",
+            "testimonial_3_author_name": "Yeni Anguiano",
+            "testimonial_3_author_title": "Verified Buyer",
+            "testimonial_3_rating": 5,
+            "testimonial_4_text": "\"I couldn’t recommend these more. I’ve never had a pair of sunglasses that have fit, let alone feminine ones. Even men's were snug and uncomfortable. I was checking tracking every 20 minutes the day they arrived and when I tried them on the first time I teared up. They fit and feel so much better than even expected and they look so cute. I was so excited and I haven’t taken them off since. They are so flattering and I will be ordering more in every colour. I’m in love. Shipping was also very quick! I received them across the country in less than a week. Quality is better than other designer/high-end glasses I have purchased. Seriously, order them. You won’t regret it.\"",
+            "testimonial_4_author_name": "/ Jacey Loewen",
+            "testimonial_4_author_title": "Verified Buyer",
+            "testimonial_4_rating": 5,
+            "testimonial_5_text": "\"Never before in my life have I put on a pair of sunglasses that I am 100% happy with. These sunnies are high quality, stylish, and so flattering I am honestly shocked. I had long ago surrendered to the idea that sunglasses just didn’t look good on me and I debated buying these for months before finally purchasing during a 'less than perfect' sale. Not only are they the perfect fit for my wide face but I truly can’t see what deemed them less than perfect in the first place. 10/10. LOVE THEM! Don’t sleep on these, they are everything they claim to be!!\"",
+            "testimonial_5_author_name": "Lisa B",
+            "testimonial_5_author_title": "Verified Buyer",
+            "testimonial_5_rating": 5,
+            "testimonial_6_text": "",
+            "testimonial_6_author_name": "",
+            "testimonial_6_author_title": "Verified Buyer",
+            "testimonial_6_rating": 5,
+            "testimonial_7_text": "\"By far these are the best glasses I’ve ever worn. I have pretty wide cheek bones and these don’t squeeze my head at all so I can wear them all day. I feel powerful and confident when I have them on because I finally have sunglasses that flatter me.\"",
+            "testimonial_7_author_name": "Ashley Scott",
+            "testimonial_7_author_title": "Verified Buyer",
+            "testimonial_7_rating": 5,
+            "testimonial_8_text": "\"When I was born, my mom's friends nicknamed me Head Quarters. Needless to say I have a large round face. I’ve struggled my entire life for sunglasses that not only fit my face but also flatter it. They don’t pinch my temples, and look chic.\"",
+            "testimonial_8_author_name": "Laura Brown",
+            "testimonial_8_author_title": "Verified Buyer",
+            "testimonial_8_rating": 5,
+            "testimonial_9_text": "\"I’ve been waiting my whole life for glasses that actually fit me well! These fit perfectly and are SO cute! So happy I found this brand.\"",
+            "testimonial_9_author_name": "Sally Gietzen",
+            "testimonial_9_author_title": "Verified Buyer",
+            "testimonial_9_rating": 5,
+            "testimonial_10_text": "\"I was a bit apprehensive of buying these glasses, but let me tell you... I absolutely love them. I've gotten so many compliments when I took them on vacation to Punta Cana! I've always had a hard time finding glasses that fit my face and since I've found this company I now have four pairs from the site!\"",
+            "testimonial_10_author_name": "Joyce Gail",
+            "testimonial_10_author_title": "Verified Buyer",
+            "testimonial_10_rating": 5,
+            "testimonial_11_text": "\"I found Sol Kyst on TikTok by chance (or so I thought) and decided to give a few of the sale aviators a try. I was hesitant at first, but they are everything I ever dreamed of and more! They are high quality and frame my face to perfection. It’s a dream to have large aviators that actually fit and flatter my face. Also, the company’s customer service is absolutely incredible and the owner is someone I am so proud to support. You can definitely buy with confidence and they’ll answer any product questions you have. I would highly recommend giving some of their styles a shot! I personally love Tyler & Charli but I’ll be purchasing others very soon! You won’t be disappointed.\"",
+            "testimonial_11_author_name": "Becca",
+            "testimonial_11_author_title": "Verified Buyer",
+            "testimonial_11_rating": 5,
+            "testimonial_12_text": "",
+            "testimonial_12_author_name": "",
+            "testimonial_12_author_title": "Verified Buyer",
+            "testimonial_12_rating": 5,
+            "testimonial_13_text": "\"I have had these since the very first orders went out when this brand started. It’s safe to say they’ve been put to the test. I’ve dropped them, sat on them, they’ve traveled with me, and been shoved to the bottom of my backpack many times. The quality and durability of these has yet to fail me. If you are wondering if you should pull the trigger to buy these THIS IS YOUR SIGN TO BUY IT ❤️ Also they cute as all get out!\"",
+            "testimonial_13_author_name": "S.C",
+            "testimonial_13_author_title": "Verified Buyer",
+            "testimonial_13_rating": 5,
+            "testimonial_14_text": "",
+            "testimonial_14_author_name": "",
+            "testimonial_14_author_title": "Verified Buyer",
+            "testimonial_14_rating": 5,
+            "testimonial_15_text": "\"As with much of the fashion industry only making clothing for one (small) body type, sunglasses have never been designed with different face shapes in mind and seem to only focus on slim faces. I found Sol Kyst through a TikTok where the owner was showing the difference between small and wide sunglasses. I bought these SO FAST!! Our worth as a human is NEVER tied to how clothing or sunglasses look on us because they are meant to serve US, not the other way around. But to finally have shades designed SPECIFICALLY for my face shape has helped me feel even more confident and I am just so obsessed with these!\"",
+            "testimonial_15_author_name": "Tina Van Aarsen",
+            "testimonial_15_author_title": "Verified Buyer",
+            "testimonial_15_rating": 5,
+            "testimonial_16_text": "\"Wow, so happy I found Sol Kyst! I’ve purchased Celine’s before in vain as even Celine’s weren’t quite as big as I need to compliment my wide face. I’ve received my first pair of glasses from Sol Kyst today and the quality of materials is exactly the same as I experienced with other overpriced designer brands except even better because they actually compliment me and don’t give me headaches from the tightness on my temples. I will absolutely be purchasing more from this site and can’t wait to see what new designs they come up with!\"",
+            "testimonial_16_author_name": "Chica Villalobos",
+            "testimonial_16_author_title": "Verified Buyer",
+            "testimonial_16_rating": 5,
+            "testimonial_17_text": "\"I’m obsessed with these sunglasses. I have a round face and I’ve never had a pair of sunglasses that I actually feel comfortable and confident wearing before. I have bought countless sunglasses my whole life trying to find the right pair. I’m so glad I bought these! They fit and flatter! First pair I truly think actually look good on me. So happy! And love the customer service! Highly recommend.\"",
+            "testimonial_17_author_name": "Daniel Gentili",
+            "testimonial_17_author_title": "Verified Buyer",
+            "testimonial_17_rating": 5,
+            "testimonial_18_text": "\"Thank you so much for (finally!!!) making chic women’s sunglasses in larger widths! I almost cried when I first put these on and realized I didn’t feel any discomfort. I’m so grateful. Also, they’re really high quality and the Obsidian style is cute af.\"",
+            "testimonial_18_author_name": "Abigail Reno",
+            "testimonial_18_author_title": "Verified Buyer",
+            "testimonial_18_rating": 5,
+            "testimonial_19_text": "",
+            "testimonial_19_author_name": "",
+            "testimonial_19_author_title": "Verified Buyer",
+            "testimonial_19_rating": 5,
+            "testimonial_20_text": "\"I have a big head and most sunglasses look awkward on me. I feel glamorous in these sunglasses. I feel included and beautiful!\"",
+            "testimonial_20_author_name": "Emily Henry",
+            "testimonial_20_author_title": "Verified Buyer",
+            "testimonial_20_rating": 5,
+            "layout": "carousel"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_48118d9_akiNYE"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_GnhBGc": {
+      "type": "section",
+      "blocks": {
+        "text_fqyUnk": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Iconic style, starts with fit.</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_adnNh7": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Sol Kyst - the viral Canadian wide fit sunglasses brand now designed in multiple frame sizes to fit and flatter more face shapes, specializing in wide fit eyewear for the wide face babes and proportions of round face cheeky girls.<br/><br/>Not sure what size you are? Start with your current sunglasses. If they pinch, leave marks, sit too high, don't reach your ears, or feel tight at the temples, you may need a wider fit! </p><p>Because 'one size fits all' never actually did.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_fqyUnk",
+        "text_adnNh7"
+      ],
+      "disabled": true,
+      "name": "t:names.rich_text_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 25,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "section_7fVabn": {
+      "type": "section",
+      "blocks": {
+        "group_kFBJBy": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-end",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
+            "gap": 100,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "height": "fill",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-5",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/IMG_0660.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 17,
+            "toggle_overlay": false,
+            "overlay_color": "#1a1a1a69",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "shopify://products/azure-sunglasses-for-wide-face-wide-fit-frames",
+            "open_in_new_tab": false,
+            "placeholder": "hero-apparel-1",
+            "padding-block-start": 40,
+            "padding-block-end": 40,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "spacer_WL9Axn": {
+              "type": "spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 16,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_D4U4fT": {
+              "type": "button",
+              "settings": {
+                "label": "Keepsake",
+                "link": "shopify://products/bridal",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "spacer_WL9Axn",
+            "button_D4U4fT"
+          ]
+        },
+        "group_HXdmjF": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
+            "gap": 16,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fill",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-5",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/503F622F-8C54-4040-95F3-7A94D85892CD.png",
+            "background_image_position": "cover",
+            "border": "solid",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 17,
+            "toggle_overlay": false,
+            "overlay_color": "#1a1a1a69",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "shopify://products/core-wide-fit-sunglasses",
+            "open_in_new_tab": false,
+            "placeholder": "hero-apparel-2",
+            "padding-block-start": 40,
+            "padding-block-end": 40,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "spacer_gUc8LQ": {
+              "type": "spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 16,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_JdmRhJ": {
+              "type": "button",
+              "settings": {
+                "label": "Aura",
+                "link": "shopify://products/mella",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "spacer_gUc8LQ",
+            "button_JdmRhJ"
+          ]
+        },
+        "group_kUnefa": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-5",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/IMG_2520_copy.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 17,
+            "toggle_overlay": false,
+            "overlay_color": "#1a1a1a69",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "shopify://products/terra-sunglasses-for-wide-face-wide-fit-frames",
+            "open_in_new_tab": false,
+            "placeholder": "hero-apparel-2",
+            "padding-block-start": 40,
+            "padding-block-end": 40,
+            "padding-inline-start": 30,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "spacer_Tphk3r": {
+              "type": "spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 16,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_prj8N4": {
+              "type": "button",
+              "settings": {
+                "label": "Naomi",
+                "link": "shopify://products/naomi",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "spacer_Tphk3r",
+            "button_prj8N4"
+          ]
+        }
+      },
+      "block_order": [
+        "group_kFBJBy",
+        "group_HXdmjF",
+        "group_kUnefa"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "t:names.split_showcase",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": false,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 6,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-d98ddb8a-aae3-4e7d-895c-c2347570cc28",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 3.5,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#a59a8d",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 13,
+        "padding-block-end": 12
+      }
+    },
+    "hero_qVCE4h": {
+      "type": "hero",
+      "blocks": {
+        "text_6EhXF4": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Custom & Prescription Services</h2>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_Uk7TxJ": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/rx",
+            "open_in_new_tab": false,
+            "style_class": "link",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_6EhXF4",
+        "button_Uk7TxJ"
+      ],
+      "custom_css": [
+        "a,.button,.link {text-decoration: underline; text-underline-offset: 0.22em; text-decoration-thickness: 1px;}"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/0E115051-65EB-4F2E-9315-838B2EB58964.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "custom",
+        "section_height_custom": 53,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#1a1a1a69",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "176784795778671e34": {
+      "type": "_blocks",
+      "blocks": {
+        "loox_reviews_loox_trust_badge_yMmJ7a": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "layout": "vertical",
+            "alignment": "center",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": false,
+            "loox-branding": false,
+            "review-count": true,
+            "open-reviews": false,
+            "show-border": false,
+            "border-radius": 0,
+            "font-size": 17,
+            "background-color": "",
+            "secondary-background-color": "",
+            "text-color": "",
+            "rating-icon-color": "#000000",
+            "border-color": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_trust_badge_yMmJ7a"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_F9fMc4": {
+      "type": "section",
+      "blocks": {
+        "group_Q6JxNp": {
+          "type": "group",
+          "name": "Content",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 16,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fill",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_XmzkXY": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Designed to fit & flatter wide face babes.</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_aCXUUG": {
+              "type": "button",
+              "name": "t:names.button",
+              "disabled": true,
+              "settings": {
+                "label": "SHOP NOW",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_XmzkXY",
+            "button_aCXUUG"
+          ]
+        },
+        "comparison_slider_YEKHnD": {
+          "type": "comparison-slider",
+          "name": "t:names.comparison_slider",
+          "settings": {
+            "before_image": "shopify://shop_images/Black_and_Beige_Modern_Minimal_Interior_Email_Newsletter_4_x_5_in.png",
+            "after_image": "shopify://shop_images/IMG_1092.jpg",
+            "slider_style": "horizontal",
+            "show_text": true,
+            "before_text": "Generic size Womens sunglasses",
+            "after_text": "Our Wide Face Viral Obsidian Sunnies",
+            "text_preset": "",
+            "text_position_horizontal": "end",
+            "text_position_vertical": "end",
+            "text_background": false,
+            "text_background_color": "#ffffff",
+            "text_corner_radius": 0,
+            "image_ratio": "portrait",
+            "width": "custom",
+            "custom_width": 37,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "group_Q6JxNp",
+        "comparison_slider_YEKHnD"
+      ],
+      "name": "Size comparison ",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 50,
+        "section_width": "full-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-d98ddb8a-aae3-4e7d-895c-c2347570cc28",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 21,
+        "padding-block-end": 82
+      }
+    },
+    "section_7cjHWB": {
+      "type": "section",
+      "blocks": {
+        "text_q6Efiw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\" I never wanted to just widen the measurements of basic sunglasses but truly hone in on the features of a wider face and come up with new thoughftully crafted designs. Our frames are designed with your face at the forefront of all our engineering and decisions.”</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_jmwCWA": {
+          "type": "button",
+          "settings": {
+            "label": "- Meghan Victoria, Founder & Professional Makeup Artist",
+            "link": "shopify://collections/best-sellers",
+            "open_in_new_tab": true,
+            "style_class": "link",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_q6Efiw",
+        "button_jmwCWA"
+      ],
+      "name": "t:names.pull_quote",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-sk-blush",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 96,
+        "padding-block-end": 96
+      }
+    },
+    "17790414037ac5ecbc": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "17842278331d8dcd58": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "17842491828a200cd7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ea83db7_RBWf6Q": {
+          "type": "ai_gen_block_ea83db7",
+          "disabled": true,
+          "settings": {
+            "heading": "Sol Kyst in Action",
+            "subheading": "Tag us to glet featured!",
+            "text_alignment": "center",
+            "section_padding": 40,
+            "header_spacing": 40,
+            "desktop_width_percent": 100,
+            "columns_desktop": 6,
+            "columns_tablet": 3,
+            "columns_mobile": "2",
+            "grid_gap": 15,
+            "aspect_ratio": "9 / 16",
+            "video_border_radius": 8,
+            "video_background": "#000000",
+            "play_button_size": 60,
+            "play_button_bg": "#ffffff",
+            "play_button_icon_color": "#000000",
+            "enable_loop": true,
+            "enable_mute": false,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_text_color": "#ffffff",
+            "overlay_opacity": 80,
+            "overlay_padding": 20,
+            "heading_size": 32,
+            "heading_case": "none",
+            "heading_color": "#000000",
+            "subheading_size": 16,
+            "subheading_color": "#666666",
+            "author_size": 14,
+            "caption_size": 12,
+            "video_1": "shopify://files/videos/v14044g50000d980jtnog65ggi76l5kg.mp4",
+            "author_1": "@jordanunhea",
+            "caption_1": "Featuring Kin",
+            "video_2": "shopify://files/videos/v12044gd0000chddtkrc77uah2usuj00.mp4",
+            "author_2": "@marieveganbeauty",
+            "caption_2": "Featuring Integrity",
+            "video_3": "shopify://files/videos/v09044g40000chrmhcbc77ucd2d4mrtg.mp4",
+            "author_3": "@newmamameg",
+            "caption_3": "Featuring Monarch",
+            "video_4": "shopify://files/videos/v12044gd0000crh2587og65t3efhvklg.mp4",
+            "author_4": "@fashionmycurves",
+            "caption_4": "Featuring As If",
+            "video_5": "shopify://files/videos/v26044gc0000d8lhgafog65omutm0pug.mp4",
+            "author_5": "@makeupbynamaisa",
+            "caption_5": "Featuring Core",
+            "video_6": "shopify://files/videos/371e8379ef2748389102394bac1e8c6d.mov",
+            "author_6": "",
+            "caption_6": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ea83db7_RBWf6Q"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "178483197918528f61": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "1784832046c9f6d8e8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cfe4422_WWQqLf": {
+          "type": "ai_gen_block_cfe4422",
+          "disabled": true,
+          "settings": {
+            "main_image": "shopify://shop_images/6C2C73EB-EB85-4296-BCA6-2A10D8E64AFC_1_201_a_14abc720-3dd6-4efd-9a20-aecfa790e216.jpg",
+            "top_image": "shopify://shop_images/27A3B086-0E3B-4B71-9756-F5DD7DAF70C3.jpg",
+            "bottom_image": "shopify://shop_images/547973D9-7C97-4ACD-BD1B-C47CF3CCE67F.jpg",
+            "desktop_width_percent": 65,
+            "gap": 8,
+            "mobile_gap": 8
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_cfe4422_NXLC7q": {
+          "type": "ai_gen_block_cfe4422",
+          "disabled": true,
+          "settings": {
+            "main_image": "shopify://shop_images/6C2C73EB-EB85-4296-BCA6-2A10D8E64AFC_1_201_a_14abc720-3dd6-4efd-9a20-aecfa790e216.jpg",
+            "top_image": "shopify://shop_images/27A3B086-0E3B-4B71-9756-F5DD7DAF70C3.jpg",
+            "bottom_image": "shopify://shop_images/547973D9-7C97-4ACD-BD1B-C47CF3CCE67F.jpg",
+            "desktop_width_percent": 65,
+            "gap": 8,
+            "mobile_gap": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cfe4422_WWQqLf",
+        "ai_gen_block_cfe4422_NXLC7q"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "sk_ticker": {
+      "type": "marquee",
+      "blocks": {
+        "t0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free tariff &amp; duty-free shipping on eyewear across North America over $150</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "t1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>30-day returns · 45-day exchanges</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "t2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Canadian wide fit eyewear</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "t3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Three widths · 135 · 145 · 158mm</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "t4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>UV 400 · Polarized lenses · Acetate frames</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "t5": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Prescription services available</p>",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "1.5rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        },
+        "s5": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✦</p>",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          }
+        }
+      },
+      "block_order": [
+        "t0",
+        "s0",
+        "t1",
+        "s1",
+        "t2",
+        "s2",
+        "t3",
+        "s3",
+        "t4",
+        "s4",
+        "t5",
+        "s5"
+      ],
+      "settings": {
+        "movement_direction": "normal",
+        "color_scheme": "scheme-sk-cocoa",
+        "padding-block-start": 22,
+        "padding-block-end": 22,
+        "gap_between_elements": 36
+      }
+    },
+    "sk_fit": {
+      "type": "sk-fit-index",
+      "blocks": {
+        "w1": {
+          "type": "width",
+          "settings": {
+            "name": "Standard",
+            "mm": 135,
+            "text": "<p>Best for petite or smaller faces who still want an oversized look and a bit of glamour.</p>",
+            "link_label": "Shop this fit",
+            "link": "shopify://collections/shop-mini-styles"
+          }
+        },
+        "w2": {
+          "type": "width",
+          "settings": {
+            "name": "Soft Wide",
+            "mm": 145,
+            "text": "<p>Our classic oversized fit — ideal if most standard sunglasses fit, but you want a little more room and drama to your look.</p>",
+            "link_label": "Shop this fit",
+            "link": "shopify://collections/shop-midi-styles"
+          }
+        },
+        "w3": {
+          "type": "width",
+          "settings": {
+            "name": "Wide",
+            "mm": 158,
+            "text": "<p>Our signature wide face babe fit. Widest on the market — designed for fuller cheeks, wider temples, and anyone who always finds sunglasses too tight.</p>",
+            "link_label": "Shop this fit",
+            "link": "shopify://collections/shop-wide-face-babe"
+          }
+        },
+        "p1": {
+          "type": "spec",
+          "settings": {
+            "title": "UV 400 protection",
+            "text": ""
+          }
+        },
+        "p2": {
+          "type": "spec",
+          "settings": {
+            "title": "Polarized nylon lenses",
+            "text": ""
+          }
+        },
+        "p3": {
+          "type": "spec",
+          "settings": {
+            "title": "Acetate framework",
+            "text": ""
+          }
+        },
+        "p4": {
+          "type": "spec",
+          "settings": {
+            "title": "Scratch resistant coating",
+            "text": ""
+          }
+        },
+        "p5": {
+          "type": "spec",
+          "settings": {
+            "title": "The unboxing",
+            "text": "Protective hard case, microfibre cloth and luxury sliding gift box."
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "w2",
+        "w3",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "settings": {
+        "eyebrow": "A field guide to fit",
+        "heading": "The <em>Fit</em> Index",
+        "intro": "<p>Never one size fits all. Every Sol Kyst frame comes with its exact measurements — here is how to read them.</p>",
+        "anchor": "fit-index",
+        "scale_max": 170,
+        "unit_label": "mm",
+        "scale_note": "Overall frame width, drawn to scale.",
+        "show_anatomy": true,
+        "anatomy_heading": "How to read a frame",
+        "anatomy_text": "<p>Every Sol Kyst frame lists its size as overall width | lens – nose bridge – arm.</p>",
+        "overall_label": "Overall width",
+        "overall": "158mm",
+        "lens_label": "Lens",
+        "lens": "67",
+        "bridge_label": "Nose bridge",
+        "bridge": "19",
+        "arm_label": "Arm",
+        "arm": "145",
+        "anatomy_caption": "Shown: AURA, Wide — 158mm | 67-19-145",
+        "specs_heading": "The technical stuff",
+        "color_scheme": "scheme-sk-sand"
+      }
+    },
+    "sk_mosaic": {
+      "type": "sk-product-mosaic",
+      "blocks": {
+        "m1": {
+          "type": "product",
+          "settings": {
+            "product": "mella",
+            "photo": 4,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        },
+        "m2": {
+          "type": "product",
+          "settings": {
+            "product": "cashmere",
+            "photo": 10,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        },
+        "m3": {
+          "type": "product",
+          "settings": {
+            "product": "hangover",
+            "photo": 7,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        },
+        "m4": {
+          "type": "product",
+          "settings": {
+            "product": "naomi",
+            "photo": 12,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        },
+        "m5": {
+          "type": "product",
+          "settings": {
+            "product": "monarch",
+            "photo": 6,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        },
+        "m6": {
+          "type": "product",
+          "settings": {
+            "product": "charli",
+            "photo": 3,
+            "hover_photo": 1,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6"
+      ],
+      "settings": {
+        "eyebrow": "The frames",
+        "heading": "Iconic style, <em>starts with fit.</em>",
+        "text": "<p>Specializing in our Wide Face Babe fit — the widest women's glasses on the market.</p>",
+        "link_label": "Shop all",
+        "link": "shopify://collections/shop-wide-face-babe",
+        "image_ratio": "portrait",
+        "show_price": true,
+        "show_caption": true,
+        "footnote": "",
+        "color_scheme": "scheme-sk-linen",
+        "image_shape": "rounded"
+      }
+    },
+    "sk_barbie": {
+      "type": "sk-product-mosaic",
+      "blocks": {
+        "b1": {
+          "type": "product",
+          "settings": {
+            "product": "barbie™-x-sol-kyst-1959-originals",
+            "photo": 1,
+            "hover_photo": 2,
+            "caption": ""
+          }
+        },
+        "b2": {
+          "type": "product",
+          "settings": {
+            "product": "barbie™-x-sol-kyst-1980s-crystal-cat-eye",
+            "photo": 1,
+            "hover_photo": 2,
+            "caption": ""
+          }
+        },
+        "b3": {
+          "type": "product",
+          "settings": {
+            "product": "barbie™-x-sol-kyst-1980s-black-barbie-square",
+            "photo": 1,
+            "hover_photo": 2,
+            "caption": ""
+          }
+        },
+        "b4": {
+          "type": "product",
+          "settings": {
+            "product": "barbie™-x-sol-kyst-1970s-superstar-hexagon",
+            "photo": 1,
+            "hover_photo": 2,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "eyebrow": "The collaboration",
+        "heading": "Barbie™ <em>x</em> Sol Kyst",
+        "text": "",
+        "link_label": "Shop the collection",
+        "link": "shopify://collections/barbie-x-sol-kyst",
+        "image_ratio": "square",
+        "image_shape": "rounded",
+        "show_price": true,
+        "show_caption": false,
+        "footnote": "Barbie™ and associated trademarks and trade dress are owned by, and used under license from Mattel.",
+        "color_scheme": "scheme-sk-blush"
+      }
+    },
+    "sk_breast_cancer": {
+      "type": "sk-product-mosaic",
+      "blocks": {
+        "c1": {
+          "type": "product",
+          "settings": {
+            "product": "breast-cancer-blue-light-frame",
+            "photo": 2,
+            "hover_photo": 5,
+            "caption": ""
+          }
+        },
+        "c2": {
+          "type": "product",
+          "settings": {
+            "product": "breast-cancer-kyst-klip-1",
+            "photo": 2,
+            "hover_photo": 0,
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2"
+      ],
+      "settings": {
+        "eyebrow": "Eyewear with a purpose",
+        "heading": "Breast Cancer Canada <em>x</em> Sol Kyst",
+        "text": "<p>We are proud to partner with Breast Cancer Canada to raise money for life saving research. 20% of sales will be donated on every order of BCC x Sol Kyst Blue Light frames.</p><p><strong>Buy one, get a second pair for $100.00</strong></p>",
+        "link_label": "Learn more",
+        "link": "shopify://pages/breast-cancer",
+        "image_ratio": "portrait",
+        "image_shape": "rounded",
+        "show_price": true,
+        "show_caption": false,
+        "footnote": "An official licensed collaboration with Breast Cancer Canada.",
+        "color_scheme": "scheme-sk-blush"
+      }
+    }
+  },
+  "order": [
+    "hero_iyt6zg",
+    "sk_ticker",
+    "section_rj9EgA",
+    "ss_circle_menu_kfhzxX",
+    "section_aCCTtH",
+    "sk_fit",
+    "section_NWpYxm",
+    "sk_mosaic",
+    "sk_breast_cancer",
+    "section_F9fMc4",
+    "ss_scrolling_logo_cloud_HbLCPF",
+    "1776970902f668fc85",
+    "section_G7JJkY",
+    "178422256487e7a2a3",
+    "section_GnhBGc",
+    "section_7fVabn",
+    "sk_barbie",
+    "hero_qVCE4h",
+    "176784795778671e34",
+    "section_7cjHWB",
+    "17790414037ac5ecbc",
+    "17842278331d8dcd58",
+    "17842491828a200cd7",
+    "178483197918528f61",
+    "1784832046c9f6d8e8"
+  ]
+}

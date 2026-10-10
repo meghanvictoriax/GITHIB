@@ -1,0 +1,303 @@
+{% comment %}
+  Section contract.
+  Product page fit guide. Reads the product's sizes from its description, written as
+  "NAME - 158mm wide | 67-19-145" (overall width | lens – nose bridge – arm), draws
+  each width to scale, and labels the frame diagram with the largest size.
+  Renders nothing when the product has no sizes in that format.
+  @example
+  <!-- Add "SK · Product fit" to a product template -->
+{% endcomment %}
+
+{%- capture sizes -%}{%- render 'sk-sizes', product: product -%}{%- endcapture -%}
+{%- liquid
+  assign sizes = sizes | strip | split: '^'
+  assign scale_max = section.settings.scale_max
+-%}
+
+{%- if sizes.size > 0 -%}
+  {% render 'sk-styles' %}
+  {% render 'sk-fit-styles' %}
+
+  {%- liquid
+    assign largest = sizes | last | split: '~'
+  -%}
+
+  <section
+    id="{{ section.settings.anchor | handleize | default: section.id }}"
+    class="sk sk-fit sk-fit--product color-{{ section.settings.color_scheme }}"
+    aria-labelledby="SkProductFitHeading-{{ section.id }}"
+  >
+    <div class="sk-fit__inner">
+      <header class="sk-fit__head sk-reveal">
+        <div class="sk-fit__title">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="sk-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+          {%- endif -%}
+          <h2 id="SkProductFitHeading-{{ section.id }}" class="sk-display sk-fit__heading">
+            {{- section.settings.heading | replace: '[product]', product.title -}}
+          </h2>
+        </div>
+        <div class="sk-fit__intro">
+          {%- if section.settings.intro != blank -%}
+            <div class="sk-lede">{{ section.settings.intro }}</div>
+          {%- endif -%}
+          {%- if section.settings.link_label != blank and section.settings.link != blank -%}
+            <a class="sk-link" href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+          {%- endif -%}
+        </div>
+      </header>
+
+      <ol class="sk-fit__widths" role="list">
+        {%- for size in sizes -%}
+          {%- liquid
+            assign s = size | split: '~'
+            assign pct = s[0] | times: 100.0 | divided_by: scale_max
+            if pct > 100
+              assign pct = 100
+            endif
+          -%}
+          <li class="sk-fit__row sk-reveal">
+            <span class="sk-fit__no" aria-hidden="true">No. {{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <h3 class="sk-fit__name">{{ s[5] | default: s[1] | escape }}</h3>
+            <span class="sk-fit__mm">
+              <span class="sk-fit__mm-num">{{ s[0] }}</span>
+              <span class="sk-fit__mm-unit">mm</span>
+            </span>
+            <div
+              class="sk-fit__ruler"
+              style="--sk-ticks: {{ scale_max | divided_by: 10.0 }}; --sk-fill: {{ pct | round: 2 }}%;"
+              role="img"
+              aria-label="{{ s[5] | default: s[1] | escape }}: {{ s[0] }}mm"
+            >
+              <span class="sk-fit__bar"></span>
+            </div>
+            <div class="sk-fit__desc">
+              <p class="sk-fit__text sk-fit__measure">
+                <span>{{ section.settings.lens_label | escape }} {{ s[2] }}</span>
+                <span aria-hidden="true">·</span>
+                <span>{{ section.settings.bridge_label | escape }} {{ s[3] }}</span>
+                <span aria-hidden="true">·</span>
+                <span>{{ section.settings.arm_label | escape }} {{ s[4] }}</span>
+              </p>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+      {%- if section.settings.scale_note != blank -%}
+        <p class="sk-fit__scale-note">{{ section.settings.scale_note | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.show_anatomy -%}
+        <div class="sk-fit__lower">
+          <figure class="sk-fit__anatomy sk-reveal">
+            <figcaption class="sk-fit__sub">
+              {%- if section.settings.anatomy_heading != blank -%}
+                <h3 class="sk-fit__subheading">{{ section.settings.anatomy_heading | escape }}</h3>
+              {%- endif -%}
+              {%- if section.settings.anatomy_text != blank -%}
+                <div class="sk-fit__text">{{ section.settings.anatomy_text }}</div>
+              {%- endif -%}
+            </figcaption>
+
+            {% render 'sk-frame-diagram' %}
+
+            <dl class="sk-fit__legend">
+              <div>
+                <dt><span aria-hidden="true">A · </span>{{ section.settings.overall_label | escape }}</dt>
+                <dd>{{ largest[0] }}mm</dd>
+              </div>
+              <div>
+                <dt><span aria-hidden="true">B · </span>{{ section.settings.lens_label | escape }}</dt>
+                <dd>{{ largest[2] }}</dd>
+              </div>
+              <div>
+                <dt><span aria-hidden="true">C · </span>{{ section.settings.bridge_label | escape }}</dt>
+                <dd>{{ largest[3] }}</dd>
+              </div>
+              <div>
+                <dt><span aria-hidden="true">D · </span>{{ section.settings.arm_label | escape }}</dt>
+                <dd>{{ largest[4] }}</dd>
+              </div>
+            </dl>
+            <p class="sk-fit__caption">
+              {{- section.settings.caption_prefix | escape }}
+              {{ product.title | escape }}, {{ largest[5] | default: largest[1] | escape }} — {{ largest[0] }}mm | {{ largest[2] }}-{{ largest[3] }}-{{ largest[4] -}}
+            </p>
+          </figure>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-fit--product {
+    padding-block: clamp(3.5rem, 7vw, 7rem);
+  }
+
+  .sk-fit--product .sk-fit__heading {
+    font-size: clamp(2.75rem, 6vw, 6rem);
+  }
+
+  .sk-fit--product .sk-fit__intro {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  .sk-fit__measure {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .sk-fit--product .sk-fit__anatomy {
+    grid-column: 1 / span 8;
+  }
+
+  @media (max-width: 989px) {
+    .sk-fit--product .sk-fit__anatomy {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .sk-fit--product .sk-fit__heading {
+      font-size: clamp(2.5rem, 11.5vw, 3.75rem);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "SK · Product fit",
+  "tag": "div",
+  "class": "sk-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Sizes are read from the product description, written like: WIDE - 158mm wide | 67-19-145. The section hides itself when a product has none."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading",
+      "default": "Find your fit"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "[product] is replaced with the product name.",
+      "default": "[product], <em>measured</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>Every size of this frame, drawn to scale. Never one size fits all.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link text",
+      "default": "Full size chart"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Link name for this section",
+      "default": "fit"
+    },
+    {
+      "type": "range",
+      "id": "scale_max",
+      "label": "Ruler length",
+      "min": 150,
+      "max": 200,
+      "step": 5,
+      "unit": "mm",
+      "default": 170
+    },
+    {
+      "type": "text",
+      "id": "scale_note",
+      "label": "Note under the ruler",
+      "default": "Overall frame width, drawn to scale."
+    },
+    {
+      "type": "header",
+      "content": "Frame diagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_anatomy",
+      "label": "Show frame diagram",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "anatomy_heading",
+      "label": "Heading",
+      "default": "How to read a frame"
+    },
+    {
+      "type": "richtext",
+      "id": "anatomy_text",
+      "label": "Text",
+      "default": "<p>Every Sol Kyst frame lists its size as overall width | lens – nose bridge – arm.</p>"
+    },
+    {
+      "type": "text",
+      "id": "overall_label",
+      "label": "A · label",
+      "default": "Overall width"
+    },
+    {
+      "type": "text",
+      "id": "lens_label",
+      "label": "B · label",
+      "default": "Lens"
+    },
+    {
+      "type": "text",
+      "id": "bridge_label",
+      "label": "C · label",
+      "default": "Nose bridge"
+    },
+    {
+      "type": "text",
+      "id": "arm_label",
+      "label": "D · label",
+      "default": "Arm"
+    },
+    {
+      "type": "text",
+      "id": "caption_prefix",
+      "label": "Caption start",
+      "default": "Shown:"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SK · Product fit"
+    }
+  ]
+}
+{% endschema %}

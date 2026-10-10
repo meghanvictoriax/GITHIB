@@ -1,0 +1,755 @@
+{% doc %}
+  @prompt
+    Create a homepage section called "Find Your Perfect Fit" for a premium sunglasses brand (SOL KYST). The section should include:
+    
+    **Layout:** Clean, editorial, luxury aesthetic with modern lifestyle feel.
+    
+    **Headline:** "Find Your Perfect Fit"
+    
+    **Subhead:** "SOL KYST is designed differently — with multiple frame sizes created to fit and flatter more face shapes, especially wider faces."
+    
+    **Body text:** "Not sure what size you are? Start with your current sunglasses. If they pinch, leave marks, sit too high, or feel tight at the temples, you may need a wider fit."
+    
+    **Two CTA buttons:**
+    - Primary: "Take the Fit Quiz"
+    - Secondary: "Shop by Size"
+    
+    **Three size cards displayed in a row (or grid):**
+    1. **Mini** — "Best for petite or narrow faces who still want an oversized look."
+    2. **Midi** — "Our middle fit — ideal if most standard sunglasses fit, but you want a little more room and structure."
+    3. **Wide** — "Our signature fit. Designed for fuller cheeks, wider temples, and anyone who usually finds sunglasses too tight."
+    
+    Each card should have a size label (Mini / Midi / Wide) as a bold title and the description below it. Cards should have a subtle border or card style to differentiate them.
+    
+    **Footer tagline (italic or muted):** "Because 'one size fits all' never actually did."
+    
+    Design notes:
+    - Minimal, high-end aesthetic — neutral tones, clean typography
+    - Section should be fully customizable via theme editor settings (headline, subhead, body, button labels/links, card titles and descriptions, tagline)
+    - Mobile responsive
+    - Compatible with Shopify OS 2.0 as a standalone section block
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-perfect-fit-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-perfect-fit-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ai-perfect-fit-headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.headline_spacing }}px;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    line-height: 1.2;
+  }
+
+  .ai-perfect-fit-subhead-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subhead_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.subhead_spacing }}px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .ai-perfect-fit-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.body_spacing }}px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .ai-perfect-fit-buttons-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: {{ block.settings.buttons_spacing }}px;
+  }
+
+  .ai-perfect-fit-button-primary-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background-color: {{ block.settings.primary_button_bg }};
+    color: {{ block.settings.primary_button_text_color }};
+    border: {{ block.settings.primary_button_border_width }}px solid {{ block.settings.primary_button_border }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 500;
+    text-transform: {{ block.settings.button_text_transform }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-perfect-fit-button-primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_button_hover_bg }};
+    color: {{ block.settings.primary_button_hover_text }};
+    border-color: {{ block.settings.primary_button_hover_border }};
+  }
+
+  .ai-perfect-fit-button-secondary-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background-color: {{ block.settings.secondary_button_bg }};
+    color: {{ block.settings.secondary_button_text_color }};
+    border: {{ block.settings.secondary_button_border_width }}px solid {{ block.settings.secondary_button_border }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 500;
+    text-transform: {{ block.settings.button_text_transform }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-perfect-fit-button-secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.secondary_button_hover_bg }};
+    color: {{ block.settings.secondary_button_hover_text }};
+    border-color: {{ block.settings.secondary_button_hover_border }};
+  }
+
+  .ai-perfect-fit-cards-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: {{ block.settings.card_gap }}px;
+    margin-bottom: {{ block.settings.cards_spacing }}px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ai-perfect-fit-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    text-align: left;
+  }
+
+  .ai-perfect-fit-card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+    font-weight: 700;
+    text-transform: {{ block.settings.card_title_transform }};
+  }
+
+  .ai-perfect-fit-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_description_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  .ai-perfect-fit-tagline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.tagline_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-perfect-fit-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 16px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-perfect-fit-headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.7 }}px;
+    }
+
+    .ai-perfect-fit-subhead-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subhead_size | times: 0.85 }}px;
+    }
+
+    .ai-perfect-fit-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    .ai-perfect-fit-cards-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.card_gap | times: 0.75 }}px;
+    }
+
+    .ai-perfect-fit-buttons-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-perfect-fit-button-primary-{{ ai_gen_id }},
+    .ai-perfect-fit-button-secondary-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-perfect-fit-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-perfect-fit-container-{{ ai_gen_id }}">
+    {% if block.settings.headline != blank %}
+      <h2 class="ai-perfect-fit-headline-{{ ai_gen_id }}">{{ block.settings.headline }}</h2>
+    {% endif %}
+
+    {% if block.settings.subhead != blank %}
+      <div class="ai-perfect-fit-subhead-{{ ai_gen_id }}">{{ block.settings.subhead }}</div>
+    {% endif %}
+
+    {% if block.settings.body_text != blank %}
+      <div class="ai-perfect-fit-body-{{ ai_gen_id }}">{{ block.settings.body_text }}</div>
+    {% endif %}
+
+    <div class="ai-perfect-fit-buttons-{{ ai_gen_id }}">
+      {% if block.settings.primary_btn_text != blank %}
+        <a
+          href="{{ block.settings.primary_btn_link }}"
+          class="ai-perfect-fit-button-primary-{{ ai_gen_id }}"
+        >
+          {{ block.settings.primary_btn_text }}
+        </a>
+      {% endif %}
+
+      {% if block.settings.secondary_btn_text != blank %}
+        <a
+          href="{{ block.settings.secondary_btn_link }}"
+          class="ai-perfect-fit-button-secondary-{{ ai_gen_id }}"
+        >
+          {{ block.settings.secondary_btn_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="ai-perfect-fit-cards-{{ ai_gen_id }}">
+      <div class="ai-perfect-fit-card-{{ ai_gen_id }}">
+        <h3 class="ai-perfect-fit-card-title-{{ ai_gen_id }}">{{ block.settings.card_1_title }}</h3>
+        <p class="ai-perfect-fit-card-description-{{ ai_gen_id }}">{{ block.settings.card_1_description }}</p>
+      </div>
+
+      <div class="ai-perfect-fit-card-{{ ai_gen_id }}">
+        <h3 class="ai-perfect-fit-card-title-{{ ai_gen_id }}">{{ block.settings.card_2_title }}</h3>
+        <p class="ai-perfect-fit-card-description-{{ ai_gen_id }}">{{ block.settings.card_2_description }}</p>
+      </div>
+
+      <div class="ai-perfect-fit-card-{{ ai_gen_id }}">
+        <h3 class="ai-perfect-fit-card-title-{{ ai_gen_id }}">{{ block.settings.card_3_title }}</h3>
+        <p class="ai-perfect-fit-card-description-{{ ai_gen_id }}">{{ block.settings.card_3_description }}</p>
+      </div>
+    </div>
+
+    {% if block.settings.tagline != blank %}
+      <p class="ai-perfect-fit-tagline-{{ ai_gen_id }}">{{ block.settings.tagline }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Find your perfect fit",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Find Your Perfect Fit"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subhead",
+      "label": "Subhead",
+      "default": "SOL KYST is designed differently — with multiple frame sizes created to fit and flatter more face shapes, especially wider faces."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Not sure what size you are? Start with your current sunglasses. If they pinch, leave marks, sit too high, or feel tight at the temples, you may need a wider fit."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Because 'one size fits all' never actually did."
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "primary_btn_text",
+      "label": "Text",
+      "default": "Take the Fit Quiz"
+    },
+    {
+      "type": "url",
+      "id": "primary_btn_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_btn_text",
+      "label": "Text",
+      "default": "Shop by Size"
+    },
+    {
+      "type": "url",
+      "id": "secondary_btn_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Size card 1"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Mini"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "Best for petite or narrow faces who still want an oversized look."
+    },
+    {
+      "type": "header",
+      "content": "Size card 2"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Midi"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "Our middle fit — ideal if most standard sunglasses fit, but you want a little more room and structure."
+    },
+    {
+      "type": "header",
+      "content": "Size card 3"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Wide"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Description",
+      "default": "Our signature fit. Designed for fuller cheeks, wider temples, and anyone who usually finds sunglasses too tight."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "headline_spacing",
+      "label": "Headline spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "subhead_spacing",
+      "label": "Subhead spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "body_spacing",
+      "label": "Body spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "buttons_spacing",
+      "label": "Buttons spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "cards_spacing",
+      "label": "Cards spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Card gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "label": "Headline size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "subhead_size",
+      "label": "Subhead size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Card title size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "label": "Card description size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "label": "Tagline size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "select",
+      "id": "button_text_transform",
+      "label": "Button text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "select",
+      "id": "card_title_transform",
+      "label": "Card title transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#faf9f6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Primary button colors"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg",
+      "label": "Background",
+      "default": "#dfd1c0"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_border",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_text",
+      "label": "Hover text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_border",
+      "label": "Hover border",
+      "default": "#383838"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button colors"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_bg",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_border",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#383838"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_text",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_border",
+      "label": "Hover border",
+      "default": "#383838"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "primary_button_border_width",
+      "label": "Primary button border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "secondary_button_border_width",
+      "label": "Secondary button border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Find your perfect fit"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}
