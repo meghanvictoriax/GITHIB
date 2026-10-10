@@ -25,6 +25,7 @@
   aria-labelledby="SkFitHeading-{{ section.id }}"
 >
   <div class="sk-fit__inner">
+    {%- if section.settings.heading != blank or section.settings.eyebrow != blank or section.settings.intro != blank -%}
     <header class="sk-fit__head sk-reveal">
       <div class="sk-fit__title">
         {%- if section.settings.eyebrow != blank -%}
@@ -38,6 +39,7 @@
         <div class="sk-lede sk-fit__intro">{{ section.settings.intro }}</div>
       {%- endif -%}
     </header>
+    {%- endif -%}
 
     {%- if width_blocks.size > 0 -%}
       <ol class="sk-fit__widths" role="list">
@@ -99,6 +101,7 @@
       {%- endif -%}
     {%- endif -%}
 
+    {%- if section.settings.show_anatomy or spec_blocks.size > 0 -%}
     <div class="sk-fit__lower">
       {%- if section.settings.show_anatomy -%}
         <figure class="sk-fit__anatomy sk-reveal">
@@ -160,6 +163,7 @@
         </div>
       {%- endif -%}
     </div>
+    {%- endif -%}
   </div>
 </section>
 

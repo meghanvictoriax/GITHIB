@@ -920,9 +920,9 @@
         }
       },
       "block_order": [
-        "group_Gm8NkV",
         "group_LdE8iA",
-        "group_AtMG8N"
+        "group_AtMG8N",
+        "group_Gm8NkV"
       ],
       "name": "t:names.icons_with_text",
       "settings": {
@@ -1459,96 +1459,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 0
-      }
-    },
-    "section_GnhBGc": {
-      "type": "section",
-      "blocks": {
-        "text_fqyUnk": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h2>Iconic style, starts with fit.</h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_adnNh7": {
-          "type": "text",
-          "name": "t:names.text",
-          "settings": {
-            "text": "<p>Sol Kyst - the viral Canadian wide fit sunglasses brand now designed in multiple frame sizes to fit and flatter more face shapes, specializing in wide fit eyewear for the wide face babes and proportions of round face cheeky girls.<br/><br/>Not sure what size you are? Start with your current sunglasses. If they pinch, leave marks, sit too high, don't reach your ears, or feel tight at the temples, you may need a wider fit! </p><p>Because 'one size fits all' never actually did.</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_fqyUnk",
-        "text_adnNh7"
-      ],
-      "disabled": true,
-      "name": "t:names.rich_text_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 25,
-        "section_width": "page-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
       }
     },
     "section_7fVabn": {
@@ -2656,52 +2566,12 @@
             "link_label": "Shop this fit",
             "link": "shopify://collections/shop-wide-face-babe"
           }
-        },
-        "p1": {
-          "type": "spec",
-          "settings": {
-            "title": "UV 400 protection",
-            "text": ""
-          }
-        },
-        "p2": {
-          "type": "spec",
-          "settings": {
-            "title": "Polarized nylon lenses",
-            "text": ""
-          }
-        },
-        "p3": {
-          "type": "spec",
-          "settings": {
-            "title": "Acetate framework",
-            "text": ""
-          }
-        },
-        "p4": {
-          "type": "spec",
-          "settings": {
-            "title": "Scratch resistant coating",
-            "text": ""
-          }
-        },
-        "p5": {
-          "type": "spec",
-          "settings": {
-            "title": "The unboxing",
-            "text": "Protective hard case, microfibre cloth and luxury sliding gift box."
-          }
         }
       },
       "block_order": [
         "w1",
         "w2",
-        "w3",
-        "p1",
-        "p2",
-        "p3",
-        "p4",
-        "p5"
+        "w3"
       ],
       "settings": {
         "eyebrow": "A field guide to fit",
@@ -2711,7 +2581,7 @@
         "scale_max": 170,
         "unit_label": "mm",
         "scale_note": "Overall frame width, drawn to scale.",
-        "show_anatomy": true,
+        "show_anatomy": false,
         "anatomy_heading": "How to read a frame",
         "anatomy_text": "<p>Every Sol Kyst frame lists its size as overall width | lens – nose bridge – arm.</p>",
         "overall_label": "Overall width",
@@ -2723,7 +2593,7 @@
         "arm_label": "Arm",
         "arm": "145",
         "anatomy_caption": "Shown: AURA, Wide — 158mm | 67-19-145",
-        "specs_heading": "The technical stuff",
+        "specs_heading": "",
         "color_scheme": "scheme-sk-sand"
       }
     },
@@ -2906,6 +2776,77 @@
         "footnote": "An official licensed collaboration with Breast Cancer Canada.",
         "color_scheme": "scheme-sk-blush"
       }
+    },
+    "sk_fit_guide": {
+      "type": "sk-fit-index",
+      "blocks": {
+        "p1": {
+          "type": "spec",
+          "settings": {
+            "title": "UV 400 protection",
+            "text": ""
+          }
+        },
+        "p2": {
+          "type": "spec",
+          "settings": {
+            "title": "Polarized nylon lenses",
+            "text": ""
+          }
+        },
+        "p3": {
+          "type": "spec",
+          "settings": {
+            "title": "Acetate framework",
+            "text": ""
+          }
+        },
+        "p4": {
+          "type": "spec",
+          "settings": {
+            "title": "Scratch resistant coating",
+            "text": ""
+          }
+        },
+        "p5": {
+          "type": "spec",
+          "settings": {
+            "title": "The unboxing",
+            "text": "Protective hard case, microfibre cloth and luxury sliding gift box."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "intro": "",
+        "anchor": "frame-guide",
+        "scale_max": 170,
+        "unit_label": "mm",
+        "scale_note": "",
+        "show_anatomy": true,
+        "anatomy_heading": "How to read a frame",
+        "anatomy_text": "<p>Every Sol Kyst frame lists its size as overall width | lens – nose bridge – arm.</p>",
+        "overall_label": "Overall width",
+        "overall": "158mm",
+        "lens_label": "Lens",
+        "lens": "67",
+        "bridge_label": "Nose bridge",
+        "bridge": "19",
+        "arm_label": "Arm",
+        "arm": "145",
+        "anatomy_caption": "Shown: AURA, Wide — 158mm | 67-19-145",
+        "specs_heading": "The technical stuff",
+        "color_scheme": "scheme-sk-sand",
+        "show_ref": false
+      }
     }
   },
   "order": [
@@ -2913,8 +2854,9 @@
     "sk_ticker",
     "section_rj9EgA",
     "ss_circle_menu_kfhzxX",
-    "section_aCCTtH",
     "sk_fit",
+    "section_aCCTtH",
+    "sk_fit_guide",
     "section_NWpYxm",
     "sk_mosaic",
     "sk_breast_cancer",
@@ -2923,7 +2865,6 @@
     "1776970902f668fc85",
     "section_G7JJkY",
     "178422256487e7a2a3",
-    "section_GnhBGc",
     "section_7fVabn",
     "sk_barbie",
     "hero_qVCE4h",

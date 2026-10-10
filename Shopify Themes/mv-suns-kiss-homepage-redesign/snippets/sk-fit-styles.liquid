@@ -192,6 +192,11 @@
     padding-block-start: clamp(4rem, 8vw, 7rem);
   }
 
+  /* When the frame guide is its own section, it needs no gap above it. */
+  .sk-fit__inner > .sk-fit__lower:first-child {
+    padding-block-start: 0;
+  }
+
   .sk-fit__anatomy {
     grid-column: 1 / span 7;
     margin: 0;
