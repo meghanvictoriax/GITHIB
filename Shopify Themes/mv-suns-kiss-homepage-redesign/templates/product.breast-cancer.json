@@ -361,7 +361,7 @@
               "type": "shopify://apps/lensadvisor-prescription-lens/blocks/app-block/86552bcb-0c5c-439e-b59c-d8577012ea59",
               "settings": {
                 "hide_add_to_cart": true,
-                "button_label": "Customize Your Lenses",
+                "button_label": "Add My Prescription",
                 "use_quick_view": false,
                 "use_metafield_data": false,
                 "enable_slide_animation": false
