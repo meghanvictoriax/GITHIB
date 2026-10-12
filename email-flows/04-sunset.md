@@ -1,70 +1,62 @@
-# Flow 4: Sunset / Unengaged Subscribers
+# Flow 4: Sunset (people who've stopped opening)
 
-**Trigger:** Segment "Unengaged 120 days" (create this first)
-
-**Segment definition:**
+**Trigger:** Segment "Unengaged 120d". Build it first:
 - Can receive email marketing
-- AND Opened Email zero times in the last 120 days
-- AND Clicked Email zero times in the last 120 days
-- AND Placed Order zero times in the last 180 days
-- AND Profile created more than 120 days ago
+- Opened Email = 0 in last 120 days AND Clicked Email = 0 in last 120 days
+- Placed Order = 0 in last 180 days
+- Profile created > 120 days ago
 
-**Goal:** Try once more to re-engage quiet subscribers. If they stay quiet, suppress them to protect deliverability (and the Klaviyo bill).
+**How this differs from "Winback final":** winback chases lapsed *buyers*. Sunset cleans up *anyone* who has gone quiet, to protect inbox placement for everyone else.
 
-**Difference from "Winback final":** Winback targets lapsed *customers*. Sunset targets *any* subscriber who has stopped opening.
+## The strategy
+
+Stop begging. A short, honest "should we stop?" email beats another promo with a bigger discount. The people who still care will click, and the rest *should* leave, because every dead address drags down whether your launches land in the inbox. Offer a lighter option ("launches only") so you keep people who are just overwhelmed.
 
 ---
 
 ## Email 1: Immediately
 
-**Subject:** Is this goodbye? 🥺
-**Preview text:** We miss you, here's 10% off if you're still in
+**Subject A:** Should we stop emailing you?
+**Subject B:** Honest question, {{ first_name|default:'friend' }}
+**Preview:** No guilt trip, just pick one
 
-**Body:**
+> Hey {{ first_name|default:'there' }},
+>
+> We noticed you haven't opened our emails in a while. Totally fine. Inboxes are a lot.
+>
+> Rather than keep showing up uninvited, we'd rather just ask. Pick one:
+>
+> **[ Keep me in the loop ]** → everything: drops, restocks, the occasional deal
+> **[ Only new launches ]** → a few emails a year, that's it
+> **[ I'm good, unsubscribe me ]**
+>
+> Whatever you choose, thanks for being part of this for a while. 💛
+>
+> SOL KYST
 
-Hey {{ first_name|default:'there' }},
-
-It's been a while and we miss you! 💛
-
-We know inboxes get messy, so let's keep it simple. If you still want sunnies made for wide faces (and the occasional fun email from us), just tap the button below.
-
-As a thank-you for sticking around: **10% off** with code **{{ STAYSUNNY10 }}**.
-
-**[ Yes, Keep Me Subscribed! → ]**
-*(links to the site so the click counts as engagement)*
-
-Not feeling it anymore? Totally okay, no hard feelings. You can unsubscribe below.
-
-xo,
-The SOL KYST Crew
-
----
-
-## Email 2: Wait 5 days
-
-**Flow filter on this email:** Opened Email zero times since starting this flow AND Clicked Email zero times since starting this flow
-
-**Subject:** Last call ☀️👋
-**Preview text:** We'll stop emailing unless you tell us otherwise
-
-**Body:**
-
-Hi {{ first_name|default:'friend' }},
-
-This is our last email unless you let us know you want to stay.
-
-We'll take you off our list in a few days. You can always come back anytime at solkyst.ca. 😎
-
-**[ Keep Me On The List → ]**
-
-Thank you for being part of the SOL KYST story, even for a little while. 💛
-
-The SOL KYST Crew
+*Build note: buttons 1 and 2 link to the site with a UTM tag, and the click counts as engagement. Button 2 should also set the profile property `email_frequency = launches_only` (via preference page or a link-tracked segment). Button 3 is `{% unsubscribe %}`.*
 
 ---
 
-## Final step: Wait 3 days, then update the profile
+## Email 2: 5 days later, only if no opens or clicks since flow start
 
-**Flow filter:** Opened Email zero times since starting this flow AND Clicked Email zero times since starting this flow
+**Subject A:** We're taking you off the list on {{ weekday }}
+**Subject B:** Last one from us ☀️
+**Preview:** Unless you'd rather stay
 
-**Action:** Update Profile → set the property `sunset_suppressed = true`. Then suppress these profiles manually in Klaviyo, or exclude `sunset_suppressed = true` from all campaign sends.
+> {{ first_name|default:'Hi' }},
+>
+> This is our last email. If we don't hear from you, we'll take you off the list in a few days. No hard feelings at all.
+>
+> If you'd like to stay, one tap does it, and here's 10% off as a thank-you for sticking around: **{{ STAYKYST10 }}**
+>
+> **[ Keep me on the list → ]**
+>
+> SOL KYST
+
+---
+
+## After Email 2: wait 3 days
+
+**Filter:** Opened = 0 AND Clicked = 0 since flow start
+**Action:** Update profile `sunset_suppressed = true` → suppress these profiles or exclude them from all sends.

@@ -1,51 +1,49 @@
 # Flow 3: Back in Stock
 
-**Trigger:** Subscribed to Back in Stock (Klaviyo's built-in Back in Stock trigger)
-**Setup note:** In Klaviyo, the cleanest way to build this is **Flows → Create → Back in Stock template**. That handles the inventory delay for you. Paste the copy below into that template's emails.
-**Flow filters:**
-- Can receive email marketing (back-in-stock notices go to non-subscribers too, so turn on "transactional" only if legal/compliance approves)
+**Trigger:** Klaviyo Back in Stock (build from **Flows → Create → Back in Stock** so the inventory delay is wired correctly)
 
-**Goal:** Turn "notify me" sign-ups into sales the moment a pair is restocked.
+## The strategy
 
----
+People who click "notify me" have already decided. They don't need convincing, they need **speed** and **their size**. Sizes sell through unevenly (Mini and Wide go first on most styles), so the urgency here is real, not manufactured.
 
-## Email 1: Immediately when the item is back
-
-**Subject:** IT'S BACK! 🙌 {{ event.ProductName|default:'Your pair' }} just restocked
-**Preview text:** Grab it before it disappears again
-
-**Body:**
-
-{{ first_name|default:'Hey' }}! You asked, we listened 🎉
-
-**{{ event.ProductName|default:'The pair you had your eye on' }}** is back in stock, and you're one of the first to know.
-
-[Product image + price block, linking to {{ event.URL }}]
-
-Last time it sold out fast, so don't wait too long on this one!
-
-**[ Get Mine Now → ]**
-
-xo,
-The SOL KYST Crew
+Keep both emails short. The product image does the selling.
 
 ---
 
-## Email 2: Wait 1 day (only if they haven't purchased)
+## Email 1: The moment it's back
 
-**Flow filter on this email:** Placed Order zero times since starting this flow
+**Subject A:** It's back: {{ event.ProductName }}
+**Subject B:** You asked us to tell you first. {{ event.ProductName }} is back.
+**Preview:** Sizes go fast, so check yours
 
-**Subject:** Going, going… 👀
-**Preview text:** Your restocked pair is moving fast
+> {{ first_name|default:'Hey' }},
+>
+> **{{ event.ProductName }}** just restocked, and you're hearing about it before anyone else.
+>
+> [Large product image → {{ event.URL }}]
+>
+> Heads up: restocks don't sell out evenly. The most popular sizes go first, so if you know yours, don't sit on this one.
+>
+> **[ Grab my size → ]**
+>
+> Not sure which size? Mini 135mm · Midi 145mm · Wide 158mm. Measure a pair you own hinge to hinge and go one up if they pinch.
+>
+> SOL KYST
 
-**Body:**
+---
 
-Hi {{ first_name|default:'friend' }},
+## Email 2: 24 hours later, only if they haven't purchased
 
-Just a friendly heads up: **{{ event.ProductName|default:'your pair' }}** is flying off the shelves again.
+**Filter:** Placed Order = 0 since flow start
 
-Designed for wide faces, comfy all day, and back for a limited time. 😎
+**Subject A:** Sizes are moving on {{ event.ProductName }}
+**Subject B:** Don't make us send the "sold out" email 😩
+**Preview:** Quick heads up before it's gone again
 
-**[ Shop Before It's Gone → ]**
-
-The SOL KYST Crew
+> {{ first_name|default:'Hi' }}, quick one.
+>
+> **{{ event.ProductName }}** is selling through faster than last time. If you still want it, now's the moment.
+>
+> **[ Shop {{ event.ProductName }} → ]**
+>
+> SOL KYST
