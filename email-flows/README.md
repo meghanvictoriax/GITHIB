@@ -34,11 +34,24 @@ v1 was generic template copy with "wide faces" dropped in. v2 is built on what m
 - **A returns-prevention email** ("the 3-day rule" for acetate settling) goes out before customers decide the frames don't fit.
 - **Cross-sells use the size they already know** ("you've done the hard part"), including Blue Light RX ↔ sunnies.
 
-## Things only you can fill in
+## Facts pulled from the store (v2.1)
 
-- [ ] Founder first name + the real origin story (Post-Purchase Email 1A)
-- [ ] Return / exchange policy line (Cart Email 2, Post-Purchase Email 2)
-- [ ] Confirm the claims: "most standard frames stop around 140mm" and "Sweet Heart sold out the first time"
+| Used in copy | Source |
+|---|---|
+| Founder Meghan: ex-makeup artist, started in 2020, Kyst Eye pre-order early 2021, $10k in the first 24 hours | Public brand coverage |
+| "Standard" sunglasses = one size, ~140mm | SOL KYST sizing copy |
+| Free exchanges for 45 days, no restocking fee · refunds within 30 days ($10 fee) · ReturnBear drop-off in Canada | Refund policy |
+| Petite, clearance and RX orders are final sale | Refund policy |
+| Ships from Hamilton in 3–5 business days · free shipping over $150 · duty-free to CA/US over $150 | Shipping policy |
+| KIN #1, Sweet Heart #2 by net sales | Shopify analytics, last 365 days |
+
+The unverified "Sweet Heart sold out" line has been cut.
+
+## Still to do
+
+- [ ] Meghan: read Post-Purchase Email 1A and edit it so it sounds like you
+- [ ] Exclude RX and Petite orders from the exchange messaging (final sale)
+- [ ] Set the "From" name on Post-Purchase Email 1A to "Meghan at SOL KYST" in Klaviyo
 - [ ] Discount code `STAYKYST10` (Sunset Email 2 only)
 - [ ] Product/cart dynamic blocks + imagery in the Klaviyo editor
 - [ ] A/B test the subject lines (A/B pairs are provided for every email)

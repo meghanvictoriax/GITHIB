@@ -26,7 +26,7 @@ Keep both emails short. The product image does the selling.
 >
 > **[ Grab my size → ]**
 >
-> Not sure which size? Mini 135mm · Midi 145mm · Wide 158mm. Measure a pair you own hinge to hinge and go one up if they pinch.
+> Not sure which size? Mini 135mm · Midi 145mm · Wide 158mm. Measure a pair you own hinge to hinge and go one up if they pinch. Guess wrong? Exchanges are free for 45 days.
 >
 > SOL KYST
 

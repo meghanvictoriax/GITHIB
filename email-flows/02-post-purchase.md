@@ -17,22 +17,24 @@ The review ask stays in your existing "Review request" flow.
 
 ## Email 1A: Immediately · first-time customer · *plain-text, from a person*
 
-**From:** [Founder first name] at SOL KYST
+**From:** Meghan at SOL KYST
 **Subject A:** you did it
 **Subject B:** A real thank-you (not a robot one)
 **Preview:** and one quick question for you
 
 > Hey {{ first_name|default:'there' }},
 >
-> I'm [Founder first name]. I started SOL KYST because I have a wide face, and I was tired of being told to "just size up" by brands that didn't make a size up.
+> I'm Meghan, the founder of SOL KYST.
+>
+> Before this I was a makeup artist. When that work stopped in 2020, I finally did something about a problem I'd had my whole life: I have a wide, cheeky face, and sunglasses just didn't fit it. So I designed a pair that did. That was the Kyst Eye. We put it up for pre-order in early 2021, and one video brought in over $10,000 in orders in the first 24 hours. Turns out a lot of us had been squeezing into frames made for someone else.
 >
 > So when someone like you takes a chance on a small Canadian brand instead of the big names, I notice. Thank you, genuinely.
 >
-> Your order is being packed in Hamilton now. You'll get tracking the second it ships.
+> Your order ships from Hamilton within 3–5 business days, and you'll get a tracking link the moment it leaves.
 >
 > **One quick question:** what finally made you buy? Was it a friend, a TikTok, the sizing, the Barbie collab, something else? Just hit reply. I read every answer, and it honestly shapes what we make next.
 >
-> [Founder first name]
+> Meghan
 > Founder, SOL KYST
 
 *Why plain text: it lands in Primary instead of Promotions, and the replies boost your sender reputation. The question also gives you free attribution data.*
@@ -46,7 +48,7 @@ The review ask stays in your existing "Review request" flow.
 >
 > There's nothing better for a small brand than a repeat customer. It means the first pair actually fit, and that's the whole point of what we do.
 >
-> Your order's being packed now and tracking is on its way.
+> Your order ships within 3–5 business days, and tracking will follow as soon as it does.
 >
 > As a thank-you, you're first in line for our next drop. We'll email you before it goes public.
 >
@@ -69,8 +71,8 @@ The review ask stays in your existing "Review request" flow.
 > **Acetate settles.** For the first few days, new frames can feel a touch firm behind the ears or snug at the temples. That's normal. The material relaxes and shapes to you with wear.
 >
 > **Give them 3 days of real wear.** Then check in with yourself:
-> - **Sliding down your nose?** The arms can be gently warmed and bent inward. Most optical shops will do it for free in about 2 minutes.
-> - **Still tight at the temples after 3 days?** Reply to this email. We'll sort it out with you, and you won't be stuck with a pair that doesn't fit.
+> - **Still tight at the temples after 3 days?** Swap them for the next size up. **Exchanges are free for 45 days after delivery**, with no restocking fee. In Canada, drop them at any ReturnBear location with no box and no label. [ Start an exchange → ]
+> - **Sliding down your nose?** Reply to us first. A quick adjustment at an optical shop usually fixes it, but returns have to come back in their original state, so check with us before anyone bends anything.
 > - **Perfect?** Amazing. Keep them in the hard case, clean them only with the microfibre cloth, and take them off with two hands so the hinges stay tight.
 >
 > SOL KYST
@@ -96,7 +98,7 @@ The review ask stays in your existing "Review request" flow.
 > Which means your next pair is easy. Same size, different mood.
 >
 > **If you went bold → try a classic:** Integrity (sleek black rectangle) or Monarch (the tortoise version).
-> **If you went classic → have some fun:** Barbie™ x Sol Kyst Sweet Heart, the peachy-pink heart frames that sold out the first time.
+> **If you went classic → have some fun:** Barbie™ x Sol Kyst Sweet Heart, the peachy-pink heart frames that are our #2 seller this year.
 > **And for the screen hours:** Integrity Blue Light RX, the same wide fit as a blue-light frame. You can put your prescription in it (ask your optometrist to confirm).
 >
 > [Product block: same-size recommendations]
@@ -116,7 +118,8 @@ The review ask stays in your existing "Review request" flow.
 
 ---
 
-### Needs from you
-- Founder first name + a one-line origin story (Email 1A is written as a placeholder version, so edit it to the real story).
-- Confirm you're comfortable with "we'll sort it out" in Email 2. Swap in the actual exchange policy if you have one.
-- Check whether "Sweet Heart sold out the first time" is true. If not, cut it.
+### Sources
+- Founder story: public brand coverage (makeup artist → 2020 → Kyst Eye pre-order in early 2021 → $10k in 24 hours). Meghan, edit it so it sounds like you.
+- Ship time, exchange window and ReturnBear details: the store's Shipping and Refund policies.
+- Sweet Heart as the #2 seller: Shopify net sales, last 365 days.
+- Note: RX and Petite orders are final sale, so the 3-day-rule exchange line doesn't apply to them. Add a conditional split, or a line excluding them, before going live.

@@ -33,7 +33,9 @@ Someone who adds a pair and leaves *before* checkout usually isn't worried about
 > | ~140mm+ | tight at the temples | **Wide** (158mm) |
 > | anything | you want *big* | **Oversized** (145–150mm, deeper lens) |
 >
-> Still torn? **Reply with a selfie** (straight on, hair back) and we'll tell you your size. Real people answer these, usually same day.
+> Still torn? **Reply with a selfie** (straight on, hair back) and we'll tell you your size. A real person answers every one.
+>
+> And if they still don't feel right when they arrive? **Exchanges are free for 45 days**, with no restocking fee. *(Petite sizes are final sale, so if you're going Petite, send the selfie first.)*
 >
 > **[ Back to my cart → ]**
 >
@@ -58,9 +60,13 @@ Someone who adds a pair and leaves *before* checkout usually isn't worried about
 >
 > **Polarized lenses + UV400.** They cut glare and block 100% of UVA/UVB.
 >
-> **Sized for you, not the "average" face.** Up to 158mm wide. Most standard frames stop around 140mm, which is exactly why they've never fit.
+> **Sized for you, not the "average" face.** "Standard" sunglasses come in one size, around 140mm wide. Ours go up to 158mm. That 18mm is the difference between a headache by noon and forgetting you're wearing them.
 >
 > **The box.** Hard protective case, microfibre cloth and our sliding gift box. (It's giving "treat yourself," and it's a very good gift if you're buying for someone else.)
+>
+> **Zero risk on the fit.** Free exchanges for 45 days, no restocking fee. In Canada you can drop a return at a ReturnBear location with no box and no label.
+>
+> **Free shipping over $150,** and orders to Canada and the US over $150 ship duty-free. No surprise fees at the door.
 >
 > One good pair that fits beats three that sit in a drawer.
 >
@@ -74,6 +80,7 @@ Someone who adds a pair and leaves *before* checkout usually isn't worried about
 
 ---
 
-### Needs from you
-- Confirm the "~140mm" claim about standard frames matches how you talk about it on site.
-- Add your return/exchange policy line to Email 2 if you offer one (it's the strongest objection-killer we can't write without the facts).
+### Sources
+- 140mm "standard" one-size claim: SOL KYST's own sizing copy.
+- Exchange, return, shipping and duty details: the store's Refund and Shipping policies (pulled from Shopify).
+- KIN as the #1 pair: Shopify net sales, last 365 days.
