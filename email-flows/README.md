@@ -47,11 +47,21 @@ v1 was generic template copy with "wide faces" dropped in. v2 is built on what m
 
 The unverified "Sweet Heart sold out" line has been cut.
 
+## Live in Klaviyo (all draft)
+
+| Flow | Klaviyo ID | Emails with bodies |
+|---|---|---|
+| [DRAFT v2] Added to Cart | `SqBF6q` | 2 |
+| [DRAFT v2] Post-Purchase | `SjYqK2` | 6 (1A, 1B, then 2 and 3 on each branch) |
+| [DRAFT v2] Back in Stock | `SaHU4e` | 2 |
+
+HTML lives in `templates/`. To change copy, edit `build_templates.py`, run `python3 build_templates.py templates`, then re-upload to Klaviyo. `preview.html` is a local preview of every email with sample data (rebuild it with `python3 build_preview.py templates preview.html`).
+
 ## Still to do
 
+- [ ] **Added to Cart trigger:** add a trigger filter excluding `Product Type = LensAdvizor`. RX lens add-ons fire "Added to Cart" too, and nobody should get a fit-check email about a lens.
+- [ ] Point the "Start an exchange" button (Post-Purchase 2) at your return portal. It currently goes to /account.
 - [ ] Meghan: read Post-Purchase Email 1A and edit it so it sounds like you
 - [ ] Exclude RX and Petite orders from the exchange messaging (final sale)
-- [ ] Set the "From" name on Post-Purchase Email 1A to "Meghan at SOL KYST" in Klaviyo
 - [ ] Discount code `STAYKYST10` (Sunset Email 2 only)
-- [ ] Product/cart dynamic blocks + imagery in the Klaviyo editor
 - [ ] A/B test the subject lines (A/B pairs are provided for every email)

@@ -99,7 +99,6 @@ The review ask stays in your existing "Review request" flow.
 >
 > **If you went bold → try a classic:** Integrity (sleek black rectangle) or Monarch (the tortoise version).
 > **If you went classic → have some fun:** Barbie™ x Sol Kyst Sweet Heart, the peachy-pink heart frames that are our #2 seller this year.
-> **And for the screen hours:** Integrity Blue Light RX, the same wide fit as a blue-light frame. You can put your prescription in it (ask your optometrist to confirm).
 >
 > [Product block: same-size recommendations]
 >
@@ -108,6 +107,8 @@ The review ask stays in your existing "Review request" flow.
 > SOL KYST
 
 ### Variant B (bought Blue Light / RX)
+
+*Not built in Klaviyo yet. Integrity Blue Light RX isn't an active product right now, so build this branch only if it comes back.*
 
 **Subject:** Now do it for the sun ☀️
 **Preview:** Same fit you love, polarized
