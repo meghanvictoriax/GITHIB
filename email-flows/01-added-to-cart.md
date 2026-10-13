@@ -1,6 +1,6 @@
 # Flow 1: Added to Cart (pre-checkout)
 
-**Trigger:** Added to Cart
+**Trigger:** Added to Cart, where Product Type is not `LensAdvizor` (RX lens add-ons also fire Added to Cart)
 **Flow filters:** Placed Order = 0 since flow start · Checkout Started = 0 since flow start (the live "Abandoned Cart" flow takes over from there) · not in this flow in the last 14 days
 
 ## The strategy

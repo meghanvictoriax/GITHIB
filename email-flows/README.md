@@ -51,7 +51,7 @@ The unverified "Sweet Heart sold out" line has been cut.
 
 | Flow | Klaviyo ID | Emails with bodies |
 |---|---|---|
-| [DRAFT v2] Added to Cart | `SqBF6q` | 2 |
+| [DRAFT v2] Added to Cart | `U3P5sY` | 2 (trigger excludes `Product Type = LensAdvizor`) |
 | [DRAFT v2] Post-Purchase | `SjYqK2` | 6 (1A, 1B, then 2 and 3 on each branch) |
 | [DRAFT v2] Back in Stock | `SaHU4e` | 2 |
 
@@ -59,7 +59,6 @@ HTML lives in `templates/`. To change copy, edit `build_templates.py`, run `pyth
 
 ## Still to do
 
-- [ ] **Added to Cart trigger:** add a trigger filter excluding `Product Type = LensAdvizor`. RX lens add-ons fire "Added to Cart" too, and nobody should get a fit-check email about a lens.
 - [ ] Point the "Start an exchange" button (Post-Purchase 2) at your return portal. It currently goes to /account.
 - [ ] Meghan: read Post-Purchase Email 1A and edit it so it sounds like you
 - [ ] Exclude RX and Petite orders from the exchange messaging (final sale)
