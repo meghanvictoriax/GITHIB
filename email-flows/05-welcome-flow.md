@@ -1,5 +1,6 @@
 # Flow 5: Welcome series (v2)
 
+**Klaviyo:** draft flow `XaWmir` (https://www.klaviyo.com/flow/XaWmir/edit). Templates: WvL4NV, Yqpcvj, WsGNi4, S5ztXF, VzMYDf.
 **Trigger:** added to the newsletter list (`YxzPdw`), the same list as the live "Email Welcome Series Customer vs Non-Customer" flow.
 **Flow filter:** Placed Order = 0 since starting this flow, so anyone who buys stops getting the series.
 **Code:** `kystfortheveryfirsttime` (live in Shopify: 15% off, one use per customer, no end date). Every button applies it automatically through `/discount/<code>`.
