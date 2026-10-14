@@ -7,6 +7,7 @@ import pathlib, sys
 SITE = "https://www.solkyst.ca"
 CODE = "WELCOME15"  # placeholder: create this 15% first-order code in Shopify before going live
 DISC = f"{SITE}/discount/{CODE}"
+DEN = "https://www.cbc.ca/dragonsden"  # placeholder: swap for the exact SOL KYST episode/pitch link
 COCOA, IVORY, LINEN, INK, MUTED = "#3B2C27", "#FAF9F6", "#DFD1C0", "#1E1512", "#6B6460"
 SERIF = "Georgia, 'Times New Roman', serif"
 SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif"
@@ -64,7 +65,7 @@ body{{margin:0;padding:0;background:{IVORY}}}
 <tr><td style="padding:26px 20px 22px;text-align:center"><a href="{SITE}" style="font:700 18px/1 {SANS};letter-spacing:8px;color:{INK};text-decoration:none">SOL KYST</a></td></tr>
 
 <tr><td class="pad" style="background:{COCOA};padding:30px 40px 32px;text-align:center">
-{eyebrow("Welcome to the list", LINEN)}
+{eyebrow("Welcome &middot; As seen on CBC&#39;s Dragons&#39; Den", LINEN)}
 {headline("15% off your first pair.", IVORY, 30)}
 {button(f"Use code: {CODE}", link(), IVORY, IVORY)}
 </td></tr>
@@ -85,10 +86,11 @@ body{{margin:0;padding:0;background:{IVORY}}}
 <tr><td>{image(MID, link("/collections/all"), "SOL KYST in the closet")}</td></tr>
 
 <tr><td class="pad" style="padding:48px 52px 36px;text-align:center">
-{eyebrow("Made by one of us")}
-{headline("One video. $10,000<br>in 24 hours.")}
-{body("Meghan was a makeup artist with a wide face and a drawer full of sunglasses that never fit. In 2020 she designed her own. The pre-order video brought in over $10,000 in its first day. Turns out a lot of us had been squeezing into frames made for someone else.")}
-{body(f'<a href="{SITE}/pages/about" style="color:{COCOA};font-weight:600">Read our story</a>')}
+{eyebrow("As seen on CBC&#39;s Dragons&#39; Den")}
+{headline("Two Dragons<br>wanted in.")}
+{body("We walked into the Den with sunglasses built for wide faces, and two Dragons wanted to partner. We walked out with a deal. Not because of the pitch. Because the fit is that good.")}
+{button("Watch our episode", DEN, COCOA, COCOA)}
+<p style="margin:28px 0 0;font:italic 16px/1.6 {SERIF};color:{MUTED};text-align:center">It started with Meghan, a makeup artist with a wide face who designed the pair she couldn&#39;t find. Her pre-order video brought in $10,000 in 24 hours. <a href="{SITE}/pages/about" style="color:{COCOA}">Read our story</a></p>
 </td></tr>
 
 <tr><td class="pad" style="padding:8px 32px 8px">
