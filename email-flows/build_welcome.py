@@ -5,9 +5,9 @@ Run:  python3 build_welcome.py templates/welcome-15.html
 import pathlib, sys
 
 SITE = "https://www.solkyst.ca"
-CODE = "WELCOME15"  # placeholder: create this 15% first-order code in Shopify before going live
+CODE = "kystfortheveryfirsttime"  # live in Shopify: 15% off, once per customer
 DISC = f"{SITE}/discount/{CODE}"
-DEN = "https://www.cbc.ca/dragonsden"  # placeholder: swap for the exact SOL KYST episode/pitch link
+DEN = "https://www.cbc.ca/dragonsden/pitches/sol-kyst"
 COCOA, IVORY, LINEN, INK, MUTED = "#3B2C27", "#FAF9F6", "#DFD1C0", "#1E1512", "#6B6460"
 SERIF = "Georgia, 'Times New Roman', serif"
 SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif"
@@ -67,14 +67,15 @@ body{{margin:0;padding:0;background:{IVORY}}}
 <tr><td class="pad" style="background:{COCOA};padding:30px 40px 32px;text-align:center">
 {eyebrow("Welcome &middot; As seen on CBC&#39;s Dragons&#39; Den", LINEN)}
 {headline("15% off your first pair.", IVORY, 30)}
-{button(f"Use code: {CODE}", link(), IVORY, IVORY)}
+{button("Claim my 15% off", link(), IVORY, IVORY)}
+<p style="margin:16px 0 0;font:600 11px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{LINEN};text-align:center">Code: {CODE.upper()}<br><span style="font-weight:400;letter-spacing:1px;text-transform:none">Applies automatically when you tap</span></p>
 </td></tr>
 
 <tr><td>{image(HERO, link("/collections/all"), "Close-up in SOL KYST sunglasses")}</td></tr>
 
 <tr><td class="pad" style="padding:44px 48px 12px">
 {headline("Your face deserves better.")}
-{button(f"Use code: {CODE}", link("/collections/all"), COCOA, COCOA)}
+{button("Claim my 15% off", link("/collections/all"), COCOA, COCOA)}
 </td></tr>
 
 <tr><td class="pad" style="padding:28px 56px 28px">
@@ -96,7 +97,7 @@ body{{margin:0;padding:0;background:{IVORY}}}
 <tr><td class="pad" style="padding:8px 32px 8px">
 {eyebrow("Start here")}
 <table width="100%" {T0}>{grid}</table>
-{button(f"Shop with {CODE}", link("/collections/all"), COCOA, COCOA)}
+{button("Shop with 15% off", link("/collections/all"), COCOA, COCOA)}
 </td></tr>
 
 <tr><td style="padding:40px 20px 0"><table width="100%" {T0} style="border-top:1px solid {LINEN};border-bottom:1px solid {LINEN}"><tr>
