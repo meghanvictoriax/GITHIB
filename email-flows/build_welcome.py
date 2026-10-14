@@ -114,6 +114,7 @@ Let&#39;s get you Kyst.<br>
 
 </table></td></tr></table></body></html>"""
 
-out = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "templates/welcome-15.html")
-out.write_text(html)
-print(out, len(html))
+if __name__ == "__main__":
+    out = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "templates/welcome-15.html")
+    out.write_text(html)
+    print(out, len(html))
