@@ -39,3 +39,11 @@ The earlier draft `XaWmir` (v2, 5 emails over 8 days) is superseded. Delete it o
 - [ ] Send yourself a test of each email.
 
 Builders: `build_welcome.py` (email 1) and `build_welcome_flow.py` (emails 2–6). Previews: `welcome-flow-previews/`.
+
+## Mobile formatting (Oct 15)
+Klaviyo forces body text to 14px / 1.3 line-height on phones, which made the emails look squished. `mobile_fix.py` takes the flow versions (with Meghan's edits) and:
+- sets inline `line-height:1.6; font-size:16px` on paragraphs that didn't specify them,
+- caps section side padding at 24px (was up to 56px),
+- stops table cells breaking words mid-way ("FRAM-E", "Oversi-zed") and tightens cell padding,
+- eases letter-spacing on the 3-column trust row.
+Fixed versions were pushed to the standalone templates and re-attached to flow WXaimu. Flow copies now: UgMeNB, RwPhhV, WS5VER, SS5SUV, TZtHEg, UJzxCg (email 6 unchanged).
