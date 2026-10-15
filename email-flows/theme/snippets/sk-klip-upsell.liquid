@@ -1,17 +1,12 @@
 {%- comment -%}
-  Signature Kyst Klip upsell for the cart page and cart drawer (rendered from snippets/cart-products.liquid).
-  Shows when the cart has a pair from the Sunglasses collection and no Signature Klip yet.
-  The $20 price comes from the automatic discount "Signature Kyst Klip $20 with sunglasses" (50% off one Klip).
+  Half-price add-ons for the cart page and cart drawer (rendered from snippets/cart-products.liquid).
+  Each offer shows when the cart has a pair from the Sunglasses collection and that add-on isn't in the cart yet.
+  Prices come from the automatic discounts "Signature Kyst Klip $20 with sunglasses" and
+  "Kyst Kit half price with sunglasses" (50% off one of each per order).
 {%- endcomment -%}
 {%- liquid
-  assign klip = all_products['sol-kyst-signature-kyst-klip']
-  assign klip_variant = klip.selected_or_first_available_variant
   assign has_sunnies = false
-  assign has_klip = false
   for item in cart.items
-    if item.product_id == klip.id
-      assign has_klip = true
-    endif
     for c in item.product.collections
       if c.handle == 'sunglasses'
         assign has_sunnies = true
@@ -19,27 +14,47 @@
     endfor
   endfor
 -%}
-{%- if klip != blank and klip.available and has_sunnies and has_klip == false -%}
-  <div class="sk-klip-upsell">
-    <div class="sk-klip-upsell__media">
-      {{ klip.featured_image | image_url: width: 200 | image_tag: alt: klip.title, loading: 'lazy' }}
-    </div>
-    <div class="sk-klip-upsell__body">
-      <p class="sk-klip-upsell__eyebrow">Add it to your order</p>
-      <p class="sk-klip-upsell__title">{{ klip.title }}</p>
-      <p class="sk-klip-upsell__price">
-        <span>{{ klip_variant.price | divided_by: 2 | money }}</span>
-        <s>{{ klip_variant.price | money }}</s>
-      </p>
-      <p class="sk-klip-upsell__copy">Clip your sunnies to your bag. Half price with your pair.</p>
-      <form action="{{ routes.cart_add_url }}" method="post">
-        <input type="hidden" name="id" value="{{ klip_variant.id }}">
-        <input type="hidden" name="quantity" value="1">
-        <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
-        <button type="submit" class="button button--secondary sk-klip-upsell__button">Add for {{ klip_variant.price | divided_by: 2 | money }}</button>
-      </form>
-    </div>
-  </div>
+{%- if has_sunnies -%}
+  {%- assign offer_handles = 'sol-kyst-signature-kyst-klip,kyst-kit' | split: ',' -%}
+  {%- for handle in offer_handles -%}
+    {%- liquid
+      assign offer = all_products[handle]
+      assign offer_variant = offer.selected_or_first_available_variant
+      assign in_cart = false
+      for item in cart.items
+        if item.product_id == offer.id
+          assign in_cart = true
+        endif
+      endfor
+      if handle == 'kyst-kit'
+        assign offer_copy = 'Keep your sunnies in perfect shape. Mirror, spare screws, tiny screwdriver, lens cleaner, cloth and nose pads.'
+      else
+        assign offer_copy = 'Clip your sunnies to your bag. Half price with your pair.'
+      endif
+    -%}
+    {%- if offer != blank and offer.available and in_cart == false -%}
+      <div class="sk-klip-upsell">
+        <div class="sk-klip-upsell__media">
+          {{ offer.featured_image | image_url: width: 200 | image_tag: alt: offer.title, loading: 'lazy' }}
+        </div>
+        <div class="sk-klip-upsell__body">
+          <p class="sk-klip-upsell__eyebrow">Add it to your order</p>
+          <p class="sk-klip-upsell__title">{{ offer.title }}</p>
+          <p class="sk-klip-upsell__price">
+            <span>{{ offer_variant.price | divided_by: 2 | money }}</span>
+            <s>{{ offer_variant.price | money }}</s>
+          </p>
+          <p class="sk-klip-upsell__copy">{{ offer_copy }}</p>
+          <form action="{{ routes.cart_add_url }}" method="post">
+            <input type="hidden" name="id" value="{{ offer_variant.id }}">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+            <button type="submit" class="button button--secondary sk-klip-upsell__button">Add for {{ offer_variant.price | divided_by: 2 | money }}</button>
+          </form>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
 {%- endif -%}
 
 {% stylesheet %}
@@ -52,6 +67,10 @@
     padding: var(--padding-md, 1rem);
     border: 1px dashed rgb(var(--color-foreground-rgb) / 0.35);
     border-radius: 4px;
+  }
+
+  .sk-klip-upsell + .sk-klip-upsell {
+    margin-block-start: var(--margin-sm, 0.75rem);
   }
 
   .sk-klip-upsell__media img {
