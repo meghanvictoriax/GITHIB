@@ -134,13 +134,16 @@ E2 = page("Grab the pair you wore today. Bet we know how this ends.",
 
 
 # ---------- Email 3 (+4h): founder story + reviews (Mave & Chez "Why we built these") ----------
-E3 = page("Why I started SOL KYST. Plus, your 15% is still waiting.",
+E3 = page("Why I started SOL KYST, and your 15% is still here.",
     f'<tr><td>{image(PHOTO["friends"], link("/pages/about"), "SOL KYST")}</td></tr>'
-    + section(eyebrow("A note from our founder") + headline("Why I built<br>SOL KYST.")
-              + body("Hi, I&#39;m Meghan. I&#39;m a makeup artist, I have a wide face, and for years sunglasses never fit me. They pinched my temples, left red marks, and looked a size too small. I assumed it was my face. It wasn&#39;t. It was the frames: almost everything is made in one size, about 140mm.")
-              + body("So I designed the pair I couldn&#39;t find, in three widths: <b>Mini 135, Midi 145 and Wide 158mm</b>. I posted a pre-order video, and it brought in <b>$10,000 in 24 hours</b>. That&#39;s when I knew it wasn&#39;t just me.")
-              + body("Then we took SOL KYST into CBC&#39;s Dragons&#39; Den. Two Dragons wanted to partner, and we walked out with a deal.")
-              + f'<p style="margin:8px 0 26px;font:italic 18px/1.4 {SERIF};color:{INK};text-align:center">Meghan<br><span style="font:600 10px/1.4 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Founder, SOL KYST</span></p>'
+    + section(eyebrow("A note from Meghan") + headline("The pair I<br>couldn&#39;t find.")
+              + body("Hi, it&#39;s Meghan. I&#39;m the founder of SOL KYST, and I want to tell you why this brand exists, because honestly, it&#39;s a little personal.")
+              + body("I&#39;ve been a makeup artist for years, so I spend a lot of time looking at faces. And for just as long, I couldn&#39;t find a single pair of sunglasses that fit mine. I have a wide face. Every pair pinched my temples, left red marks by lunch and looked a size too small. I genuinely thought something was wrong with my face.")
+              + body("Turns out it was the frames. Almost everything out there comes in one size, about 140mm, and if that&#39;s not you, well, good luck.")
+              + body("So I designed the pair I couldn&#39;t find, in three widths: <b>Mini 135, Midi 145 and Wide 158mm</b>. I posted a pre-order video and it brought in <b>$10,000 in 24 hours</b>. My heart was so full. That&#39;s when I knew it wasn&#39;t just me.")
+              + body("Then we walked into CBC&#39;s Dragons&#39; Den, and two Dragons wanted to partner with us. I still kind of can&#39;t believe I get to type that sentence.")
+              + body("So if you&#39;ve ever tried on pair after pair and walked out with nothing, this one&#39;s for you. Your face was never the problem.")
+              + f'<p style="margin:8px 0 26px;font:italic 18px/1.4 {SERIF};color:{INK};text-align:center">Love, Meghan<br><span style="font:600 10px/1.4 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Founder, SOL KYST</span></p>'
               + button("Watch our episode", DEN, COCOA, COCOA)
               + f'<p style="margin:18px 0 0;text-align:center"><a href="{SITE}/pages/about" style="font:600 11px/1 {SANS};letter-spacing:2px;text-transform:uppercase;color:{COCOA}">Read the full story &rarr;</a></p>', "40px 48px 12px")
     + f'<tr><td class="pad" style="background:{COCOA};padding:30px 40px 32px;text-align:center">'
@@ -184,17 +187,19 @@ E5 = page("Four pairs, four moods. Start with one.",
       + f'<p style="margin:8px 0 0;font:italic 15px/1.5 {SERIF};color:{MUTED}">The brand two Dragons wanted in on. <a href="{DEN}" style="color:{COCOA}">Watch the episode</a></p>'
       + '</td></tr>')
 
-# ---------- Email 6 (+3 days): personal note from Meghan (plain, KENT-style "feedback? send us your thoughts") ----------
+# ---------- Email 6: personal note from Meghan (voice: VOICE.md) (plain, KENT-style "feedback? send us your thoughts") ----------
 E6 = ('<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOL KYST</title>'
       '<style>body{margin:0;background:#fff}td,p{font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#222}p{margin:0 0 16px}a{color:#3B2C27}</style></head>'
       '<body><div style="display:none;max-height:0;overflow:hidden">Your 15% is still here. And a quick question.</div>'
       f'<table width="100%" {T0}><tr><td style="padding:24px 20px"><table width="560" {T0} style="width:100%;max-width:560px"><tr><td>'
       f'<p>Hi {FN},</p>'
-      '<p>It&#39;s Meghan, the founder of SOL KYST. I wanted to check in personally.</p>'
-      '<p>I started this brand because I have a wide face and sunglasses never fit me. Most of the people who sign up to our list have been through the same thing, so I&#39;m guessing you have too.</p>'
-      '<p>If something is holding you back, I&#39;d love to know. Is it the size? The price? Not sure which style suits you? <b>Just hit reply.</b> I read every one, and we&#39;ll help you find your pair.</p>'
-      f'<p>Your 15% off is still waiting: <a href="{link("/collections/all")}"><b>{CODE.upper()}</b></a> (it applies automatically when you tap).</p>'
+      '<p>It&#39;s Meghan again. Quick one, I promise.</p>'
+      '<p>I&#39;ll be honest, I&#39;m not great at the salesy stuff. I&#39;d rather just talk to you.</p>'
+      '<p>If you&#39;ve been eyeing a pair but something&#39;s holding you back, I&#39;d genuinely love to know what it is. The size? The price? Not sure what&#39;ll suit your face? <b>Just hit reply and tell me.</b> I read these, and I&#39;ll help you figure it out, even if the answer is that we&#39;re not the right fit for you.</p>'
+      '<p>Or send me a selfie (straight on, hair back) and I&#39;ll tell you your size. That&#39;s honestly one of my favourite parts of this job.</p>'
+      f'<p>Your 15% off is still here whenever you&#39;re ready: <a href="{link("/collections/all")}"><b>{CODE.upper()}</b></a> (it applies automatically when you tap).</p>'
       '<p>Let&#39;s get you Kyst,<br>Meghan<br>Founder, SOL KYST</p>'
+      '<p>P.S. Running a small company means wearing a lot of hats. Reading your emails is my favourite one.</p>'
       '<p style="margin-top:40px;font-size:11px;color:#999">{{ organization.name }} &middot; {{ organization.full_address }} &middot; {% unsubscribe \'Unsubscribe\' %}</p>'
       '</td></tr></table></td></tr></table></body></html>')
 
