@@ -1,0 +1,97 @@
+{%- comment -%}
+  Signature Kyst Klip upsell for the cart page and cart drawer (rendered from snippets/cart-products.liquid).
+  Shows when the cart has a pair from the Sunglasses collection and no Signature Klip yet.
+  The $20 price comes from the automatic discount "Signature Kyst Klip $20 with sunglasses" (50% off one Klip).
+{%- endcomment -%}
+{%- liquid
+  assign klip = all_products['sol-kyst-signature-kyst-klip']
+  assign klip_variant = klip.selected_or_first_available_variant
+  assign has_sunnies = false
+  assign has_klip = false
+  for item in cart.items
+    if item.product_id == klip.id
+      assign has_klip = true
+    endif
+    for c in item.product.collections
+      if c.handle == 'sunglasses'
+        assign has_sunnies = true
+      endif
+    endfor
+  endfor
+-%}
+{%- if klip != blank and klip.available and has_sunnies and has_klip == false -%}
+  <div class="sk-klip-upsell">
+    <div class="sk-klip-upsell__media">
+      {{ klip.featured_image | image_url: width: 200 | image_tag: alt: klip.title, loading: 'lazy' }}
+    </div>
+    <div class="sk-klip-upsell__body">
+      <p class="sk-klip-upsell__eyebrow">Add it to your order</p>
+      <p class="sk-klip-upsell__title">{{ klip.title }}</p>
+      <p class="sk-klip-upsell__price">
+        <span>{{ klip_variant.price | divided_by: 2 | money }}</span>
+        <s>{{ klip_variant.price | money }}</s>
+      </p>
+      <p class="sk-klip-upsell__copy">Clip your sunnies to your bag. Half price with your pair.</p>
+      <form action="{{ routes.cart_add_url }}" method="post">
+        <input type="hidden" name="id" value="{{ klip_variant.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+        <button type="submit" class="button button--secondary sk-klip-upsell__button">Add for {{ klip_variant.price | divided_by: 2 | money }}</button>
+      </form>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .sk-klip-upsell {
+    display: grid;
+    grid-template-columns: clamp(4rem, 22%, 6.5rem) 1fr;
+    gap: var(--gap-md, 1rem);
+    align-items: center;
+    margin-block-start: var(--margin-lg, 1.25rem);
+    padding: var(--padding-md, 1rem);
+    border: 1px dashed rgb(var(--color-foreground-rgb) / 0.35);
+    border-radius: 4px;
+  }
+
+  .sk-klip-upsell__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .sk-klip-upsell__body > * {
+    margin: 0;
+  }
+
+  .sk-klip-upsell__body > * + * {
+    margin-block-start: 0.25rem;
+  }
+
+  .sk-klip-upsell__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .sk-klip-upsell__title {
+    font-size: var(--cart-font-size--md, 1rem);
+  }
+
+  .sk-klip-upsell__price s {
+    opacity: 0.6;
+    margin-inline-start: 0.35rem;
+  }
+
+  .sk-klip-upsell__copy {
+    font-size: var(--cart-font-size--sm, 0.875rem);
+    opacity: 0.8;
+  }
+
+  .sk-klip-upsell__button {
+    margin-block-start: 0.5rem;
+    width: 100%;
+  }
+{% endstylesheet %}
