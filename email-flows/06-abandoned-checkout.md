@@ -22,16 +22,16 @@
 |---|---|---|---|---|
 | Email 1 | 1 hour after checkout started | `Wk67QW` | Still thinking about {{ event.Items.0\|title\|default:'your pair' }}? | Your checkout is saved, exactly how you left it. |
 | Email 2 | 1 day later | `UhxdgQ` | Wrong size? Swap it, free | Exchanges are free for 45 days, no restocking fee. |
-| Email 3 | 2 days later | `XaJFjM` | A free Kyst Klip with your pair | Our last note about your checkout. Use code KYSTKLIP. |
+| Email 3 | 2 days later | `XaJFjM` | A free Signature Kyst Klip with your pair | Our last note about your checkout. Use code KYSTKLIP. |
 
 Every email shows the shopper's own items: the variant photo, or the product photo if there's no variant photo. The button links to `{{ event.extra.checkout_url }}`.
 
 ## Offer (email 3)
 
 - **Code:** `KYSTKLIP`, a Shopify Buy X Get Y discount.
-- **How it works:** buy any item from the Sunglasses collection and get one Kyst Klip (`kyst-klip`) free.
+- **How it works:** buy any item from the Sunglasses collection and get one Signature Kyst Klip (`sol-kyst-signature-kyst-klip`, $40) free.
 - **Limits:** one use per customer. It combines with shipping discounts only.
-- **Inventory:** the Kyst Klip shows −165 in Shopify. Check it's sold on backorder or restock before launch.
+- **Inventory:** 13 Signature Klips in stock (Oct 15), and it stops selling at zero. Once they're gone, the code can't be used.
 
 ## Still to do
 

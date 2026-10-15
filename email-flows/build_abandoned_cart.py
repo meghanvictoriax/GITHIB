@@ -9,8 +9,8 @@ Facts come from the store, not memory:
 - Free shipping over $150; duty-free to Canada and the US: Shopify shipping policy
 - Nearly 900 reviews, 4.7 stars: Loox store stats, October 2026
 - Jennifer K. review: Loox, used in the welcome flow
-- Kyst Klip description: Shopify product kyst-klip
-- KYSTKLIP: Shopify BXGY code, buy any sunglasses + get one Kyst Klip free, one use per customer
+- Signature Kyst Klip description: Shopify product sol-kyst-signature-kyst-klip
+- KYSTKLIP: Shopify BXGY code, buy any sunglasses + get one Signature Kyst Klip free, one use per customer
 
 Run:  python3 build_abandoned_cart.py   -> templates/dnd/dnd-ac-{1,2,3}.json
 """
@@ -21,8 +21,8 @@ from build_welcome import SITE, COCOA, IVORY, LINEN, INK, MUTED
 from mobile_fix import walk
 
 CHECKOUT = "{{ event.extra.checkout_url|default:'" + SITE + "/cart' }}"
-KLIP_IMG = ("384494401", K + "be0d9c9b-9b1f-41b6-b251-c9e9a7ba72fb.png")
-KLIP = f"{SITE}/products/kyst-klip"
+KLIP_IMG = ("384502325", K + "04758446-83ca-4517-b686-395238873a96.jpeg")
+KLIP = f"{SITE}/products/sol-kyst-signature-kyst-klip"
 
 
 def body(s, color=INK, align="center"):
@@ -80,16 +80,16 @@ AC2 = ([logo(),
         cart_section("Finish my order")]
        + FOOT)
 
-# ---------- Email 3 (+2 days): free Kyst Klip ----------
+# ---------- Email 3 (+2 days): free Signature Kyst Klip ----------
 AC3 = ([logo(),
-        section([text(eyebrow("A little something from us") + headline("Your pair comes with<br>a free Kyst Klip.")
-                      + body("Our last note about your checkout, then we&#39;ll leave you be. Finish your order with code <b>KYSTKLIP</b> and the Kyst Klip is on us."))],
+        section([text(eyebrow("A little something from us") + headline("Your pair comes with<br>a free Signature Kyst Klip.")
+                      + body("Our last note about your checkout, then we&#39;ll leave you be. Finish your order with code <b>KYSTKLIP</b> and our Signature Kyst Klip is on us."))],
                 IVORY, (16, 40, 0, 40)),
-        section([img(KLIP_IMG, KLIP, "The Kyst Klip", (8, 0, 8, 0)),
-                 text(body("Slide in your sunnies, fold down the arms, snap it closed and clip it to your bag, purse or jacket. They stay secure and protected on the go.")
+        section([img(KLIP_IMG, KLIP, "The Signature Kyst Klip", (8, 0, 8, 0)),
+                 text(body("Our glasses are big, our bags are small. Don&#39;t choose between gloss and sunnies. Clip your pair to your bag and keep both.")
                       + f'<p style="text-align:center;font-family:{SANS};font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:{MUTED};margin:0 0 4px;padding-top:16px;border-top:1px dashed {COCOA}">Your code</p>'
                         f'<p style="text-align:center;font-family:{SANS};font-size:14px;font-weight:600;letter-spacing:2px;color:{INK};margin:0;padding-bottom:16px;border-bottom:1px dashed {COCOA}">KYSTKLIP</p>'
-                      + small("Add a Kyst Klip to your cart with any sunglasses and enter the code at checkout. One per customer.", MUTED), (8, 0, 0, 0))],
+                      + small("Add the Signature Kyst Klip to your cart with any sunglasses and enter the code at checkout. One per customer.", MUTED), (8, 0, 0, 0))],
                 SAND, (28, 40, 28, 40)),
         cart_section("Finish my order"),
         section([text(body("Something stopped you? Size, shipping, anything. Hit reply and tell us. A real person reads every email.", MUTED))], IVORY, (0, 40, 0, 40))]
@@ -97,7 +97,7 @@ AC3 = ([logo(),
 
 EMAILS = {"dnd-ac-1": ("[DnD] SOL KYST | Abandoned checkout 1 – saved for you", AC1),
           "dnd-ac-2": ("[DnD] SOL KYST | Abandoned checkout 2 – free exchanges", AC2),
-          "dnd-ac-3": ("[DnD] SOL KYST | Abandoned checkout 3 – free Kyst Klip", AC3)}
+          "dnd-ac-3": ("[DnD] SOL KYST | Abandoned checkout 3 – free Signature Kyst Klip", AC3)}
 
 if __name__ == "__main__":
     out = pathlib.Path("templates/dnd"); out.mkdir(parents=True, exist_ok=True)
