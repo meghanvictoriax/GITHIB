@@ -206,7 +206,7 @@ E3_STORY = [
     "And right there, the idea washed up on shore: <b>I&#39;m going to make the widest, largest women&#39;s sunglasses on the market.</b>",
     "I&#39;d been a makeup artist for 10+ years, so I sat in front of my mirror with construction paper and scissors and used highlight and contour to cut out a shape that actually flatters a wider face. Many, many paper cut-outs later (and a terrible Canva diagram), that became our Kyst Eye. Same design we use today.",
     "In March 2021 I showed the first black prototype on TikTok, not expecting anything. 120,000 views in a few days and 1,200 sign-ups over one weekend. I threw a website together in three days and had a <b>$10,000+ launch day</b>. Exciting, amazing and really freaking scary, because the inventory was three months away.",
-    "Now we&#39;re in three sizes (<b>Mini 135, Midi 145 and Wide 158mm</b>), with 650+ five-star reviews and customers in over 50 countries. And on CBC&#39;s Dragons&#39; Den, two Dragons wanted to partner with us.",
+    "Now we&#39;re in three sizes (<b>Mini 135, Midi 145 and Wide 158mm</b>), with nearly 900 reviews (4.7 stars) and customers in over 50 countries. And on CBC&#39;s Dragons&#39; Den, two Dragons wanted to partner with us.",
     "Because let&#39;s be real: a bomb pair of sunnies is your armour for the day. You deserve one that fits.",
 ]
 E3 = ([topbar(), logo(), photo(PHOTO["friends"], "SOL KYST", "/pages/about"),

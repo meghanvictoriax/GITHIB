@@ -18,7 +18,7 @@ Voice: see `email-flows/VOICE.md`. Team/people details are deliberately left out
 - **June 2021, launch.** Full colour collection, ~350 orders shipped. Within two weeks, 50+ five-star reviews, "some essay length long".
 
 ## Today
-- Customers in 50+ countries. 650+ five-star reviews.
+- Customers in 50+ countries. 891 reviews on Loox, averaging 4.7 stars (Loox store stats, Oct 15 2026). Loox does not report a five-star count, so write "nearly 900 reviews" or "4.7-star average", not "X five-star reviews".
 - Three sizes: Mini, Midi, Wide (135 / 145 / 158mm). "The first and only size inclusive eyewear brand" (Meghan's claim).
 - Featured in fashion publications. Aired on CBC's Dragons' Den (two Dragons wanted to partner; don't name them). Barbie collab: full 8-piece licensed collection. Recently aired on QVC.
 
