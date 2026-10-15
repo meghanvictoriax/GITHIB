@@ -1,8 +1,7 @@
 {%- comment -%}
   Half-price add-ons for the cart page and cart drawer (rendered from snippets/cart-products.liquid).
   Each offer shows when the cart has a pair from the Sunglasses collection and that add-on isn't in the cart yet.
-  Prices come from the automatic discounts "Signature Kyst Klip $20 with sunglasses" and
-  "Kyst Kit half price with sunglasses" (50% off one of each per order).
+  Price comes from the automatic discount "Signature Kyst Klip $20 with sunglasses" (50% off one Klip per order).
 {%- endcomment -%}
 {%- liquid
   assign has_sunnies = false
@@ -15,7 +14,7 @@
   endfor
 -%}
 {%- if has_sunnies -%}
-  {%- assign offer_handles = 'sol-kyst-signature-kyst-klip,kyst-kit' | split: ',' -%}
+  {%- assign offer_handles = 'sol-kyst-signature-kyst-klip' | split: ',' -%}
   {%- for handle in offer_handles -%}
     {%- liquid
       assign offer = all_products[handle]
@@ -26,11 +25,7 @@
           assign in_cart = true
         endif
       endfor
-      if handle == 'kyst-kit'
-        assign offer_copy = 'Keep your sunnies in perfect shape. Mirror, spare screws, tiny screwdriver, lens cleaner, cloth and nose pads.'
-      else
-        assign offer_copy = 'Clip your sunnies to your bag. Half price with your pair.'
-      endif
+      assign offer_copy = 'Clip your sunnies to your bag. Half price with your pair.'
     -%}
     {%- if offer != blank and offer.available and in_cart == false -%}
       <div class="sk-klip-upsell">

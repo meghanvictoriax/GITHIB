@@ -1,6 +1,6 @@
 # Theme changes (on preview theme, not yet live)
 
-Half-price add-ons in the cart page and cart drawer: Signature Kyst Klip ($40 → $20) and Kyst Kit ($22 → $11).
+Signature Kyst Klip half-price add-on ($40 → $20) in the cart page and cart drawer. (A Kyst Kit offer was tried and removed on Oct 15; both of its discounts are turned off.)
 
 - `snippets/sk-klip-upsell.liquid` (new): when the cart has a pair from the Sunglasses collection, shows each add-on at half price unless it's already in the cart or sold out.
 - `snippets/cart-products.liquid`: the live file plus one line, `{% render 'sk-klip-upsell' %}`, after the cart form. Both the cart page and the cart drawer render this snippet.
