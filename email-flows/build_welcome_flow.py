@@ -1,5 +1,6 @@
-"""Welcome flow emails 2-5 (email 1 is build_welcome.py). Structure inspired by KENT's welcome series:
-ours-vs-theirs comparison, fit guarantee, curated "start here" picks, and a code reminder in every email.
+"""Welcome flow emails 2-6 (email 1 is build_welcome.py).
+Cadence from Mave & Chez (offer -> interactive test ~6h later -> founder story + reviews ~4h after that),
+then KENT's structure for days 2-6 (ours-vs-theirs chart, curated "start here" picks, code reminder in every email).
 
 Run:  python3 build_welcome_flow.py templates
 """
@@ -58,7 +59,7 @@ def page(preheader, rows):
             f'{topbar()}{logo()}{rows}{footer()}</table></td></tr></table></body></html>')
 
 
-# ---------- Email 2: ours vs theirs (KENT email 1) ----------
+# ---------- Email 4 (+1 day): ours vs theirs (KENT email 1) ----------
 def comparison():
     rows = [
         ("Sizes", "Mini 135 &middot; Midi 145 &middot; Wide 158mm", "One size, about 140mm"),
@@ -79,14 +80,14 @@ def comparison():
     return f'<table width="100%" {T0} class="cmp" style="margin:8px 0 28px">{head}{body_rows}</table>'
 
 
-E2 = page("Standard frames come in one size. You don't.",
+E4 = page("Standard frames come in one size. You don't.",
     f'<tr><td>{image(PHOTO["white_frames"], link("/collections/all"), "SOL KYST white frames")}</td></tr>'
     + section(eyebrow("Ours vs. theirs") + headline("Built for your face.<br>Not the average one.")
               + body("Most sunglasses are designed around one &ldquo;standard&rdquo; face. If yours is wider, you&#39;ve felt it: the squeeze at the temples, the red marks, the pair that slides down. Here&#39;s what&#39;s different about ours.")
               + comparison()
               + button("Claim my 15% off", link("/collections/all"), COCOA, COCOA)))
 
-# ---------- Email 3: find your fit + guarantee (KENT "first fit guarantee") ----------
+# ---------- Email 2 (+6h): the 30-second test (Mave & Chez "bend test") + fit guarantee ----------
 def fit_table():
     rows = [("~135mm", "feel perfect", "Mini 135"), ("~135&ndash;140mm", "feel a little snug", "Midi 145"),
             ("~140mm+", "pinch at the temples", "Wide 158"), ("Any size", "and you want big", "Oversized")]
@@ -105,22 +106,55 @@ def step(n, text):
             f'<td style="padding:4px 0 14px;font:400 16px/1.55 {SANS};color:{INK}">{text}</td></tr>')
 
 
-E3 = page("A 30-second test with a pair you already own.",
-    section(eyebrow("Find your fit") + headline("Which size are you?<br>Find out in 30 seconds.")
+def quote(text, name, product):
+    return (f'<tr><td style="padding:0 0 26px;text-align:center">'
+            f'<p style="margin:0 0 8px;font:14px/1 {SANS};letter-spacing:3px;color:{COCOA}">&#9733;&#9733;&#9733;&#9733;&#9733;</p>'
+            f'<p style="margin:0 0 10px;font:italic 19px/1.45 {SERIF};color:{INK}">&ldquo;{text}&rdquo;</p>'
+            f'<p style="margin:0;font:600 10px/1.4 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">{name} &middot; {product}</p></td></tr>')
+
+
+E2 = page("Grab the pair you wore today. Bet we know how this ends.",
+    section(eyebrow("The 30-second test") + headline("Do your sunglasses<br>actually fit?")
+            + body("Grab the pair you wore today. There&#39;s a quick test that shows whether they really fit your face, or just feel fine for the first ten minutes.")
             + f'<table width="100%" {T0} style="margin:8px 0 12px">'
             + step("1", "Grab the sunglasses you wear most.")
             + step("2", "Measure straight across the front, hinge to hinge.")
             + step("3", "Match it below.") + '</table>'
             + fit_table()
-            + body("Still torn? <b>Reply with a selfie</b> (straight on, hair back) and we&#39;ll tell you your size.")
+            + body("Pinching at 140mm? That&#39;s not your face. That&#39;s the frame. <b>Still torn? Reply with a selfie</b> (straight on, hair back) and we&#39;ll tell you your size.")
             + button("Shop in my size", link("/collections/all"), COCOA, COCOA), "40px 48px 36px")
     + f'<tr><td>{image(PHOTO["couch"], link("/collections/all"), "Trying on SOL KYST at home")}</td></tr>'
     + section(eyebrow("Our fit promise") + headline("Not in love?<br>No sweat.")
               + body("Wear them for a few days. If the fit isn&#39;t right, <b>exchanges are free for 45 days</b>, with no restocking fee. In Canada, drop them at any ReturnBear location. No box, no label.")
+              + f'<table width="100%" {T0} style="margin:8px 0 0">'
+              + quote("I had ordered the wide pair initially and felt they were too big so I exchanged them for a midi and they fit perfectly. The exchange process was painless and very easy.", "Jennifer K.", "Integrity")
+              + '</table>'
               + f'<p style="margin:0 0 20px;font:italic 13px/1.5 {SERIF};color:{MUTED};text-align:center">Petite, clearance and RX orders are final sale, so send us a selfie first if you&#39;re unsure.</p>'
               + code_box(), "40px 48px 12px"))
 
-# ---------- Email 4: start here (KENT "the trio / the work week") ----------
+
+# ---------- Email 3 (+4h): founder story + reviews (Mave & Chez "Why we built these") ----------
+E3 = page("Why I started SOL KYST. Plus, your 15% is still waiting.",
+    f'<tr><td>{image(PHOTO["friends"], link("/pages/about"), "SOL KYST")}</td></tr>'
+    + section(eyebrow("A note from our founder") + headline("Why I built<br>SOL KYST.")
+              + body("Hi, I&#39;m Meghan. I&#39;m a makeup artist, I have a wide face, and for years sunglasses never fit me. They pinched my temples, left red marks, and looked a size too small. I assumed it was my face. It wasn&#39;t. It was the frames: almost everything is made in one size, about 140mm.")
+              + body("So I designed the pair I couldn&#39;t find, in three widths: <b>Mini 135, Midi 145 and Wide 158mm</b>. I posted a pre-order video, and it brought in <b>$10,000 in 24 hours</b>. That&#39;s when I knew it wasn&#39;t just me.")
+              + body("Then we took SOL KYST into CBC&#39;s Dragons&#39; Den. Two Dragons wanted to partner, and we walked out with a deal.")
+              + f'<p style="margin:8px 0 26px;font:italic 18px/1.4 {SERIF};color:{INK};text-align:center">Meghan<br><span style="font:600 10px/1.4 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Founder, SOL KYST</span></p>'
+              + button("Watch our episode", DEN, COCOA, COCOA)
+              + f'<p style="margin:18px 0 0;text-align:center"><a href="{SITE}/pages/about" style="font:600 11px/1 {SANS};letter-spacing:2px;text-transform:uppercase;color:{COCOA}">Read the full story &rarr;</a></p>', "40px 48px 12px")
+    + f'<tr><td class="pad" style="background:{COCOA};padding:30px 40px 32px;text-align:center">'
+      + eyebrow("Don&#39;t forget", LINEN) + headline("Your 15% off is still waiting.", IVORY, 26)
+      + button("Claim my 15% off", link("/collections/all"), IVORY, IVORY)
+      + f'<p style="margin:16px 0 0;font:600 11px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{LINEN}">Code: {CODE.upper()}</p></td></tr>'
+    + section(eyebrow("Wide faces who made the switch") + headline("Finally, a pair that fits.", INK, 28)
+              + f'<table width="100%" {T0} style="margin:12px 0 4px">'
+              + quote("This is the first pair of glasses I&#39;ve owned that doesn&#39;t give me a headache or leave marks on my face. They fit my wiiiide face PERFECTLY!", "Melina T.", "Integrity")
+              + quote("I always thought my round face shape was why all sunglasses looked slightly off, but I just needed wider sunglasses!", "Mary H.", "Monarch")
+              + quote("With my very wide face, even the widest frames looked incredibly awkward and dorky. Enter the MONARCH!!", "Midori P.", "Monarch")
+              + '</table>' + button("Find my pair", link("/collections/all"), COCOA, COCOA), "44px 48px 12px"))
+
+# ---------- Email 5 (+2 days): start here (KENT "the trio / the work week") ----------
 def pick(label, name, sub, img, path):
     return (f'<tr><td style="padding:0 0 28px"><table width="100%" {T0}><tr>'
             f'<td width="46%" valign="middle"><a href="{link(path)}"><img src="{img}" width="250" alt="{name}" '
@@ -134,7 +168,7 @@ def pick(label, name, sub, img, path):
 
 
 P = {name: (img, path) for name, _, img, path in PRODUCTS}
-E4 = page("Four pairs, four moods. Start with one.",
+E5 = page("Four pairs, four moods. Start with one.",
     f'<tr><td>{image(PHOTO["friends"], link("/collections/all"), "Friends in SOL KYST")}</td></tr>'
     + section(eyebrow("Start here") + headline("Not sure where<br>to start?")
               + body("These are the pairs most people start with. Pick the one that feels most like you.")
@@ -150,8 +184,8 @@ E4 = page("Four pairs, four moods. Start with one.",
       + f'<p style="margin:8px 0 0;font:italic 15px/1.5 {SERIF};color:{MUTED}">The brand two Dragons wanted in on. <a href="{DEN}" style="color:{COCOA}">Watch the episode</a></p>'
       + '</td></tr>')
 
-# ---------- Email 5: personal note from Meghan (plain, KENT-style "feedback? send us your thoughts") ----------
-E5 = ('<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOL KYST</title>'
+# ---------- Email 6 (+3 days): personal note from Meghan (plain, KENT-style "feedback? send us your thoughts") ----------
+E6 = ('<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOL KYST</title>'
       '<style>body{margin:0;background:#fff}td,p{font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#222}p{margin:0 0 16px}a{color:#3B2C27}</style></head>'
       '<body><div style="display:none;max-height:0;overflow:hidden">Your 15% is still here. And a quick question.</div>'
       f'<table width="100%" {T0}><tr><td style="padding:24px 20px"><table width="560" {T0} style="width:100%;max-width:560px"><tr><td>'
@@ -165,10 +199,11 @@ E5 = ('<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" co
       '</td></tr></table></td></tr></table></body></html>')
 
 EMAILS = {
-    "welcome-2-ours-vs-theirs": E2,
-    "welcome-3-find-your-fit": E3,
-    "welcome-4-start-here": E4,
-    "welcome-5-meghan": E5,
+    "welcome-2-the-test": E2,
+    "welcome-3-founder-story": E3,
+    "welcome-4-ours-vs-theirs": E4,
+    "welcome-5-start-here": E5,
+    "welcome-6-meghan": E6,
 }
 
 if __name__ == "__main__":

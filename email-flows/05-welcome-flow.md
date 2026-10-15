@@ -1,28 +1,35 @@
-# Flow 5: Welcome series (v2)
+# Flow 5: Welcome series (v3, fast start)
 
-**Klaviyo:** draft flow `XaWmir` (https://www.klaviyo.com/flow/XaWmir/edit). Templates: WvL4NV, Yqpcvj, WsGNi4, S5ztXF, VzMYDf.
+**Klaviyo:** draft flow `WXaimu` (https://www.klaviyo.com/flow/WXaimu/edit). Templates: WvL4NV, WsGNi4, VNzXxr, Yqpcvj, S5ztXF, VzMYDf.
+The earlier draft `XaWmir` (v2, 5 emails over 8 days) is superseded. Delete it once v3 is approved.
 **Trigger:** added to the newsletter list (`YxzPdw`), the same list as the live "Email Welcome Series Customer vs Non-Customer" flow.
 **Flow filter:** Placed Order = 0 since starting this flow, so anyone who buys stops getting the series.
 **Code:** `kystfortheveryfirsttime` (live in Shopify: 15% off, one use per customer, no end date). Every button applies it automatically through `/discount/<code>`.
-**Inspiration:** Mave & Chez (email 1 layout) and KENT's welcome series (emails 2–4: ours-vs-theirs chart, fit guarantee, curated "start here" picks, code reminder in every email).
 
-| # | When | Email | Subject (A / B) | Preview | Job |
+## Inspiration
+- **Mave & Chez** sent 3 emails in the first ~10 hours after signup: the offer, then an interactive "bend test" (~6h), then a founder story with a code reminder and customer reviews (~4h later). Emails 1–3 copy that rhythm.
+- **KENT** (days 2–6): ours-vs-theirs chart, curated "start here" picks, a code reminder in every email.
+
+| # | When | Email | Subject | Preview | From |
 |---|---|---|---|---|---|
-| 1 | Right away | Offer + Dragons' Den | Welcome. Here's 15% off your first pair / You're in. 15% off is inside | Sunglasses built for wide faces | Deliver the code, prove it with the Den |
-| 2 | +1 day | Ours vs. theirs | Why your sunglasses pinch (it's not your face) / Standard sunglasses vs. ours | Standard frames come in one size. You don't. | Comparison chart: the reason to buy |
-| 3 | +2 days | Find your fit | Which size are you? (30-second test) / Mini, Midi or Wide? | A 30-second test with a pair you already own | Remove size anxiety + "not in love? no sweat" exchange promise |
-| 4 | +2 days | Start here | Not sure where to start? / The pairs everyone starts with | Four pairs, four moods. Start with one. | Curated picks by vibe + what's in the box |
-| 5 | +3 days | Note from Meghan | still thinking it over? / a quick question from me | Your 15% is still here. And a quick question. | Plain-text founder note, asks for replies |
+| 1 | Right away | Offer + Dragons' Den | Welcome. Here's 15% off your first pair | Sunglasses built for wide faces | SOL KYST |
+| 2 | +6 hours | The 30-second test | Do your sunglasses pass the 30-second test? | Grab the pair you wore today. Bet we know how this ends. | SOL KYST |
+| 3 | +4 hours | Founder story + reviews | Why I built SOL KYST (and why it matters to you) | Why I started SOL KYST. Plus, your 15% is still waiting. | Meghan at SOL KYST |
+| 4 | +1 day | Ours vs. theirs | Why your sunglasses pinch (it's not your face) | Standard frames come in one size. You don't. | SOL KYST |
+| 5 | +2 days | Start here | Not sure where to start? | Four pairs, four moods. Start with one. | SOL KYST |
+| 6 | +3 days | Note from Meghan (plain text) | still thinking it over? | Your 15% is still here. And a quick question. | Meghan at SOL KYST |
 
-Email 5 sends from **Meghan at SOL KYST**. The rest send from **SOL KYST** (`customer@solkyst.ca`).
+**Smart Sending is off for emails 1–3.** Klaviyo's default 16-hour window would otherwise skip emails 2 and 3.
 
 ## Copy rules
 - No fake urgency: the code has no end date, so no "expires" language.
-- Only sourced claims: sizes 135/145/158, acetate, polarized + UV400, free exchanges for 45 days, ReturnBear, free shipping and duty-free over $150, Dragons' Den deal (two Dragons wanted in, Dragons not named), Sweet Heart #2 by net sales.
+- Only sourced claims: sizes 135/145/158, acetate, polarized + UV400, free exchanges for 45 days, ReturnBear, free shipping and duty-free over $150, the Dragons' Den deal (two Dragons wanted in; Dragons not named), $10,000 pre-order in 24 hours.
+- Reviews are real 5-star Loox reviews, quoted word for word from the product pages: Melina T. (Integrity), Mary H. (Monarch), Midori P. (Monarch), Jennifer K. (Integrity).
 
 ## Before switching on
 - [ ] Decide what happens to the live welcome flow (`Xs46zf`, one email, no coupon). Two flows on the same list would double-send.
+- [ ] Three emails in one day is aggressive. Watch the unsubscribe rate on email 3 for the first two weeks.
+- [ ] Optional: swap the email 3 photo for one of Meghan. It currently reuses the friends photo from email 5.
 - [ ] Send yourself a test of each email.
-- [ ] Optional: Instagram/TikTok links in the footer (handles needed).
 
-Builders: `build_welcome.py` (email 1) and `build_welcome_flow.py` (emails 2–5). Previews: `welcome-flow-previews/`.
+Builders: `build_welcome.py` (email 1) and `build_welcome_flow.py` (emails 2–6). Previews: `welcome-flow-previews/`.
