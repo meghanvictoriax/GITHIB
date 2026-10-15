@@ -1,6 +1,6 @@
 # Sign-up pop-up (draft)
 
-Klaviyo form **Tvws8E**, "[DRAFT] SOL KYST pop-up - 15% first pair". It's still a draft and isn't published.
+Klaviyo form **S2rPMu**, "SOL KYST pop-up - 15% first pair". It replaces Tvws8E, which went live with a typo ("You're face") and mismatched fonts on the body line. The body line now reads "Your face deserves better. Join the list and the code is yours."
 
 - **Step 1:** logo, "Hey wide face babe", "15% off your first pair", an email field, then **GET MY 15%**. Sign-ups go to the **Newsletter list (YxzPdw)**, which triggers the welcome flow WXaimu. A "No thanks" link closes the pop-up.
 - **Step 2:** "You're in." with the code `kystfortheveryfirsttime` (click to copy), then **SHOP WITH 15% OFF**. That button links to `/discount/kystfortheveryfirsttime?redirect=/collections/all`, so the code is applied automatically.
