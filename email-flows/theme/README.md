@@ -1,4 +1,4 @@
-# Theme changes (not yet live)
+# Theme changes (on preview theme, not yet live)
 
 Signature Kyst Klip $20 upsell for the cart page and cart drawer.
 
@@ -7,4 +7,4 @@ Signature Kyst Klip $20 upsell for the cart page and cart drawer.
 
 The price comes from the Shopify automatic discount "Signature Kyst Klip $20 with sunglasses" (50% off one Klip per order, buy any sunglasses). That discount is already active.
 
-To install: duplicate the live theme, upload these two files to the copy, preview, then publish.
+Installed on the preview theme "Klip upsell preview (Oct 15)" (id 200518140064). Preview: https://www.solkyst.ca/?preview_theme_id=200518140064. Goes live when that theme is published.
