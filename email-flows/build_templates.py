@@ -1,6 +1,8 @@
 import pathlib, sys
 OUT = pathlib.Path(sys.argv[1])
 SITE = "https://www.solkyst.ca"
+# Redo returns/exchange portal, as linked from the store refund policy
+RETURNS_PORTAL = "https://mv-suns-kiss.myshopify.com/apps/redo/returns-portal/login?referralId=69a85dea9bdbe5b6cfc2da70"
 INK, MUTED, BG, CARD, SOFT = "#1A1A1A", "#6B6460", "#F4EEE8", "#FFFFFF", "#F6E3D8"
 FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif"
 
@@ -118,7 +120,8 @@ T["pp2-three-day-rule"] = ("SOL KYST | PP 2 - The 3-day rule", page("New acetate
     + p("<b>Acetate settles.</b> For the first few days, new frames can feel a touch firm behind the ears or snug at the temples. That&#39;s normal. The material relaxes and shapes to you with wear.")
     + p("<b>Give them 3 days of real wear.</b> Then check in with yourself:")
     + h3("Still tight after 3 days?") + p("Swap them for the next size up. <b>Exchanges are free for 45 days after delivery</b>, with no restocking fee. In Canada, drop them at any ReturnBear location with no box and no label.")
-    + btn("Start an exchange &rarr;", f"{SITE}/account")
+    + btn("Start an exchange &rarr;", RETURNS_PORTAL)
+    + p("Petite sizes, clearance and RX orders are final sale, so they can&#39;t be exchanged. If yours is one of those and something feels off, just reply and we&#39;ll help however we can.", "m")
     + h3("Sliding down your nose?") + p("Reply to us first. A quick adjustment at an optical shop usually fixes it, but returns have to come back in their original state, so check with us before anyone bends anything.")
     + h3("Perfect?") + p("Amazing. Keep them in the hard case, clean them only with the microfibre cloth, and take them off with two hands so the hinges stay tight.")
     + sign("SOL KYST")))
