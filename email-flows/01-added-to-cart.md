@@ -66,7 +66,7 @@ Someone who adds a pair and leaves *before* checkout usually isn't worried about
 >
 > **Zero risk on the fit.** Free exchanges for 45 days, no restocking fee. In Canada you can drop a return at a ReturnBear location with no box and no label.
 >
-> **Free shipping over $150,** and orders to Canada and the US over $150 ship duty-free. No surprise fees at the door.
+> **Free shipping over $150,** and every order to Canada and the US ships duty-free. No surprise fees at the door.
 >
 > One good pair that fits beats three that sit in a drawer.
 >

@@ -109,8 +109,11 @@ def topbar():
 
 
 def logo():
-    return section([text(f'<p style="text-align:center;font-family:{SANS};font-size:18px;font-weight:700;letter-spacing:8px;margin:0">'
-                         f'<a href="{SITE}" style="color:{INK};text-decoration:none">SOL KYST</a></p>')], IVORY, (24, 20, 20, 20))
+    # Meghan's logo image (Klaviyo library asset), linked to the site.
+    return section([{"content_type": "block", "type": "image", "data": {
+        "properties": {"dynamic": False, "asset_id": "283367327", "src": K + "38d7842f-50b7-4b2b-8bec-83a019d2409c.png",
+                       "href": SITE, "alt_text": "SOL KYST"},
+        "display_options": D, "styles": {"align": "center", "height": 40, "width": 388}}}], IVORY, (24, 20, 20, 20))
 
 
 def trust(third="As seen on<br>Dragons&#39; Den"):
@@ -175,7 +178,7 @@ E1 = ([logo(),
        section(None, IVORY, (0, 26, 0, 26), cols=[product_cell("INTEGRITY", "The sleek black rectangle"), product_cell("MONARCH", "The tortoise rectangle")]),
        section(None, IVORY, (0, 26, 0, 26), cols=[product_cell("HANGOVER", "Big, dark and forgiving"), product_cell("SWEET HEART", "Barbie&trade; x Sol Kyst")]),
        section([button("Shop with 15% off", link("/collections/all"))], IVORY, (0, 32, 8, 32))]
-      + footer("Let&#39;s get you Kyst.", "Duty-free CA &amp; US<br>over $150"))
+      + footer("Let&#39;s get you Kyst.", "Duty-free<br>CA &amp; US"))
 
 STEP = lambda n, s: f'<p style="font-family:{SANS};font-size:16px;line-height:1.55;color:{INK};margin:0 0 12px"><span style="font-family:{SERIF};font-style:italic;font-size:24px;color:{COCOA};padding-right:16px">{n}</span>{s}</p>'
 E2 = ([topbar(), logo(),
@@ -255,7 +258,7 @@ E5 = ([topbar(), logo(), photo(PHOTO["friends"], "Friends in SOL KYST"),
        pick("The fun one", "Sweet Heart", "Barbie&trade; x Sol Kyst. Peachy-pink hearts and our #2 style this year."),
        section([button("Claim my 15% off", link("/collections/all"))], IVORY, (0, 40, 28, 40)),
        section([text(eyebrow("What you get") + headline("Every pair comes with", INK, 26)
-                     + body("A hard protective case, a microfibre cloth and our sliding gift box. Free shipping over $150, and orders to Canada and the US over $150 ship duty-free.")
+                     + body("A hard protective case, a microfibre cloth and our sliding gift box. Free shipping over $150, and every order to Canada and the US ships duty-free.")
                      + f'<p style="text-align:center;font-family:{SERIF};font-style:italic;font-size:15px;color:{MUTED};margin:8px 0 0">The brand two Dragons wanted in on. <a href="{DEN}" style="color:{COCOA}">Watch the episode</a></p>')],
                SAND, (40, 48, 40, 48))]
       + footer())

@@ -42,7 +42,7 @@ v1 was generic template copy with "wide faces" dropped in. v2 is built on what m
 | "Standard" sunglasses = one size, ~140mm | SOL KYST sizing copy |
 | Free exchanges for 45 days, no restocking fee · refunds within 30 days ($10 fee) · ReturnBear drop-off in Canada | Refund policy |
 | Petite, clearance and RX orders are final sale | Refund policy |
-| Ships from Hamilton in 3–5 business days · free shipping over $150 · duty-free to CA/US over $150 | Shipping policy |
+| Ships from Hamilton in 3–5 business days · free shipping over $150 · always duty-free to CA/US | Shipping policy |
 | KIN #1, Sweet Heart #2 by net sales | Shopify analytics, last 365 days |
 
 The unverified "Sweet Heart sold out" line has been cut.

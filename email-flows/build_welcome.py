@@ -103,7 +103,7 @@ body{{margin:0;padding:0;background:{IVORY}}}
 <tr><td style="padding:40px 20px 0"><table width="100%" {T0} style="border-top:1px solid {LINEN};border-bottom:1px solid {LINEN}"><tr>
 <td style="padding:16px 8px;text-align:center;font:600 10px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Free exchanges<br>45 days</td>
 <td style="padding:16px 8px;text-align:center;font:600 10px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Free shipping<br>over $150</td>
-<td style="padding:16px 8px;text-align:center;font:600 10px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Duty-free CA &amp; US<br>over $150</td>
+<td style="padding:16px 8px;text-align:center;font:600 10px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Duty-free<br>CA &amp; US</td>
 </tr></table></td></tr>
 
 <tr><td style="padding:28px 30px 40px;text-align:center;font:400 12px/1.7 {SANS};color:{MUTED}">

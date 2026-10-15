@@ -28,3 +28,8 @@ Voice: see `email-flows/VOICE.md`. Team/people details are deliberately left out
 ## Materials
 - The first thing people notice is the weight: substantial, no traditional plastic.
 - Acetate frames, UV400, nylon polarized lenses, extra anti-scratch coating. Luxury packaging.
+
+## Shipping and fit policy
+- Free shipping over $150.
+- Always duty-free to Canada and the US. There's no threshold, so never write "duty-free over $150".
+- Free exchanges for 45 days. In Canada, returns can be dropped at any ReturnBear location.

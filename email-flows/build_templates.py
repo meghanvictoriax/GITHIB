@@ -87,7 +87,7 @@ T["atc2-value"] = ("SOL KYST | ATC 2 - What you get", page("(and why they'll out
     + h3("Sized for you, not the &quot;average&quot; face") + p("&quot;Standard&quot; sunglasses come in one size, around 140mm wide. Ours go up to 158mm. That 18mm is the difference between a headache by noon and forgetting you&#39;re wearing them.")
     + h3("The box") + p("Hard protective case, microfibre cloth and our sliding gift box. It&#39;s giving &quot;treat yourself&quot;, and it makes a very good gift.")
     + h3("Zero risk on the fit") + p("Free exchanges for 45 days, no restocking fee. In Canada, drop returns at any ReturnBear location with no box and no label.")
-    + h3("No surprise fees") + p("Free shipping over $150, and orders to Canada and the US over $150 ship duty-free.")
+    + h3("No surprise fees") + p("Free shipping over $150, and every order to Canada and the US ships duty-free.")
     + p("One good pair that fits beats three that sit in a drawer.")
     + ATC_CARD
     + btn("Finish what you started &rarr;", ATC_URL)

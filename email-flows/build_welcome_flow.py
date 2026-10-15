@@ -187,7 +187,7 @@ E5 = page("Four pairs, four moods. Start with one.",
               + '</table>' + button("Claim my 15% off", link("/collections/all"), COCOA, COCOA), "40px 40px 28px")
     + f'<tr><td style="background:#F4EEE8;padding:40px 48px;text-align:center" class="pad">'
       + eyebrow("What you get") + headline("Every pair comes with", INK, 26)
-      + body("A hard protective case, a microfibre cloth and our sliding gift box. Free shipping over $150, and orders to Canada and the US over $150 ship duty-free.")
+      + body("A hard protective case, a microfibre cloth and our sliding gift box. Free shipping over $150, and every order to Canada and the US ships duty-free.")
       + f'<p style="margin:8px 0 0;font:italic 15px/1.5 {SERIF};color:{MUTED}">The brand two Dragons wanted in on. <a href="{DEN}" style="color:{COCOA}">Watch the episode</a></p>'
       + '</td></tr>')
 

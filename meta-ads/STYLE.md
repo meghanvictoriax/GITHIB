@@ -15,5 +15,5 @@ Canva doc: https://www.canva.com/d/15jxs2HYl3w7He_ ("SOL KYST Meta Ads: Editoria
 
 ## Rules
 - No VIP-sale messaging (scrapped).
-- Only claims we can source: sizes 135/145/158, free 45-day exchanges, free shipping over $150, duty-free CA/US over $150, ships from Hamilton, KIN #1 / Sweet Heart #2 (net sales).
+- Only claims we can source: sizes 135/145/158, free 45-day exchanges, free shipping over $150, always duty-free to CA/US, ships from Hamilton, KIN #1 / Sweet Heart #2 (net sales).
 - Real reviews only. Never write a quote.

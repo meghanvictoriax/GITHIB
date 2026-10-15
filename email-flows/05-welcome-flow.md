@@ -29,7 +29,7 @@ The earlier draft `XaWmir` (v2, 5 emails over 8 days) is superseded. Delete it o
 
 ## Copy rules
 - No fake urgency: the code has no end date, so no "expires" language.
-- Only sourced claims: sizes 135/145/158, acetate, polarized + UV400, free exchanges for 45 days, ReturnBear, free shipping and duty-free over $150, the Dragons' Den deal (two Dragons wanted in; Dragons not named), $10,000+ launch day after the March 2021 TikTok. Full fact sheet: `../BRAND.md`.
+- Only sourced claims: sizes 135/145/158, acetate, polarized + UV400, free exchanges for 45 days, ReturnBear, free shipping over $150, always duty-free to CA & US, the Dragons' Den deal (two Dragons wanted in; Dragons not named), $10,000+ launch day after the March 2021 TikTok. Full fact sheet: `../BRAND.md`.
 - Reviews are real 5-star Loox reviews, quoted word for word from the product pages: Melina T. (Integrity), Mary H. (Monarch), Midori P. (Monarch), Jennifer K. (Integrity).
 
 ## Before switching on

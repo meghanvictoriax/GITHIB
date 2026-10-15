@@ -17,7 +17,7 @@ Format: 1080×1350 (4:5 feed). Export pages 1–8 as PNG from Canva.
 CTA: **Shop now** → solkyst.ca (product page for 6 and 7)
 
 ## Fix before export
-- [ ] **5:** footer "TARIFF FREE TO CA & US" → "DUTY-FREE TO CA & US OVER $150" (policy only covers orders over $150)
+- [ ] **5:** footer "TARIFF FREE TO CA & US" → "DUTY-FREE TO CA & US" (always duty-free, no threshold)
 - [ ] **5:** eyebrow → "WOMEN-OWNED · INDEPENDENT · SMALL BATCH"
 - [ ] **6:** callout "[61-17-145 MM]" → "61-17-145 MM" (remove the brackets)
 - [ ] **7:** footer in caps to match the rest; confirm the "Original 1959 Barbie Sunglasses Design" claim and the ad with Mattel
