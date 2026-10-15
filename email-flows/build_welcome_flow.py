@@ -137,12 +137,14 @@ E2 = page("Grab the pair you wore today. Bet we know how this ends.",
 E3 = page("Why I started SOL KYST, and your 15% is still here.",
     f'<tr><td>{image(PHOTO["friends"], link("/pages/about"), "SOL KYST")}</td></tr>'
     + section(eyebrow("A note from Meghan") + headline("The pair I<br>couldn&#39;t find.")
-              + body("Hi, it&#39;s Meghan. I&#39;m the founder of SOL KYST, and I want to tell you why this brand exists, because honestly, it&#39;s a little personal.")
-              + body("I&#39;ve been a makeup artist for years, so I spend a lot of time looking at faces. And for just as long, I couldn&#39;t find a single pair of sunglasses that fit mine. I have a wide face. Every pair pinched my temples, left red marks by lunch and looked a size too small. I genuinely thought something was wrong with my face.")
-              + body("Turns out it was the frames. Almost everything out there comes in one size, about 140mm, and if that&#39;s not you, well, good luck.")
-              + body("So I designed the pair I couldn&#39;t find, in three widths: <b>Mini 135, Midi 145 and Wide 158mm</b>. I posted a pre-order video and it brought in <b>$10,000 in 24 hours</b>. My heart was so full. That&#39;s when I knew it wasn&#39;t just me.")
-              + body("Then we walked into CBC&#39;s Dragons&#39; Den, and two Dragons wanted to partner with us. I still kind of can&#39;t believe I get to type that sentence.")
-              + body("So if you&#39;ve ever tried on pair after pair and walked out with nothing, this one&#39;s for you. Your face was never the problem.")
+              + body("Hi, it&#39;s Meghan, the founder of SOL KYST. Let me take you back to summer 2020.")
+              + body("It&#39;s lockdown. Work is shut down, I&#39;m living in downtown Toronto, eating through my savings and wondering what the heck I&#39;m going to do. One day I&#39;m sitting on the beach in my cute cover-up and my bathing suit&hellip; and a stupid pair of sunglasses that made me look like John Lennon and Harry Potter had a baby.")
+              + body("I wasn&#39;t feeling cute. I wasn&#39;t feeling confident. And it was all because of my stupidly small glasses. They weren&#39;t even abnormally small. I&#39;m just a wide-faced cheeky babe, and sunglasses come in one standard size that has never worked for me.")
+              + body("And right there, the idea washed up on shore: <b>I&#39;m going to make the widest, largest women&#39;s sunglasses on the market.</b>")
+              + body("I&#39;d been a makeup artist for 10+ years, so I sat in front of my mirror with construction paper and scissors and used highlight and contour to cut out a shape that actually flatters a wider face. Many, many paper cut-outs later (and a terrible Canva diagram), that became our Kyst Eye. Same design we use today.")
+              + body("In March 2021 I showed the first black prototype on TikTok, not expecting anything. 120,000 views in a few days and 1,200 sign-ups over one weekend. I threw a website together in three days and had a <b>$10,000+ launch day</b>. Exciting, amazing and really freaking scary, because the inventory was three months away.")
+              + body("Now we&#39;re in three sizes (<b>Mini 135, Midi 145 and Wide 158mm</b>), with 650+ five-star reviews and customers in over 50 countries. And on CBC&#39;s Dragons&#39; Den, two Dragons wanted to partner with us.")
+              + body("Because let&#39;s be real: a bomb pair of sunnies is your armour for the day. You deserve one that fits.")
               + f'<p style="margin:8px 0 26px;font:italic 18px/1.4 {SERIF};color:{INK};text-align:center">Love, Meghan<br><span style="font:600 10px/1.4 {SANS};letter-spacing:2px;text-transform:uppercase;color:{MUTED}">Founder, SOL KYST</span></p>'
               + button("Watch our episode", DEN, COCOA, COCOA)
               + f'<p style="margin:18px 0 0;text-align:center"><a href="{SITE}/pages/about" style="font:600 11px/1 {SANS};letter-spacing:2px;text-transform:uppercase;color:{COCOA}">Read the full story &rarr;</a></p>', "40px 48px 12px")
@@ -150,7 +152,7 @@ E3 = page("Why I started SOL KYST, and your 15% is still here.",
       + eyebrow("Don&#39;t forget", LINEN) + headline("Your 15% off is still waiting.", IVORY, 26)
       + button("Claim my 15% off", link("/collections/all"), IVORY, IVORY)
       + f'<p style="margin:16px 0 0;font:600 11px/1.5 {SANS};letter-spacing:2px;text-transform:uppercase;color:{LINEN}">Code: {CODE.upper()}</p></td></tr>'
-    + section(eyebrow("Wide faces who made the switch") + headline("Finally, a pair that fits.", INK, 28)
+    + section(eyebrow("Wide face babes who made the switch") + headline("Finally, a pair that fits.", INK, 28)
               + f'<table width="100%" {T0} style="margin:12px 0 4px">'
               + quote("This is the first pair of glasses I&#39;ve owned that doesn&#39;t give me a headache or leave marks on my face. They fit my wiiiide face PERFECTLY!", "Melina T.", "Integrity")
               + quote("I always thought my round face shape was why all sunglasses looked slightly off, but I just needed wider sunglasses!", "Mary H.", "Monarch")

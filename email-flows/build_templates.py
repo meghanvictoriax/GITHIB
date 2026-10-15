@@ -97,7 +97,7 @@ T["atc2-value"] = ("SOL KYST | ATC 2 - What you get", page("(and why they'll out
 T["pp1a-founder"] = ("SOL KYST | PP 1A - Founder thank-you", plain_page("and one quick question for you",
     pp("Hey {{ first_name|default:'there' }},")
     + pp("I&#39;m Meghan, the founder of SOL KYST.")
-    + pp("Before this I was a makeup artist. When that work stopped in 2020, I finally did something about a problem I&#39;d had my whole life: I have a wide, cheeky face, and sunglasses just didn&#39;t fit it. So I designed a pair that did. That was the Kyst Eye. We put it up for pre-order in early 2021, and one video brought in over $10,000 in orders in the first 24 hours. Turns out a lot of us had been squeezing into frames made for someone else.")
+    + pp("Before this I was a makeup artist. When that work stopped in 2020, I finally did something about a problem I&#39;d had my whole life: I have a wide, cheeky face, and sunglasses just didn&#39;t fit it. So I designed a pair that did. That was the Kyst Eye. In March 2021 I showed it on TikTok, and a few days later we had a $10,000+ launch day. Turns out a lot of us had been squeezing into frames made for someone else.")
     + pp("So when someone like you takes a chance on a small Canadian brand instead of the big names, I notice. Thank you, genuinely.")
     + pp("Your order ships from Hamilton within 3&ndash;5 business days, and you&#39;ll get a tracking link the moment it leaves.")
     + pp("<b>One quick question:</b> what finally made you buy? A friend, a TikTok, the sizing, the Barbie collab, something else? Just hit reply. I read every answer, and it honestly shapes what we make next.")

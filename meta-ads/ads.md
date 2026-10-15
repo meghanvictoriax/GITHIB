@@ -83,7 +83,7 @@ Built from the last 90 days of Meta data: women 25–44 bought 70 of 75 orders, 
 
 > I was a makeup artist with a wide, cheeky face, and sunglasses never fit me. So in 2020 I designed a pair that did.
 >
-> One video later we had $10,000 in pre-orders in 24 hours. Turns out a lot of us were squeezing into frames made for someone else. 💛
+> One TikTok later, we had a $10,000+ launch day. Turns out a lot of us were squeezing into frames made for someone else. 💛
 >
 > — Meghan, founder
 

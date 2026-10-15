@@ -38,7 +38,7 @@ v1 was generic template copy with "wide faces" dropped in. v2 is built on what m
 
 | Used in copy | Source |
 |---|---|
-| Founder Meghan: ex-makeup artist, started in 2020, Kyst Eye pre-order early 2021, $10k in the first 24 hours | Public brand coverage |
+| Founder Meghan: ex-makeup artist, started in 2020, Kyst Eye on TikTok March 2021, $10,000+ launch day | Meghan (`../BRAND.md`) |
 | "Standard" sunglasses = one size, ~140mm | SOL KYST sizing copy |
 | Free exchanges for 45 days, no restocking fee · refunds within 30 days ($10 fee) · ReturnBear drop-off in Canada | Refund policy |
 | Petite, clearance and RX orders are final sale | Refund policy |
@@ -64,3 +64,4 @@ HTML lives in `templates/`. To change copy, edit `build_templates.py`, run `pyth
 - [ ] Exclude RX and Petite orders from the exchange messaging (final sale)
 - [ ] Discount code `STAYKYST10` (Sunset Email 2 only)
 - [ ] A/B test the subject lines (A/B pairs are provided for every email)
+- Post-purchase PP 1A now uses template `TPAPaW` (launch-day fact fix).

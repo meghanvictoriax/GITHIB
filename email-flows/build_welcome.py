@@ -91,7 +91,7 @@ body{{margin:0;padding:0;background:{IVORY}}}
 {headline("Two Dragons<br>wanted in.")}
 {body("We walked into the Den with sunglasses built for wide faces, and two Dragons wanted to partner. We walked out with a deal. Not because of the pitch. Because the fit is that good.")}
 {button("Watch our episode", DEN, COCOA, COCOA)}
-<p style="margin:28px 0 0;font:italic 16px/1.6 {SERIF};color:{MUTED};text-align:center">It started with Meghan, a makeup artist with a wide face who designed the pair she couldn&#39;t find. Her pre-order video brought in $10,000 in 24 hours. <a href="{SITE}/pages/about" style="color:{COCOA}">Read our story</a></p>
+<p style="margin:28px 0 0;font:italic 16px/1.6 {SERIF};color:{MUTED};text-align:center">It started with Meghan, a makeup artist with a wide face who designed the pair she couldn&#39;t find. One TikTok later, she had a $10,000+ launch day. <a href="{SITE}/pages/about" style="color:{COCOA}">Read our story</a></p>
 </td></tr>
 
 <tr><td class="pad" style="padding:8px 32px 8px">

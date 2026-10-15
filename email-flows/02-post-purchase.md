@@ -26,7 +26,7 @@ The review ask stays in your existing "Review request" flow.
 >
 > I'm Meghan, the founder of SOL KYST.
 >
-> Before this I was a makeup artist. When that work stopped in 2020, I finally did something about a problem I'd had my whole life: I have a wide, cheeky face, and sunglasses just didn't fit it. So I designed a pair that did. That was the Kyst Eye. We put it up for pre-order in early 2021, and one video brought in over $10,000 in orders in the first 24 hours. Turns out a lot of us had been squeezing into frames made for someone else.
+> Before this I was a makeup artist. When that work stopped in 2020, I finally did something about a problem I'd had my whole life: I have a wide, cheeky face, and sunglasses just didn't fit it. So I designed a pair that did. That was the Kyst Eye. In March 2021 I showed it on TikTok, and a few days later we had a $10,000+ launch day. Turns out a lot of us had been squeezing into frames made for someone else.
 >
 > So when someone like you takes a chance on a small Canadian brand instead of the big names, I notice. Thank you, genuinely.
 >
@@ -120,7 +120,7 @@ The review ask stays in your existing "Review request" flow.
 ---
 
 ### Sources
-- Founder story: public brand coverage (makeup artist → 2020 → Kyst Eye pre-order in early 2021 → $10k in 24 hours). Meghan, edit it so it sounds like you.
+- Founder story: public brand coverage (see ../BRAND.md: makeup artist → 2020 → TikTok March 2021 → $10,000+ launch day). Meghan, edit it so it sounds like you.
 - Ship time, exchange window and ReturnBear details: the store's Shipping and Refund policies.
 - Sweet Heart as the #2 seller: Shopify net sales, last 365 days.
 - Note: RX and Petite orders are final sale, so the 3-day-rule exchange line doesn't apply to them. Add a conditional split, or a line excluding them, before going live.

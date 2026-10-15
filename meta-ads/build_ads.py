@@ -35,7 +35,7 @@ GROUPS = [
        why="Your Dragons' Den video returned 3.0 ROAS in the US but was barely tested in Canada (Advantage+ Canada spent $174 on a copy of it). Re-cut a shorter version with the first 2 seconds showing the pitch moment. Confirm the Dragons' Den claim before running."),
   dict(id="A5", name="Founder story", fmt="Video 9:16, 30s, Meghan to camera", img="afterglow",
        overlay="[Video] \"I was a makeup artist with a wide face…\"",
-       primary="I was a makeup artist with a wide, cheeky face, and sunglasses never fit me. So in 2020 I designed a pair that did.\n\nOne video later we had $10,000 in pre-orders in 24 hours. Turns out a lot of us were squeezing into frames made for someone else. 💛\n\n— Meghan, founder",
+       primary="I was a makeup artist with a wide, cheeky face, and sunglasses never fit me. So in 2020 I designed a pair that did.\n\nOne TikTok later, we had a $10,000+ launch day. Turns out a lot of us were squeezing into frames made for someone else. 💛\n\n— Meghan, founder",
        headline="Made for faces like ours", desc="Designed in Hamilton, Ontario", cta="Learn More",
        why="A fresh hook for audiences that are fatigued (Canada frequency is 60). Script: problem (0–5s), what she made (5–15s), try-on in 3 sizes (15–25s), CTA (25–30s)."),
  ]),
