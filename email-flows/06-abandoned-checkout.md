@@ -1,7 +1,7 @@
 # Flow 6: Abandoned Checkout (rebuild)
 
-**Klaviyo:** draft flow `SJaAJJ`, "[DRAFT] Abandoned Checkout 2026 (replaces Abandoned Cart)". Built by `build_abandoned_cart.py`.
-**Replaces:** live flow `Y7eYv5` "Abandoned Cart". Keep it running until the swap is approved.
+**Klaviyo:** flow `SJaAJJ` (**live since Oct 15, 2026**), "[DRAFT] Abandoned Checkout 2026 (replaces Abandoned Cart)". Built by `build_abandoned_cart.py`.
+**Replaces:** flow `Y7eYv5` "Abandoned Cart", set to manual on Oct 15, 2026.
 **Trigger:** Checkout Started (`TcjaQA`)
 **Flow filters:** Placed Order = 0 since flow start, Checkout Started = 0 since flow start, re-entry after 3 days
 **From / reply-to:** SOL KYST <info@solkyst.ca> / info@solkyst.ca
@@ -33,7 +33,7 @@ Every email shows the shopper's own items: the variant photo, or the product pho
 - **Limits:** one use per customer. It combines with shipping discounts only.
 - **Inventory:** the Kyst Klip shows −165 in Shopify. Check it's sold on backorder or restock before launch.
 
-## Before launch
+## Still to do
 
-1. Turn off Shopify's own abandoned checkout email. That's in Shopify admin, under Settings → Notifications or Marketing → Automations.
-2. Set the old flow `Y7eYv5` to manual. Set `SJaAJJ` emails to live.
+- Turn off Shopify's own abandoned checkout email. That's in Shopify admin, under Settings → Notifications or Marketing → Automations.
+- Rename the flow in Klaviyo to drop "[DRAFT]" (the API can't rename flows).
