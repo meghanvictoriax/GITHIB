@@ -1,6 +1,10 @@
 # Flow 5: Welcome series (v3)
 
-**Klaviyo:** draft flow `WXaimu` (https://www.klaviyo.com/flow/WXaimu/edit). Templates: WvL4NV, WsGNi4, VNzXxr, Yqpcvj, S5ztXF, VzMYDf.
+**Klaviyo:** draft flow `WXaimu` (https://www.klaviyo.com/flow/WXaimu/edit).
+**Templates (drag-and-drop, used by the flow):** WkxUsh, UNmMYT, TdzrkC, Usxwx9, SAUnJU, TJbdxi (emails 1–6). Built by `build_dnd.py`; photos live in Klaviyo's image library.
+The older coded versions (WvL4NV, WsGNi4, VNzXxr, Yqpcvj, S5ztXF, VzMYDf) are kept for reference only.
+
+**Editing:** open the flow, click an email, then Edit content. Everything is drag-and-drop now: click text to change it, swap photos, drag sections. Once you edit in Klaviyo, Klaviyo is the source of truth; re-running `build_dnd.py` would overwrite your edits.
 The earlier draft `XaWmir` (v2, 5 emails over 8 days) is superseded. Delete it once v3 is approved.
 **Trigger:** added to the newsletter list (`YxzPdw`), the same list as the live "Email Welcome Series Customer vs Non-Customer" flow.
 **Flow filter:** Placed Order = 0 since starting this flow, so anyone who buys stops getting the series.
